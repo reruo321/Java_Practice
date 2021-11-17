@@ -48,7 +48,7 @@ One of the constructors for class Scanner has InputStream as its parameter, so p
 Methods for this Scanner with their names "next~" will take user's inputs as their data types.
 
 ## Ex. 03 - BufferedReader
-It takes a line and a character as inputs.
+It takes a line input as the address, and a character as the sex of user.
 ### Class
     public abstract class Reader
        └ public class BufferedReader
@@ -83,3 +83,12 @@ Beware that BufferedReader.readLine() and System.in.read() should throw java.io.
     public static void main(String [] args) throws IOException {...}
 
 ## Ex. 04 - JOptionPane
+First, it asks the user's name. After saying hello with his/her name, it wonders if he/she wants to buy a fruit.
+If he/she chooses OK, three options are given; "사과"(apple),"바나나"(banana), and "포도"(grape). It finishes the process after selling.
+### Class
+    public class JOptionPane
+       └ static void showMessageDialog(...)
+       └ static int showInputDialog(...)
+       └ static void showConfirmDialog(...)
+       └ static int showOptionDialog(...)
+There are so many fields and methods for the class. You can check the full documentation [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#YES_NO_CANCEL_OPTION).
