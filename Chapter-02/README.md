@@ -83,8 +83,8 @@ Beware that BufferedReader.readLine() and System.in.read() should throw java.io.
     public static void main(String [] args) throws IOException {...}
 
 ## Ex. 04 - JOptionPane
-First, it asks the user's name. After saying hello with his/her name, it wonders if he/she wants to buy a fruit.
-If he/she chooses OK, three options are given; "사과"(apple),"바나나"(banana), and "포도"(grape). It finishes the process after selling.
+First, it asks the user's name. After saying hello with his/her name, it wonders if he/she wants to buy some fruits.
+If he/she chooses OK, three options are given for type of the fruit, and wrapping; {"사과"(apple), "바나나"(banana), "포도"(grape)} for fruits, and {"쇼핑백"(shopping bag), "상자"(box), "맨손"(bare hands)} for wrapping. It finishes the process after selling.
 ### Class
     public class JOptionPane
        └ static void showMessageDialog(...)
