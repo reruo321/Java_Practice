@@ -48,7 +48,7 @@ One of the constructors for class Scanner has InputStream as its parameter, so p
 Methods for this Scanner with their names "next~" will take user's inputs as their data types.
 
 ## Ex. 03 - BufferedReader
-It takes 
+It takes a line and a character as inputs.
 ### Class
     public abstract class Reader
        └ public class BufferedReader
@@ -72,6 +72,11 @@ System.in.read() reads some number of bytes from the input stream, and it stores
     String address = rd.readLine();
     
     int sex = System.in.read();
+
+As System.in.read() reads the input as byte type, cast it from byte to char if you want a character form.
+
+    int sex = System.in.read();  // If the input is 'F', int sex = 70. 70 implies 'F' in ASCII code.
+    System.out.println((char)sex);  // By type casting, the output will be converted from 70 to 'F'.
 
 Beware that BufferedReader.readLine() and System.in.read() should throw java.io.IOException when they catch an exception. Add "throws IOException" to your method.
 
