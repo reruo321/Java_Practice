@@ -73,6 +73,8 @@ System.in.read() reads some number of bytes from the input stream, and it stores
     
     int sex = System.in.read();
 
-Beware that BufferedReader.readLine() and System.in.read() throw java.io.IOException when they catch an exception. You should add "throws IOException" to your method.
+Beware that BufferedReader.readLine() and System.in.read() should throw java.io.IOException when they catch an exception. Add "throws IOException" to your method.
 
     public static void main(String [] args) throws IOException {...}
+
+## Ex. 04 - JOptionPane
