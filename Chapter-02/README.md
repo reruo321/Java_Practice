@@ -92,7 +92,7 @@ If he/she chooses OK, three options are given for type of the fruit, and wrappin
        └ static void showConfirmDialog(...)
        └ static int showOptionDialog(...)
 There are so many fields and methods for the class. You can check the full documentation [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#YES_NO_CANCEL_OPTION).
-![02JOptionPane](https://user-images.githubusercontent.com/48712088/142445391-7114b842-5cde-4733-a64e-fc831b86e2db.png)
+![02JOptionPane](https://user-images.githubusercontent.com/48712088/142446610-6843a0c1-7cab-4924-afb2-5cae4bf15639.png)
 
     // Example 1
     String name = JOptionPane.showInputDialog(null, "Write your name.", "Form", JOptionPane.QUESTION_MESSAGE);
