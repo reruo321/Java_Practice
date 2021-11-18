@@ -100,5 +100,5 @@ There are so many fields and methods for the class. You can check the full docum
     
     // Example 2
     Object[] fselection = {"Apple", "Banana", "Grape"};
-    String fruit = (String) JOptionPane.showInputDialog(null, "Select the fruits to buy.", "Selection", JOptionPane.PLAIN_MESSAGE, null, fselection, fselection[0]);
+    Object fruit = JOptionPane.showInputDialog(null, "Select the fruits to buy.", "Selection", JOptionPane.PLAIN_MESSAGE, null, fselection, fselection[0]);
     JOptionPane.showMessageDialog(null, "You bought " + fruit, "Purchase Completed", JOptionPane.INFORMATION_MESSAGE);
