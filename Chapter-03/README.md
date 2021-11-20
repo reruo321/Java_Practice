@@ -46,7 +46,7 @@ If you want to represent a long-type literal instead of int, put the letter 'L' 
     long longVal = 1234L;   // L can be omitted from this line
     System.out.println(1234L);   // Output will be: 1234
 #### 2. Floating-Point Literal
-A floating-point literal is the real-number literal that has a floating-point. Float-type literal ends with the letter 'F' or f, and double-type with 'D' or 'd' or without any letters. If you add 'E' or 'e' to the literal, it turns into an exponential expression for scientific notation.
+A floating-point literal is the real-number literal that has a floating-point. Float-type literal ends with the letter 'F' or 'f', and double-type with 'D' or 'd' or without any letters. If you add 'E' or 'e' to the literal, it turns into an exponential expression for scientific notation.
 
     float f1 = 888.8F;   // !!! F can't be omitted !!!
     double d1 = 123.4D;   // D can be left out
