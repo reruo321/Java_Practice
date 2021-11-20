@@ -1,9 +1,9 @@
-# Ch. 3 - Basics of JAVA Language
+# Ch. 3 - Basics of Java Language
 In this chapter, you can learn the basics of JAVA language. It is pretty much the same as C++.
 
 ## Ex. 01 - Data Type Variable
 ### Data Types
-See details on [JAVA Language Specification](https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-ClassOrInterfaceType).
+See details on [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-ClassOrInterfaceType).
 
                                                             ┌ byte  (8-bit, signed)
                        ┌ boolean (1-bit)                    ├ short (16-bit, signed)
@@ -33,4 +33,25 @@ Primitive type is predefined by the language and is named by a reserved keyword.
 ##### boolean
 1) boolean: represents 1-bit of information that has only two possible values: true or false. Default value: false.
 ### Literal
+Literal is the stationary data having a fixed value. Because of its primitive nature, it does not need computation to be represented.
 #### 1. Integer Literal
+An integer literal is the number not containing floating point, and it can be expressed in the decimal, hexadecimal, octal, and binary system. Add '0x', '0', and '0b' for hexadecimal, octal, and binary.
+
+    int decVal = 91;   // 91 in decimal
+    int hexaVal = 0xABC;   // 2748 in decimal
+    int octalVal = 0144;   // 100 in deciaml
+    int binVal = 0b1010110;   // 86 in decimal
+If you want to represent a long-type literal instead of int, put the letter 'L' or 'l' behind it. (Using 'l' will be puzzling so 'L' is more recommended.)
+
+    long longVal = 1234L;   // L can be omitted from this line
+    System.out.println(1234L);   // Output will be: 1234
+#### 2. Floating-Point Literal
+A floating-point literal is the real-number literal that has a floating-point. Float-type literal ends with the letter 'F' or f, and double-type one with 'D' or 'd' or without any letters. If you add 'E' or 'e' to the literal, it turns into an exponential expression for scientific notation.
+
+    float f1 = 888.8F;   // !!! F can't be omitted !!!
+    double d1 = 123.4D;   // D can be left out
+    double d2 = 123.456;
+    float f2 = 1234.5678E2F   // 123456.78
+    double d3 = 12345.67891-E3;   // 12.34567891
+    
+#### 3. Character Literal
