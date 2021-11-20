@@ -20,6 +20,7 @@ See details on [JAVA Language Specification](https://docs.oracle.com/javase/spec
     3. null Type
 Let us check the primitive type here, and then others on Chapter 4 and Chapter 7.
 #### Primitive Type
+Primitive type is predefined by the language and is named by a reserved keyword. As the Java programming language is statically-typed, all variables must first be declared before they can be used. The field variables will be assigned to a default value by the compiler, depending on their data types. However, local one must be initialized (assign it a value) before use, or it will cause the error. It is good to get into the routine of assigning value to the declared variables to avoid the trouble.
 ##### Integral Type
 1) byte: 8-bit signed two's complement integer. -128 ~ 127. Default value: 0.
 2) short: 16-bit signed two's complement integer. -32,768~ 32,767. Default value: 0.
