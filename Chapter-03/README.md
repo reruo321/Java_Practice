@@ -33,7 +33,7 @@ Primitive type is predefined by the language and is named by a reserved keyword.
 ##### boolean
 1) boolean: represents 1-bit of information that has only two possible values: true or false. Default value: false.
 ### Literal
-Literal is the stationary data having a fixed value. Because of its primitive nature, it does not need computation to be represented.
+Literal is the stationary data having a fixed value. Because of its primitive nature, computation does not need for the literal to be represented.
 #### 1. Integer Literal
 An integer literal is the number not containing floating point, and it can be expressed in the decimal, hexadecimal, octal, and binary system. Add '0x', '0', and '0b' for hexadecimal, octal, and binary.
 
@@ -46,7 +46,7 @@ If you want to represent a long-type literal instead of int, put the letter 'L' 
     long longVal = 1234L;   // L can be omitted from this line
     System.out.println(1234L);   // Output will be: 1234
 #### 2. Floating-Point Literal
-A floating-point literal is the real-number literal that has a floating-point. Float-type literal ends with the letter 'F' or f, and double-type one with 'D' or 'd' or without any letters. If you add 'E' or 'e' to the literal, it turns into an exponential expression for scientific notation.
+A floating-point literal is the real-number literal that has a floating-point. Float-type literal ends with the letter 'F' or f, and double-type with 'D' or 'd' or without any letters. If you add 'E' or 'e' to the literal, it turns into an exponential expression for scientific notation.
 
     float f1 = 888.8F;   // !!! F can't be omitted !!!
     double d1 = 123.4D;   // D can be left out
