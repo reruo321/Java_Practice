@@ -1,5 +1,5 @@
 # Ch. 3 - Basics of Java Language
-In this chapter, you can learn the basics of JAVA language. It is pretty much the same as C++.
+In this chapter, you can learn the basics of JAVA language. It resembles the ones from C++.
 
 ## Ex. 01 - Data Type Variable
 ### Data Types
@@ -18,7 +18,7 @@ See details on [Java Language Specification](https://docs.oracle.com/javase/spec
                        └ Array Type
                       
     3. null Type
-Let us check the primitive type here, and then others on Chapter 4 and Chapter 7.
+Let us check the primitive type here, and the others later on Chapter 4 and Chapter 7.
 #### Primitive Type
 Primitive type is predefined by the language and is named by a reserved keyword. As the Java programming language is statically-typed, all variables must first be declared before they can be used. The field variables will be assigned to a default value by the compiler, depending on their data types. However, local one must be initialized (assign it a value) before use, or it will cause the error. It is good to get into the routine of assigning value to the declared variables to avoid the trouble.
 ##### Integral Type
@@ -54,4 +54,17 @@ A floating-point literal is the real-number literal that has a floating-point. F
     float f2 = 1234.5678E2F   // 123456.78
     double d3 = 12345.67891-E3;   // 12.34567891
     
-#### 3. Character Literal
+#### 3. Character Literal & String Literal
+※ Understanding explanation of string literal may need knowledge from later chapters. Check it later if you feel this hard.
+
+Character literal in Java can contain ASCII code, and even Unicode (UTF-16) characters. A Java programmer is allowed to use Unicode characters directly, or utilize "Unicode escape ('\u')" if the editor and file system do not permit it. Use single quotes for char literals like below.
+
+    char hangul = '한'; // A direct Unicode character.
+    char hangul_u = '\ud55c'; // An indirect Unicode character for the upper Korean character, '한'.
+String literal is implemented as instance of the [String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html).
+Since String is constant and its objects are immutable, they can be shared. (String buffers support mutable strings.) Use double quotes for string literal.
+
+    String korean = "한글"; // A String with direct Unicode characters.
+    String korean_u = "\ud55c\uae00"; // A String with indirect Unicode characters.
+    String hello = "Hello, World!";
+
