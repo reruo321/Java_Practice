@@ -3,7 +3,7 @@ In this chapter, you can learn the basics of JAVA language. It resembles the one
 
 ## Ex. 01 - Data Type Variable
 ### Data Types
-See details on [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-ClassOrInterfaceType).
+See details on [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-ClassOrInterfaceType), and an official tutorial on [The Java Tutorials](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html).
 
                                                             ┌ byte  (8-bit, signed)
                        ┌ boolean (1-bit)                    ├ short (16-bit, signed)
@@ -55,7 +55,7 @@ A floating-point literal is the real-number literal that has a floating-point. F
     double d3 = 12345.67891-E3;   // 12.34567891
     
 #### 3. Character Literal & String Literal
-※ Understanding explanation of string literal may need knowledge from later chapters. Check it later if you feel this hard.
+※ Understanding some explanation of string literal may need knowledge from later chapters, so take it easy.
 
 Character literal in Java can contain ASCII code, and even Unicode (UTF-16) characters. A Java programmer is allowed to use Unicode characters directly, or utilize "Unicode escape ('\u')" if the editor and file system do not permit it. Use single quotes for char literals like below.
 
@@ -65,6 +65,23 @@ String literal is implemented as instance of the [String class](https://docs.ora
 Since String is constant and its objects are immutable, they can be shared. (String buffers support mutable strings.) Use double quotes for string literal.
 
     String korean = "한글"; // A String with direct Unicode characters.
-    String korean_u = "\ud55c\uae00"; // A String with indirect Unicode characters.
+    String korean_u = "\ud55c\uae00"; // A String with indirect Unicode characters, meaning "한글".
     String hello = "Hello, World!";
 
+Java supports not only Unicode escape sequences, but also some special escape sequences for both char and String literals.
+I filed this from [Chapter 2](https://github.com/reruo321/Java_Practice/tree/main/Chapter-02).
+
+#### 4. Miscellaneous
+1. null Literal: null literal is often used as a marker to unavailable objects. It can be used as a value for any reference type, and it may also be assigned to any variable, except variables of primitive types.
+2. Class Literal: Clas literal refers to the object (of type Class) that represents the type itself. It takes its form as "<CLASS_TYPE>.class", and for example, "String.class" is the class literal for the "String" class.
+
+In Java SE 7 and later, to make the programmers easy to read their digits while programming, it allows to put underscore characters between digits in a numerical literal, as many as they want to.
+
+    int underVal = 1_2_3_4_5_6_7_8;   // 12345678
+    float pi = 3.14_15F;   // 3.1415
+    long hexVal = 0xABCD_EF01;   // 0xABCDFE01
+    byte binVal = 0b0100_1101;   // 01001101
+    
+## Ex. 02 - Operator
+Operators in Java operate arithmetic on various data types, and they consider precedence (priority) and associativity. (direction of calculation)
+### 1. Assignment Operator
