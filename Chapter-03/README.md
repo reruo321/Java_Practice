@@ -92,3 +92,10 @@ Assignment operator saves a value to the declared variable, and it uses the char
     x = 1;   // x = 1, y = 10.
 ## Ex. 03 - Increment
 ### 2. Increment & Decrement Operator
+If an increment/decrement operator is added to a variable, it adds/subtracts 1 to its value. They both have their pre- version and post- version. Pre- version adds/subtracts 1 first, then it uses the changed value to arithmetic. On the other hand, post- version takes the calculation first, then the increment/decrement later.
+
+    int a = 0;
+    int b = ++a;   // same as "a = a+1; int b = a". a = 1, b = 1.
+    
+    int c = 0;
+    int d = c++;   // c = 1, d = 0.
