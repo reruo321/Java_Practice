@@ -1,5 +1,5 @@
 # Ch. 3 - Basics of Java Language
-In this chapter, you can learn the basics of JAVA language. It resembles the ones from C++.
+In this chapter, you can learn the basics of Java language. It resembles the ones from C++.
 
 ## Ex. 01 - Data Type Variable
 ### Data Types
@@ -82,6 +82,13 @@ In Java SE 7 and later, to make the programmers easy to read their digits while 
     long hexVal = 0xABCD_EF01;   // 0xABCDFE01
     byte binVal = 0b0100_1101;   // 01001101
     
-## Ex. 02 - Operator
-Operators in Java operate arithmetic on various data types, and they consider precedence (priority) and associativity. (direction of calculation)
+## Ex. 02 - AssignOp
+Operators in Java operate arithmetic on various data types, and they consider precedence (priority) and associativity. (direction of calculation) I will mainly check some new operators peculiar to Java.
 ### 1. Assignment Operator
+Assignment operator saves a value to the declared variable, and it uses the character '='. It operates from right to left.
+
+    int x, y;
+    x = y = 10;   // y = 10, then x = y.
+    x = 1;   // x = 1, y = 10.
+## Ex. 03 - Increment
+### 2. Increment & Decrement Operator
