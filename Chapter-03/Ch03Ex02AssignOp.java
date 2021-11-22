@@ -5,7 +5,7 @@ public class Ch03Ex02AssignOp {
         char p, q;
 
         x = y = 100;
-//        x = 20;
+        x = 20;
         a = b = 0.012;
         a = 3.14159;
         p = q = '#';
