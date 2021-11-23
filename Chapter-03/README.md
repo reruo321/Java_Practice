@@ -113,4 +113,27 @@ If an increment/decrement operator is added to a variable, it adds/subtracts 1 t
     int c = 0;
     int d = c++;   // c = 1, d = 0.
 
-### 3. 
+### 4. Relational Operator
+A relational operator is used to compare two values, and its result is always boolean. (true or false)
+
+  class Animal{}
+  class Bear extends Animal{}
+  class relationalEx { 
+    public static void main(String[] args){
+      Animal animal = new Animal();
+      Bear bear = new Bear();
+      int a, b, c;
+      boolean d;
+
+      a = b = 100;
+      c = 1;
+
+      d = (a == b);   // d = true
+      d = (a != b);   // d = false
+      d = (a > c);   // d = true
+      d = (a <= b);   // d = true
+      d = bear instanceof Animal;   // d = true, it's okay to not know this operator now.
+      }
+    }
+    
+### 5. Logical Operator
