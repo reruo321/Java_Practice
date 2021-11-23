@@ -114,7 +114,7 @@ If an increment/decrement operator is added to a variable, it adds/subtracts 1 t
     int d = c++;   // c = 1, d = 0.
 
 ### 4. Relational Operator
-A relational operator is used to compare two values, and its result is always boolean. (true or false)
+A relational operator is used to test or define some kind of relation between two entities, and its result is always boolean. (true or false)
 
   class Animal{}
   class Bear extends Animal{}
@@ -137,3 +137,54 @@ A relational operator is used to compare two values, and its result is always bo
     }
     
 ### 5. Logical Operator
+Logical operators, AND(&&), OR(||), and NOT(!), determine the logic between operands.
+
+    boolean b1 = true && false;   // false
+    boolean b2 = true || false;   // true
+    boolean b3 = !true;   // false
+    
+### 6. Bitwise Operation
+Bitwise operation operates on integral types at the level of its individual bits.
+#### 1. Bitwise Operator
+Bitwise operator uses bitwise AND(&), OR(|), XOR(^), and NOT(~).
+
+    byte a1 = 11 & 13;   // 00001011 & 00001101 = 00001001 (9)
+    byte a2 = 9 | 5;   // 00001001 | 00000101 = 00001101 (13)
+    byte a3 = 11 ^ 13;   // 00001011 ^ 00001101 = 00000110 (6)
+    byte a4 = ~17   // ~00010001 = 11101110 (-18)
+    
+#### 2. Bit Shift
+Bit shift moves the digits to the left or right by given number. Java additionally has **>>>** (unsigned right shift) as a bit shift operator.
+
+    byte b1 = 13 << 3;   // 00001101 << 3 = 01101000 (104)
+    byte b2 = -18 >> 2;   // 11101110 >> 2 = 11111011 (-5)
+
+    int a = -18 >> 2;   // 11111111111111111111111111111011 (-5)
+    int b = -18 >>> 2;   // 00111111111111111111111111111011 (1073741819)
+    System.out.println(String.format("%32s", Integer.toBinaryString(a)).replaceAll(" ", "0"));   // It represents the output as 32-bit digits.
+    System.out.println(String.format("%32s", Integer.toBinaryString(b)).replaceAll(" ", "0"));
+    
+Unlike the arithmetic shift operator >>, >>> performs logical right shift so it makes the operand unsigned, no matter what its sign was. The logical shift moves the digits, and replace the discard bits to 0s.
+
+### 7. Conditional Operator
+Conditional operator ?: is a type of ternary operator (taking three operands) that evaluates an expression as a boolean value.
+
+Syntax: condition ? expr1 : expr2
+
+If the condition is true, expr1 will be evaluated, otherwise expr2.
+
+    String str = ((31 % 2) == 0) ? "짝수" : "홀수";   // ((31 % 2) == 0) = false, so str = "홀수".
+
+### 8. Compound Assignment Operator
+With a compound assignment operator, you can express assignment and arithmetic operators simply.
+
+    a += 1;   // a = a + 1;
+    a *= 3;   // a = a * 3;
+    a %= 5;   // a = a % 5;
+    
+### 9. Cast Operator
+If data types of entities are different, types are converted automatically. Making data from a smaller type to larger one is called "Widening Casting", and "Narrowing Casting" vice versa. In Java language, narrow casting cannot be automatic since the compiler notify the programmer of data loss, as an error. Therefore, you should use cast operator if you want a narrow casting.
+
+    double x = 3.14;
+    // int y = x;   // Error! java: incompatible types: possible lossy conversion from double to int
+    int y = (int) x;   // y = 3
