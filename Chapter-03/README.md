@@ -82,7 +82,7 @@ In Java SE 7 and later, to make the programmers easy to read their digits while 
     long hexVal = 0xABCD_EF01;   // 0xABCDFE01
     byte binVal = 0b0100_1101;   // 01001101
     
-## Ex. 02 - AssignOp
+## Ex. 02 ~ Ex. 05 - Operator
 Operators in Java operate arithmetic on various data types, and they consider precedence (priority) and associativity. (direction of calculation) I will mainly check some new operators peculiar to Java.
 ### 1. Assignment Operator
 Assignment operator saves a value to the declared variable, and it uses the character '='. It operates from right to left.
@@ -90,8 +90,21 @@ Assignment operator saves a value to the declared variable, and it uses the char
     int x, y;
     x = y = 10;   // y = 10, then x = y.
     x = 1;   // x = 1, y = 10.
-## Ex. 03 - Increment
-### 2. Increment & Decrement Operator
+### 2. Arithmetic Operator
+Arithmetic operators are broken down into two types: "Unary" and "Binary". Unary arithmetic operators act on a single operand, and for example +, -, ++, and -- are unary. Meanwhile, binary arithmetic operators such as +, -, * , /, and % should have two operands to work.
+
+    +a;   // Unary Arithmetic Operators
+    -a;
+    ++a;
+    --a;
+    
+    a+b;   // Binary Arithmetic Operators
+    a-b;
+    a*b;
+    a/b;
+    a%b;    
+
+### 3. Increment & Decrement Operator
 If an increment/decrement operator is added to a variable, it adds/subtracts 1 to its value. They both have their pre- version and post- version. Pre- version adds/subtracts 1 first, then it uses the changed value to arithmetic. On the other hand, post- version takes the calculation first, then the increment/decrement later.
 
     int a = 0;
@@ -99,3 +112,5 @@ If an increment/decrement operator is added to a variable, it adds/subtracts 1 t
     
     int c = 0;
     int d = c++;   // c = 1, d = 0.
+
+### 3. 
