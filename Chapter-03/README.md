@@ -183,7 +183,7 @@ With a compound assignment operator, you can express assignment and arithmetic o
     a %= 5;   // a = a % 5;
     
 ### 9. Cast Operator
-If data types of entities are different, types are converted automatically. Making data from a smaller type to larger one is called "Widening Casting", and "Narrowing Casting" vice versa. In Java language, narrow casting cannot be automatic since the compiler notify the programmer of data loss, as an error. Therefore, you should use cast operator if you want a narrow casting.
+If data types of entities are different, types are converted automatically. Making data from a smaller type to larger one is called "Widening Casting", and "Narrowing Casting" vice versa. In Java language, narrow casting cannot be automatic since the compiler notify the programmer of data loss, as an error. Therefore, you should use cast operator if you want a narrow casting. Add a parenthesized type name in front of the data.
 
     double x = 3.14;
     // int y = x;   // Error! java: incompatible types: possible lossy conversion from double to int
