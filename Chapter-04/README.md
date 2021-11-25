@@ -35,7 +35,32 @@ If you want just one simple statement being only accessed by true evaluation, yo
 If you want multiple conditions for one if-then, use logical operators to control them.
 
     int age = 14;
-    if(age >= 7 && age < 18)   // If a boy's age is 7 <= age < 18, prevent him from playing Call of Duty.
+    if(age >= 7 && age < 18)
         System.out.println("Oh, no! You can't play Call of Duty yet. Play Minecraft instead.")
 
-#### If-else
+In the example, if a boy's age is 7 <= age < 18, it prevents him from playing the game Call of Duty (18+), and suggests him to play Minecraft(7+).
+
+#### If-then-else
+    int a = 10;
+    if(a < 0)
+        System.out.println("Negative");   // false
+    else
+        System.out.println("Positive");   // true
+If-then-else runs the statements in the "else" nested block if the condition is not true. The example will print "Positive" since the variable 'a' is not under 0.
+
+    int weight = 50;
+    
+    if(weight < 45)
+        System.out.println("Thin!");
+    else if(weight >= 45 && weight < 55)
+        System.out.println("Normal Weight!");
+    else if(weight >= 55 && weight < 65)
+        System.out.println("OverWeight!");
+    else
+        System.out.println("Fat!");
+        
+The If-then-else example with a "Else if" tries to check each condition from the top to the bottom, until it finds a true evaluation. "Else if" is supported in C/C++ and Java, and it can be added as many as the programmer wants.
+
+The example finds the BMI (on obesity) of the woman by her weight. Because it is 45 <= weight < 55, the program prints that she has normal weight.
+
+### Case and Switch
