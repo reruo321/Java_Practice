@@ -9,7 +9,7 @@ Statement(문) is a syntactic unit of an imperative programming language (progra
     if (a == 10) return 0;   // compound statement
     
 Control flow is the order of imperative program to execute or evaluate its statements, instructions, or function calls. Conditional statement handles the flow with its evaluation, true or false, for the condition.
-"If-then-else" and "Case and Switch" are the examples for this.
+If-then-else, Case and Switch, and Loops are the examples for the conditional statements.
 
 ### If-then-else
 Most known high-level programming languages like C/C++ and Java have if-then-else statements as one of the key elements of structed programming.
@@ -18,19 +18,19 @@ Most known high-level programming languages like C/C++ and Java have if-then-els
     int a = 11;
     if(a % 2 != 0){   // If 'a' is an odd number, run "{...}". True.
         System.out.println("Odd input!");
-        a--;
+        a++;
     }
     System.out.println(a + " is even.");
 
     /* Example 2 */
     int b = 11;
-    if(b % 2 != 0)   // If 'b' is an odd number, run "b--;". True.
-        b--;         
+    if(b % 2 != 0)   // If 'b' is an odd number, run "b++;". True.
+        b++;         
     System.out.println(b + " is even.");
 
 Example 1 makes an odd variable 'a' to run statements in the nested block. (Nested block: parenthesized statements by curly brackets {}.)
 
-If you want just one simple statement being only accessed by true evaluation, you can write it right after "if" without any brackets. In the second example, if a variable 'b' is odd, the condition is true so it triggers "b--;" and then "System.out.println(b);". However, even 'b' will result in a false evaluation, and "b--;" will not work either, but will instead run "System.out.println(b);".
+If you want just one simple statement being only accessed by true evaluation, you can write it right after if-condition without any brackets. In the second example, if a variable 'b' is odd, the condition is true so it triggers "b++;" and then "System.out.println(b);". However, even 'b' will result in a false evaluation, and "b++;" will not work either, but will instead run "System.out.println(b);".
 
 If you want multiple conditions for one if-then, use logical operators to control them.
 
@@ -64,3 +64,40 @@ The If-then-else example with a "Else if" tries to check each condition from the
 The example finds the BMI (on obesity) of the woman by her weight. Because it is 45 <= weight < 55, the program prints that she has normal weight.
 
 ### Case and Switch
+Case and Switch statement may make some control flows simpler than If-then-else.
+    
+    char c = 'p';
+    
+    if(c == 'd')
+        System.out.println("d - Called a dog. Woof Woof!");
+    else if(c == 'c')
+        System.out.println("c - Called a cat. Meow!");
+    else if(c == 'p')
+        System.out.println("p - Called a pig. Oink!");
+    else if(c == 'h')
+        System.out.println("h - Called a horse. Neigh!");
+    else
+        System.out.println("Unknown Command...");
+        
+This is the same as
+
+    char c = 'p';
+
+    switch(c){
+    case 'd':
+        System.out.println("d - Called a dog. Woof Woof!");
+        break;
+    case 'c':
+        System.out.println("c - Called a cat. Meow!");
+        break;
+    case 'p':
+        System.out.println("p - Called a pig. Oink!");
+        break;
+    case 'h':
+        System.out.println("h - Called a horse. Neigh!");
+        break;
+    default:
+        System.out.println("Unknown Command...");
+        break;
+    }
+### Loop
