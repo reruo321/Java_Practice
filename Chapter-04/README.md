@@ -35,7 +35,7 @@ If you want just one simple statement being only accessed by true evaluation, yo
 If you want multiple conditions for one if-then, use logical operators to control them.
 
     int age = 14;
-    if(age > 7 && age < 18)   // If a boy's age is between 7 ~ 18, prevent him from playing Call of Duty.
+    if(age >= 7 && age < 18)   // If a boy's age is 7 <= age < 18, prevent him from playing Call of Duty.
         System.out.println("Oh, no! You can't play Call of Duty yet. Play Minecraft instead.")
 
 #### If-else
