@@ -170,7 +170,7 @@ It seems like a "function" in other languages, but there's a little difference b
 ### Syntax
 1. Access Modifier: Sets the accessibility of classes, methods, and other members. Examples are public, private, and protected.
 2. Reserved Word: Keyword that controls lifetime and visibility. *static* declaration in Java is used for static block, for the static initialization of a class. Unlike C++, Java does not support static local variables, though.
-3. Return Nype: Defines the data type of the value returned from the method.
+3. Return Type: Defines the data type of the value returned from the method.
 4. Method Name: Name of the method.
 5. Type Parameter: Special kind of variable in a subroutine, to refer input data for the subroutine.
 6. throws-Exception Class: Sets the class for exception handling.
