@@ -166,7 +166,7 @@ Loop in computer science is a control flow statement specialized in repeating co
 If main method becomes very big, it is hard to figure out the program's structure, or manage it.
 "Divide and Conquer" approach cuts the main method into small methods, and embodies the program with them step by step.
 
-It seems like a "function" in other languages, but there's a little difference between them. The method is a procedure associated with a message and an **object**, but function is independent of any object. Nevertheless, the terminology are often used, being mixed with each other. For example, in C++, there's a "member function" that fits the description of the "method", but it is usually called "function" anyway.
+It seems like a "function" in other languages, but there's a little difference between them. The method is a procedure associated with a message and an **object**, but function is independent of any object. Nevertheless, both terminologies are often used, being mixed with each other. For example, in C++, there's a "member function" that fits the description of the "method", but it is usually called "function" anyway.
 ### Syntax
     
 1. Access Modifier: Sets the accessibility of classes, methods, and other members. Examples are public, private, and protected.
