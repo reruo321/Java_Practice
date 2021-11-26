@@ -101,3 +101,61 @@ This is the same as
         break;
     }
 ### Loop
+Loop in computer science is a control flow statement specialized in repeating code execution. It iterates codes in a simple statement or a nested block, while checking the condition.
+#### For Loop
+    /* Syntax */
+    /*
+    for(<Initialization>; <Condition>; <Advancement>){
+        ...;
+    }
+    */
+    
+    /* Example 1 */
+    for(int i=1; i<=5; i++){
+        System.out.println(i);   // Repeat this for i=1, i=2, i=3, i=4, i=5.
+    }
+
+    /* Example 2 */
+    int intArr[] = {1, 22, 333, 4444, 55555};
+    System.out.println("What are in the array?");
+    for(int x : intArr){
+        System.out.print(x + " ");   // Repeat this for each array element.
+    }
+    
+#### While Loop
+    /* Syntax */
+    /*
+    while(<Condition/Expression>){
+        ...;
+    }
+    */
+    
+    /* Example 1 */
+    int i = 1;
+    while(i<=5){
+        System.out.println(i);   // Repeat this for i=1, i=2, i=3, i=4, i=5.
+        i++;
+    }
+
+    /* Example 2 */
+    int i = 1;
+    while(true){
+        System.out.println(i);   // Repeat this for i=1, i=2, i=3, etc... Infinite loop
+        i++;
+    }
+    
+#### Do While Loop
+    /* Syntax */
+    /*
+    do {
+        ...;
+    } while(<Condition/Expression>);
+    */
+    
+    /* Example */
+    int i = 1;
+    do {
+        System.out.println(i);   // Repeat this for i=1, i=2, i=3, i=4, i=5.
+        i++;
+    } while (i <= 5);
+### Other Statement
