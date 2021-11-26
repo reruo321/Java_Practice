@@ -168,11 +168,12 @@ If main method becomes very big, it is hard to figure out the program's structur
 
 It seems like a "function" in other languages, but there's a little difference between them. The method is a procedure associated with a message and an **object**, but function is independent of any object. Nevertheless, the terminology are often used, being mixed with each other. For example, in C++, there's a "member function" that fits the description of the "method", but it is usually called "function" anyway.
 ### Syntax
+    
 1. Access Modifier: Sets the accessibility of classes, methods, and other members. Examples are public, private, and protected.
 2. Reserved Word: Keyword that controls lifetime and visibility. *static* declaration in Java is used for static block, for the static initialization of a class. Unlike C++, Java does not support static local variables, though.
 3. Return Type: Defines the data type of the value returned from the method.
 4. Method Name: Name of the method.
 5. Type Parameter: Special kind of variable in a subroutine, to refer input data for the subroutine.
-6. throws-Exception Class: Sets the class for exception handling.
+6. *throws*-Exception Class: Sets the class for exception handling.
 7. Statements: Statements in the method.
 ### Calling
