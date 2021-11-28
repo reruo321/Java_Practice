@@ -169,9 +169,11 @@ If main method becomes very big, it is hard to figure out the program's structur
 It seems like a "function" in other languages, but there's a little difference between them. The method is a procedure associated with a message and an **object**, but function is independent of any object. Nevertheless, both terminologies are often used, being mixed with each other. For example, in C++, there's a "member function" that fits the description of the "method", but it is usually called "function" anyway.
 ### Syntax
     /* Syntax */
+    /*
     <1. Access Modifier> <2. Reserved Word> <3. Return Type> <4. Method Name>(<5. Type Parameter>) <6. throws-Exception Class>{
         <7. Statements>
     }
+    */
 
     /* Example */
     public static int sumHello(int a, int b) throws IOException {
@@ -192,3 +194,34 @@ It seems like a "function" in other languages, but there's a little difference b
 7. Statements: Statements in the method.
 ### Calling
 Java has two types of data: primitive and reference. However, Java is always only call-by-value, whereas C++ is call-by-value, -reference, and -address. This is confusing since it says non-primitive Java types are handled & accessed by *references*. The primitive arguments being passed by value is the actual value of the primitive, but the reference ones are the value of the *reference* to the object, so Java never provides the direct access to the values of object itself. Therefore, no matter what the data types are, they are always **passed by value** in Java.
+
+### Overloading
+Java methods can be overloaded, if their number of parameters or types of parameters are different.
+
+### Recursive Method
+Recursive method returns itself so it makes a loop.
+
+## Array
+### 1D Declaration
+    /* Syntax */
+    /*
+    <TYPE> <Array-Name> [];
+            or
+    <TYPE> [] <Array-Name>;
+    */
+    
+    /* Example */
+    int arr[];
+    
+    int [] arr;
+### Creation
+    /* Syntax */
+    // <Array-Name> = new <TYPE>[<Array-Size>];
+  
+    /* Example */
+    arr = new int[10];
+    
+    /* Declaration + Creation Example */
+    int arr[] = new int[10];
+
+### Multidimensional Array
