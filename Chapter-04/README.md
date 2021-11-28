@@ -202,19 +202,27 @@ Java methods can be overloaded, if their number of parameters or types of parame
 Recursive method returns itself so it makes a loop.
 
 ## Array
+Array packs multiple data with the same type into one object, to manage them easily.
+Declare and create a new array, then use it by assigning reference value of array object to array variable. The array object is dynamically allocated on the heap.
 ### 1D Declaration
+Data types for array can be either primitive or reference. The name of array variable is the reference of the array.
+
     /* Syntax */
     /*
-    <TYPE> <Array-Name> [];
+    <TYPE> <Array-Name> [];   // C-style array declaration so might be less preferred
             or
-    <TYPE> [] <Array-Name>;
+    <TYPE> [] <Array-Name>;   // Java-style
     */
     
     /* Example */
     int arr[];
     
     int [] arr;
+    
+In the example, several int data are able to use an array variable 'arr', to refer allocated memory for the array structure.
 ### Creation
+The array should be memory allocated before using. Add a *new* keyword to allocate the memory, and to assign allocated reference to the declared array variable.
+
     /* Syntax */
     // <Array-Name> = new <TYPE>[<Array-Size>];
   
@@ -222,8 +230,30 @@ Recursive method returns itself so it makes a loop.
     arr = new int[10];
     
     /* Declaration + Creation Example */
-    int arr[] = new int[10];
+    int [] arr = new int[10];   // 'arr' variable can refer allocated memory for 10 int-type data.
 
-※ Example 09 needs to set arguments for the main method. Follow [this guide](https://github.com/reruo321/Java_Practice/tree/main/Appendix#main-arguments) to do it without internal code setting.
+※ Example 09 needs to set arguments for the main method. Follow [this guide](https://github.com/reruo321/Java_Practice/tree/main/Appendix#main-arguments) to do it without code statements.
 
 ### Multidimensional Array
+Adding additional '[ ]' extends the dimension of the array. It is usually used up to 3D.
+
+    /* 2D Array Syntax */
+    // <TYPE> [][] <Array-Name> = new <TYPE>[<Row-Size>][<Column-Size>];
+  
+    /* 2D Array Example */
+    int [][] arr = new int[3][4];
+    
+### Initialization
+An array initialization declares the array, allocates the memory to the size of the literal, and initializes array values literally.
+
+    /* Syntax 1 */
+    // <TYPE>[] <Array-Name> = {<literal_1>, <literal_2>, ... <literal_n>};
+    /* Syntax 2 */
+    // <TYPE> [] <Array-Name>;
+    // <Array-Name> = new <TYPE>[]{<literal_1>, <literal_2>, ... <literal_n>};
+    
+    /* Example 1 */
+    int [] arr1 = {1, 22, 333, 4444, 55555};
+    /* Example 2 */
+    int [] arr2;
+    arr2 = new int[]{1, 22, 333, 4444, 55555};
