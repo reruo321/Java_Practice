@@ -261,7 +261,7 @@ An array initialization declares the array, allocates the memory to the size of 
     arr2 = new int[]{1, 22, 333, 4444, 55555};
 
 ### Parameter Passing
-I referred to this [https://www.baeldung.com/java-pass-by-value-or-pass-by-reference](good explanation).
+I referred to this [good explanation](https://www.baeldung.com/java-pass-by-value-or-pass-by-reference).
 
 As all arguments in Java are pass-by-value, during method invocation, a copy of each argument is created in stack memory and passed to the method.
 
