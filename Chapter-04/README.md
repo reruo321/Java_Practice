@@ -191,3 +191,4 @@ It seems like a "function" in other languages, but there's a little difference b
 6. *throws*-Exception Class: Sets the class for exception handling.
 7. Statements: Statements in the method.
 ### Calling
+Java has two types of data: primitive and reference. However, Java is always only call-by-value, whereas C++ is call-by-value, -reference, and -address. This is confusing since it says non-primitive Java types are handled & accessed by *references*. The primitive arguments being passed by value is the actual value of the primitive, but the reference ones are the value of the *reference* to the object, so Java never provides the direct access to the values of object itself. Therefore, no matter what the data types are, they are always **passed by value** in Java.
