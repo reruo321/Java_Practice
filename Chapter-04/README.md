@@ -224,4 +224,6 @@ Recursive method returns itself so it makes a loop.
     /* Declaration + Creation Example */
     int arr[] = new int[10];
 
+※ Example 09 needs to set arguments for the main method. Follow [this guide](https://github.com/reruo321/Java_Practice/tree/main/Appendix#main-arguments) to do it without internal code setting.
+
 ### Multidimensional Array
