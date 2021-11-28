@@ -193,7 +193,9 @@ It seems like a "function" in other languages, but there's a little difference b
 6. *throws*-Exception Class: Sets the class for exception handling.
 7. Statements: Statements in the method.
 ### Calling
-Java has two types of data: primitive and reference. However, Java is always only call-by-value, whereas C++ is call-by-value, -reference, and -address. This is confusing since it says non-primitive Java types are handled & accessed by *references*. The primitive arguments being passed by value is the actual value of the primitive, but the reference ones are the value of the *reference* to the object, so Java never provides the direct access to the values of object itself. Therefore, no matter what the data types are, they are always **passed by value** in Java.
+Java has two types of data: primitive and reference. However, Java is always only call-by-value, whereas C++ is call-by-value, -reference, and -address. This is confusing since it says non-primitive Java types are handled & accessed by *references*. Due to the absence of "pointer" in Java, it is impossible to get direct access to the memory. Instead, "reference variables" like array and class make the process similar to that of the pointer. All object variables in Java are references.
+
+The primitive arguments being passed by value is the actual value of the primitive, and the reference ones are the value of the *reference* to the object, but Java never provides the direct access to the values of object itself on both ways. Therefore, no matter what the data types are, they are always **passed by value** in Java.
 
 ### Overloading
 Java methods can be overloaded, if their number of parameters or types of parameters are different.
@@ -257,3 +259,14 @@ An array initialization declares the array, allocates the memory to the size of 
     /* Example 2 */
     int [] arr2;
     arr2 = new int[]{1, 22, 333, 4444, 55555};
+
+### Parameter Passing
+I referred to this [https://www.baeldung.com/java-pass-by-value-or-pass-by-reference](good explanation).
+
+As all arguments in Java are pass-by-value, during method invocation, a copy of each argument is created in stack memory and passed to the method.
+
+Primitive variables are directly stored in stack memory, and the values of primitive arguments are copied inside stack memory as formal arguments. They accumulate their own space in space memory. The formal arguments have their lifespan while the method is running, and after that, they are taken away from the stack and discarded.
+
+On the other hand, for all objects that are non-primitive, they are dynamically stored in heap memory. The reference variables in stack memory refer to the objects in the heap. The reference variables are **copied** when the objects are passed as arguments, and the new ones referring the same location of the object as their originals, are passed to the method. Therefore, if a new object is assigned for an argument inside the method, the reference refers the new object, not the original, so any changes on the new does not affect the original object.
+
+Let us check the Example 15. Likewise for an object, array, if an array 'arr' is passed as an argument of a method 'foo', foo(arr) makes a change to the elements of 'arr', but not to 'arr' variable itself. A method 'bar' does not alter anything for 'arr', since it tries to touch a copied reference 'y', but not 'arr'.
