@@ -269,4 +269,11 @@ Primitive variables are directly stored in stack memory, and the values of primi
 
 On the other hand, for all objects that are non-primitive, they are dynamically stored in heap memory. The reference variables in stack memory refer to the objects in the heap. The reference variables are **copied** when the objects are passed as arguments, and the new ones referring the same location of the object as their originals, are passed to the method. Therefore, if a new object is assigned for an argument inside the method, the reference refers the new object, not the original, so any changes on the new does not affect the original object.
 
-Let us check the Example 15. Likewise for any other objects, if an array 'arr' is passed as an argument of a method 'foo', a reference 'x' is copied and it also refers to the object, 'arr'. Since foo(arr) modifies the contents of the object that 'x' is referring, it makes a change to the contents of 'arr', but not to 'arr' variable itself. A method 'bar' does not alter anything for 'arr', since it tries to touch only a new object int[ ]{666666, 7777777, 22}, being referred by a copied reference 'y'.
+Let us check the Example 14. Likewise for any other objects, if an array 'arr' is passed as an argument of a method 'foo', a reference 'x' is copied and it also refers to the object, 'arr'. Since foo(arr) modifies the contents of the object that 'x' is referring, it makes a change to the contents of 'arr', but not to 'arr' variable itself. A method 'bar' does not alter anything for 'arr', since it tries to touch only a new object int[ ]{666666, 7777777, 22}, being referred by a copied reference 'y'.
+
+![04foo1](https://user-images.githubusercontent.com/48712088/143889591-d00f0d44-0f8d-462d-b6ad-9b49b367d633.png)
+![04foo2](https://user-images.githubusercontent.com/48712088/143889595-50909fff-6540-4d47-ba47-6795f1e2983a.png)
+![04foo3](https://user-images.githubusercontent.com/48712088/143889598-0652dca4-a6c3-47e8-91ea-067e187e7daa.png)
+![04bar1](https://user-images.githubusercontent.com/48712088/143889611-d19d6919-ee92-4ed8-9bff-46d79f16a939.png)
+![04bar2](https://user-images.githubusercontent.com/48712088/143889618-60977290-0e02-4aad-a9ae-c86a69e34563.png)
+![04bar3](https://user-images.githubusercontent.com/48712088/143889622-e3a41170-c860-4138-a8de-e1c30ce7b0e2.png)
