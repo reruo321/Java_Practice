@@ -31,9 +31,7 @@ A default constructor is the constructor taking no arguments, and it is automati
     public class NoDefault{
       int a;
       // NoDefault(){ a = 0; }   // Should be added, or an error will happen.
-      NoDefault(int x){
-        a = x;
-      }
+      NoDefault(int x){ a = x; }
     }
     
     /* NoDefaultError.java */
