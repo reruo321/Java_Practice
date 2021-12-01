@@ -111,4 +111,4 @@ Well, "int a" is initialized again as a local variable by a method oneMethod(), 
 
 Meanwhile, another method, twoMethod() takes 'a' from the member variable, and adds 1 to it. (Field 'a' was automatically initialized as 0 at the beginning.) This change is reflected to the member variable, so it still lasts after the method termination.
 
-Example 05 is a variation of Example 03, and Ch05Ex05Global class has "static C05E03Person person", "static int score", CallOne(), and a main method as its members. The score variable now keeps its value despite the termination of CallOne(), unlike that of Example 03 version.
+Example 05 is a variation of Example 03, and Ch05Ex05Global class has "static C05E03Person person", "static int score", CallOne(), and a main method as its members. The score variable now keeps its value despite the termination of CallOne(), unlike that of Example 03 version. There is no "global" variable in Java, but making use of *static* keyword allows us to utilize the similar concept.
