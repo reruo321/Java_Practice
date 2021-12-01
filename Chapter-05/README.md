@@ -107,9 +107,8 @@ All object variables in Java are references, so member variables in the object o
 The position of declaring a variable decides scope to use the value of it. Let us see Example 04.
 C05E04Scope class has "int a" as a member variable. It can be accessed by all methods in the class.
 
-Well, "int a" is initialized again as a local variable by a method oneMethod(), but the latter is unable to access from outside of the method. Because of this, the member variable is not affected by this method at all, since the local variable with the same name is initialized at the first line. When the method is over, "int a" and "int b" are discarded.
+Well, "int a" is initialized again as a local variable by a method oneMethod(), but the latter is unable to access from outside of the method. Because of this, the member variable is not affected by this method at all, since the local variable with the same name is initialized at the first line. When the method is over, the locals "int a" and "int b" are discarded.
 
-Meanwhile, another method, twoMethod() takes 'a' from the member variable, and adds 1 to 'a'. (Field 'a' was automatically initialized as 0 at the beginning.) This change is reflected to the member variable, so it still lasts after the method termination.
+Meanwhile, another method, twoMethod() takes 'a' from the member variable, and adds 1 to it. (Field 'a' was automatically initialized as 0 at the beginning.) This change is reflected to the member variable, so it still lasts after the method termination.
 
-
-Example 05 is a variation of Example 03, and Ch05Ex05Global class has "static C05E03Person person", "static int score", CallOne(), and a main method as its members. The score variable keeps its value despite the termination of CallOne(), unlike that of Example 03 version.
+Example 05 is a variation of Example 03, and Ch05Ex05Global class has "static C05E03Person person", "static int score", CallOne(), and a main method as its members. The score variable now keeps its value despite the termination of CallOne(), unlike that of Example 03 version.
