@@ -72,12 +72,35 @@ After the object creation, we can access member variables and call methods of th
         myDog.color = "white";   // Access a member variable "color" which myDog is referring to
         
 ## Java Files with Classes
-There are two ways to construct .java files with multiple classes, when we write a Java program. It is good to follow these rules, even if [there are some tricks for naming](https://www.geeksforgeeks.org/myth-file-name-class-name-java/).
+There are two ways to construct .java files with multiple classes, when we write a Java program. It is good to follow these rules, even if [there are some tricks for naming](https://www.geeksforgeeks.org/myth-file-name-class-name-java/), since the file name tells Java Virtual Machine(JVM) that this is an entry point. 
 1. All-in-One File: The name of the .java file = The name of the public class containing a main method.
 2. One File Per Class: The name of each .java file = The name of the public class.
 
-Usually, each compiled file produces a .class file which is a bytecode. (See the tricks for some exceptions) Moreover, whenever a class is loaded, it gets bytecode per method in the class. The Java bytecode is the bytecode-structed instruction set of the Java Virtual Machine(JVM), and it has a similar role to that of an assembler for C/C++. It is not processed by the processor, but by the JVM instead. This intermediate code is the keypoint to enable Java to get platform independence.
+Usually, each compiled file produces a .class file which is a bytecode. (See the tricks for some exceptions) Moreover, whenever a class is loaded, it gets bytecode per method in the class. The Java bytecode is the bytecode-structed instruction set of the JVM, and it has a similar role to that of an assembler for C/C++. It is not processed by the processor, but by the JVM instead. This intermediate code is the keypoint to enable Java to get platform independence.
         
         Program (Source Code) ---> Compiler ---> Bytecode ---> JVM ---> Machine Code
         
 ## this
+### this
+*this* is used to refer an object itself of a class.
+
+        /* Example */
+        class Dog{
+            String name;
+            Dog(String name){ this.name = name; }   // "this.name" denotes its member variable, and "name" a parameter.
+        }
+The example class has "String name" as its field, and its constructor also has "String name" as its parameter. To clarify the representation of "name" member variable in the class, add *this*.
+
+        return this;
+The return statement will return the current object.
+
+### this()
+*this()* is the special method for a constructor, which calls another constructor. It is useful when the class is overloading the constructors. It should be called in the first line of the constructor.
+
+        class Dog{
+        public Dog(int n){...}   // Callee of the constructor below
+        public Dog(String str){ this(Integer.parseInt(str)); ... }   // Calls the constructor. Dog(Integer.parseInt(str))
+        }
+## Method Parameter
+All object variables in Java are references, so member variables in the object of class are allocated on heap memory, and they are referred by reference variable on the stack. Explanation on [Chapter 4](https://github.com/reruo321/Java_Practice/tree/main/Chapter-04#parameter-passing) would be helped to understand this, too. Looking at the main method in Example 03, you will notice that "int score" is a primitive, and "C05E03Person person" is a reference. This difference causes the "CallOne(score, person)" method to make a change in the former, whereas field values from the latter to be updated.
+## Scope
