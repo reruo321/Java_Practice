@@ -60,7 +60,7 @@ When we say A is an *instance* of type B, it means that A is a member of the set
 A reference variable in a method is a local variable on stack memory, so when the method is terminated its memory is retrieved and the variable is discarded. However, an instance allocated on heap memory is automatically collected by a garbage collector, if it is not used any longer.
 
 ## Object Usage
-After the object creation, we can access member variables and call methods of the object by adding punctuation mark, '.'.
+After the object creation, we can access member variables and call methods of the object by adding a punctuation mark, '.'.
 
         /* Syntax */
         <Reference-Variable>.<Method-Name>();
@@ -68,6 +68,16 @@ After the object creation, we can access member variables and call methods of th
         
         /* Example */
         Dog myDog = new Dog();   // Object Creation
-        myDog.bark();   // Call "bark()" method where myDog is referring
-        myDog.color = "white";   // Access a member variable "color" where myDog is referring
+        myDog.bark();   // Call "bark()" method which myDog is referring to
+        myDog.color = "white";   // Access a member variable "color" which myDog is referring to
         
+## Java Files with Classes
+There are two ways to construct .java files with multiple classes, when we write a Java program. It is good to follow these rules, even if [there are some tricks for naming](https://www.geeksforgeeks.org/myth-file-name-class-name-java/).
+1. All-in-One File: The name of the .java file = The name of the public class containing a main method.
+2. One File Per Class: The name of each .java file = The name of the public class.
+
+Usually, each compiled file produces a .class file which is a bytecode. (See the tricks for some exceptions) Moreover, whenever a class is loaded, it gets bytecode per method in the class. The Java bytecode is the bytecode-structed instruction set of the Java Virtual Machine(JVM), and it has a similar role to that of an assembler for C/C++. It is not processed by the processor, but by the JVM instead. This intermediate code is the keypoint to enable Java to get platform independence.
+        
+        Program (Source Code) ---> Compiler ---> Bytecode ---> JVM ---> Machine Code
+        
+## this
