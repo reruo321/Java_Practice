@@ -112,3 +112,45 @@ Well, "int a" is initialized again as a local variable by a method oneMethod(), 
 Meanwhile, another method, twoMethod() takes 'a' from the member variable, and adds 1 to it. (Field 'a' was automatically initialized as 0 at the beginning.) This change is reflected to the member variable, so it still lasts after the method termination.
 
 Example 05 is a variation of Example 03, and Ch05Ex05Global class has "static C05E03Person person", "static int score", CallOne(), and a main method as its members. The score variable now keeps its value despite the termination of CallOne(), unlike that of Example 03 version. There is no "global" variable in Java, but making use of *static* keyword allows us to utilize the similar concept.
+
+## Relationship
+![05uml](https://user-images.githubusercontent.com/48712088/144634512-09ed92fe-5970-411b-8c44-f8010315bc0e.png)
+Here are some UML(Unified Modeling Language) diagrams to express relations between objects.
+They should be drawn with their directionality and multiplicity.
+
+If an object is an aggregation of other objects, it is called "Aggregation", or "HAS-A" relationship. Example for this is the situation that a Rectangle object has a Point object as its field.
+
+Meanwhile, there is also a relationship to describe an activity between two objects. It is an "Association", and binary relationships on Car-Driver or Doctor-Patient can be the examples for this.
+
+※ Other relationships will be introduced on further chapters.
+
+## Object Comparison
+Let's see Example 07. To compare an instance of a class in Java to another, one should check the way to do, otherwise he will get an unwanted output. Because operator '==' compares **the values of two references theirselves**, it will conclude that
+
+        /* Example 1 */
+        String str1 = new String("Good");
+        String str2 = new String();
+        str2 = "Good";
+        System.out.println(str1 == str2);   // false
+
+this comparison is false, even if both are referring to "Good". Actually each reference was made to refer the different String (with the same appearance) because of *new* operator. You can also see this difference indirectly by
+
+        System.out.println(System.identityHashCode(str1));   // For me, 460141958
+        System.out.println(System.identityHashCode(str2));   // For me, 1163157884
+        
+looking their hashcodes. Then what if he wants to compare their referring contents?
+
+        System.out.println(str1.equals(str2));   // true
+        
+Use "equals()" to get the right answer! You can apply this to all objects including String and your user-defined ones.
+
+How about the second case using operator '=' to refer the value? Since the both comparison, between the references and the contents are the same, the outputs are also true.
+
+        String stra = "Wow!"
+        String strb = "Wow!"
+        System.out.println(stra == strb);   // true
+        System.out.println(System.identityHashCode(stra));   // For me, 1956725890
+        System.out.println(System.identityHashCode(strb));   // For me, 1956725890
+        System.out.println(stra.equals(strb));   // true
+        
+## toString()
