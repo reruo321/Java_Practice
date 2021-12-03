@@ -124,7 +124,9 @@ Meanwhile, there is also a relationship to describe an activity between two obje
 
 ※ Other relationships will be introduced on further chapters.
 
-## Object Comparison
+## Class Object
+[By Official Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html): Class Object is the root of the class hierarchy. Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.
+### Object Comparison
 Let's see Example 07. To compare an instance of a class in Java to another, one should check the way to do, otherwise he will get an unwanted output. Because operator '==' compares **the values of two references theirselves**, it will conclude that
 
         /* Example 1 */
@@ -146,6 +148,7 @@ Use "equals()" to get the right answer! You can apply this to all objects includ
 
 How about the second case using operator '=' to refer the value? Since the both comparison, between the references and the contents are the same, the outputs are also true.
 
+        /* Example 2 */
         String stra = "Wow!"
         String strb = "Wow!"
         System.out.println(stra == strb);   // true
@@ -153,4 +156,18 @@ How about the second case using operator '=' to refer the value? Since the both 
         System.out.println(System.identityHashCode(strb));   // For me, 1956725890
         System.out.println(stra.equals(strb));   // true
         
-## toString()
+### toString()
+All derived classes from the root, Object, also have toString() method. Users can make a custom String output for printing the object defined by them, by overriding toString(). Operators '+' and '+=' can be applied to String.
+### Array
+Finally, array is available for all types of classes.
+
+## Package
+While programming, some classes or methods can cause a collision due to the same name. To prevent this and to more manageable program, you can use package like a directory. Put the classes in the package, and import it to use them.
+
+If you want to compile source codes including a package statement, you need to use an option. Compile and execute the program from "C:\myJava>" in the package "myPackage.unit" like this:
+
+        (Example)
+        C:\myJava> javac -d . PackageTest.java Package.java
+        C:\myJava> java myPackage.unit.PackageTest
+        
+Intellij IDEA users can make a new package by right-clickling a source-code directory, placing the cursor to New, and clicking Package.
