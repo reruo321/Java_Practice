@@ -157,7 +157,7 @@ How about the second case using operator '=' to refer the value? Since the both 
         System.out.println(stra.equals(strb));   // true
         
 ### toString()
-All derived classes from the root, Object, also have toString() method. Users can make a custom String output for printing the object defined by them, by overriding toString(). Operators '+' and '+=' can be applied to String.
+All derived classes from the root, Object, also have toString() method. Users can make a custom String output for printing the object defined by them, by overriding toString(). Operators '+' and '+=' can be applied to String so that String edit is more flexible.
 ### Array
 Finally, array is available for all types of classes.
 
