@@ -162,7 +162,7 @@ All derived classes from the root, Object, also have toString() method. Users ca
 Finally, array is available for all types of classes.
 
 ## Package
-While programming, some classes or methods can cause a collision due to the same name. To prevent this and to more manageable program, you can use package like a directory. Put the classes in the package, and import it to use them.
+While programming, some classes or methods can cause a collision due to the same name. To prevent this and to make a more manageable program, you can use package like a directory. Put the classes in the package, and import it to use them.
 
 If you want to compile source codes including a package statement, you need to use an option. Compile and execute the program from "C:\myJava>" in the package "myPackage.unit" like this:
 
