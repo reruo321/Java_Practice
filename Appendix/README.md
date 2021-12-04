@@ -19,3 +19,15 @@ I would like to explain on Intellij IDEA here, and users of other IDEs such as E
 
     1. Run > Edit Configurations > Put arguments into the "Program arguments" field, on Build and run.
     2. Press Alt + Ctrl + F10 > Click '>' > Edit
+
+## Not Working Breakpoints in Intellij IDEA?
+I experienced a little dumb troubles at the first time to use debugger in Intellij IDEA.
+### Disabled line breakpoint?
+1. You won't be able to toggle a line breakpoint on an empty line.
+
+       (Example)
+       void moveX(int a)  // OK.
+       {                  // OK.
+                          // You can't put a line breakpoint here, because it's an empty line.
+          x += a;         // OK.
+       }                  // OK.
