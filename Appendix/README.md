@@ -23,7 +23,7 @@ I would like to explain on Intellij IDEA here, and users of other IDEs such as E
 ## Not Working Breakpoints in Intellij IDEA?
 I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
 ### Disabled line breakpoint?
-You won't be able to toggle a line breakpoint on an empty line.
+If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for the line, check this out. You won't be able to toggle the line breakpoint on an empty line.
 
        (Example)
        void moveX(int a)  // OK.
@@ -33,5 +33,6 @@ You won't be able to toggle a line breakpoint on an empty line.
        }                  // OK.
 ### Skipped breakpoints?
 1. If you "run" the program, instead of "debugging" it, breakpoints do not work. F9 is for the debugging, and F10 for the running.
-2. Try to clear caches by File > Invalidate Caches.
-3. Try to update the IDE to the latest version.
+### Other possible solutions?
+1. Try to clear caches by File > Invalidate Caches.
+2. Try to update the IDE to the latest version.
