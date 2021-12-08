@@ -33,4 +33,5 @@ You won't be able to toggle a line breakpoint on an empty line.
        }                  // OK.
 ### Skipped breakpoints?
 1. If you "run" the program, instead of "debugging" it, breakpoints do not work. F9 is for the debugging, and F10 for the running.
-2. Try to clear caches by File > Invalidate Caches
+2. Try to clear caches by File > Invalidate Caches.
+3. Try to update the IDE to the latest version.
