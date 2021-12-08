@@ -14,6 +14,25 @@ Subclass inherits the fields and methods of the superclass, but not its construc
 ## Constructor
 If the superclass has no user-defined constructor itself OR has a user-defined contructor with no parameter, its subclass is able to do so, too. However, if the super has the constructor with any parameters, the subclass constructor **MUST** be defined, and the sub-constructor should call super-constructor.
 
+## Super Reference
+### super
+        (Syntax)
+        super.<Member-Variable>;
+        super.<Method-Name>(<Arguments>);
+        
+        /* Example */
+        super.x = a;
+        super.setX(int a);
+Use *super* to refer superclass from the subclass, calling its fields or methods.
+
+### super()
+        (Syntax)
+        super(<SuperClass-Constructor-Arguments>);
+
+        /* Example */
+        super(a, b);
+*super()* is the method to call superclass constructor from the sub-constructor.
+
 ## Type of Inheritance
 1. Single Inheritance: The basic form of inheritance; a class extends another one class.
 2. Multiple Inheritance: A class extending more than one base class, which should manage the dependency of its multiple classes. Most of the new object-oriented languages like Java and C# do not provide multiple inheritance, whereas C++ does.
