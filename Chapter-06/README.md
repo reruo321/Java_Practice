@@ -11,8 +11,10 @@ A class is defined as a subclass when the keyword *extends* gets stuck on it. Wr
 
 Subclass inherits the fields and methods of the superclass, but not its constructor. Therefore, a programmer may need to write a new constructor for the subclass.
 
-※ If the superclass has no user-defined constructor itself OR has a user-defined contructor with no parameter, its subclass is able to do so, too. However, if the super has the constructor with any parameters, the subclass constructor **MUST** be defined, and the sub-constructor should call super-constructor.
+## Constructor
+If the superclass has no user-defined constructor itself OR has a user-defined contructor with no parameter, its subclass is able to do so, too. However, if the super has the constructor with any parameters, the subclass constructor **MUST** be defined, and the sub-constructor should call super-constructor.
 
+## Type of Inheritance
 1. Single Inheritance: The basic form of inheritance; a class extends another one class.
 2. Multiple Inheritance: A class extending more than one base class, which should manage the dependency of its multiple classes. Most of the new object-oriented languages like Java and C# do not provide multiple inheritance, whereas C++ does.
 3. Multilevel Inheritance: A class extending another one class is a parent of the other class.
