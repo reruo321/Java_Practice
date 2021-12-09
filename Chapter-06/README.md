@@ -58,4 +58,12 @@ A subclass inherits the methods from its super. If a programmer adds the same me
 - If the super's method does not throw an exception, overriding one can throw an unchecked exception (unchecked exception: children of RuntimeException), but not checked ones.
 - If the super's method declares an exception, overriding one can declare the same, subclass, or no exception, **but not** its parent.
 
+## Overshadow
+If a subclass declares a variable sharing the same name with the super's field, it says the variable of the super becomes *overshadow*ed.
+
+### How to Refer the Overshadowed Field
+1. Assign instances to the superclass-type references. (Ex: **Super** super = new Sub();)
+2. Use *super* reference keyword.
+3. Cast subclass-type reference to the superclass-type, then refer it. (Ex: ((Super)sub).field)
+
 --- Under Construction ---
