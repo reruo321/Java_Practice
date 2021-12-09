@@ -51,4 +51,11 @@ The access modifiers allow the range of the access like this:
 
 Summary: private < default < protected < public
 
+## Overriding
+A subclass inherits the methods from its super. If a programmer adds the same method with different contents to the sub, *overriding* happens, which has polymorphism.
+
+- Methods with *private*, *static*, *final* keywords cannot be overrided.
+- If the super's method does not throw an exception, overriding one can throw an unchecked exception (unchecked exception: children of RuntimeException), but not checked ones.
+- If the super's method declares an exception, overriding one can declare the same, subclass, or no exception, **but not** its parent.
+
 --- Under Construction ---
