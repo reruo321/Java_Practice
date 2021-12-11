@@ -71,15 +71,29 @@ Casting, or type conversion has two types: automatic (widening), and explicit (n
 
 The former automatically converts narrower data type to broader one. For example, converting Ronaldo to a Football player is okay. However, the inverse case, which tries to make a Football player to Ronaldo, is not allowed.
 
-## static
+## Keywords
+### static
 *static* keyword can be glued to a method or a variable. A *static* method is able to be called without making its instance. It also allows several intances to share the memory, so that the *static* member variables can be used as if they are global.
 
 - static method cannot use *this* reference.
-- static method cannot be overriden to a normal method.
+- static method cannot be overriden by a normal method.
 - Only static variables are allowed in the static method.
 - static method can call only other static methods in the same class.
 
-## final
+### final
+*final* keyword prevents a class to have any children, a method to be overriden, and a variable to be changed. (The last one is the same as *const* in C/C++.) If the variable refers an instance, it cannot point to other reference, but the instance values of its reference can be changed. *final* and *abstract* cannot be together because they are mutually exclusive concepts.
 
+        final Animal a = new Animal();
+        a.setName("Poodle");   // Changing an instance value. Okay.
+
+### Others
+#### volatile
+*volatile* keyword is one of the ways to control memory order, which only gets along with a variable, but not with a class, a method, or *final* keyword. All volatile variables, also known as "memory variables", are read and written by main memory directly. It may be edited by interrupts.
+#### native
+*native* can be used on method.
+#### transient
+*transient* is used to make a variable not to be serialized.
+#### synchronized
+*synchronized* marks a variable or a method, to lock an object in multiple threads, to synchronize its access. It ensures that the object is modified by only one thread at a time.
 
 --- Under Construction ---
