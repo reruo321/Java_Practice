@@ -90,7 +90,7 @@ The former automatically converts narrower data type to broader one. For example
 #### volatile
 *volatile* keyword is one of the ways to control memory order, which only gets along with a variable, but not with a class, a method, or *final* keyword. All volatile variables, also known as "memory variables", are read and written by main memory directly. It may be edited by interrupts.
 #### native
-*native* can be used on method.
+*native* can be used on method, and it indicates that the method is implemented in native code using JNI(Java Native Interface).
 #### transient
 *transient* is used to make a variable not to be serialized.
 #### synchronized
