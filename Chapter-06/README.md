@@ -59,7 +59,7 @@ A subclass inherits the methods from its super. If a programmer adds the same me
 - If the super's method declares an exception, overriding one can declare the same, subclass, or no exception, **but not** its parent.
 
 ## Overshadow
-If a subclass declares a variable sharing the same name with the super's field, it says the variable of the super becomes *overshadow*ed.
+If a subclass declares a variable sharing the same name with the super's field, it says the variable of the super becomes *overshadow*ed. The original super one is not disappeared, but it takes some special ways to refer it from the subclass.
 
 ### How to Refer the Overshadowed Field
 1. Assign instances to the superclass-type references. (Ex: **Super** super = new Sub();)
@@ -73,5 +73,13 @@ The former automatically converts narrower data type to broader one. For example
 
 ## static
 *static* keyword can be glued to a method or a variable. A *static* method is able to be called without making its instance. It also allows several intances to share the memory, so that the *static* member variables can be used as if they are global.
+
+- static method cannot use *this* reference.
+- static method cannot be overriden to a normal method.
+- Only static variables are allowed in the static method.
+- static method can call only other static methods in the same class.
+
+## final
+
 
 --- Under Construction ---
