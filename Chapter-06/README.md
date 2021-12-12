@@ -64,7 +64,7 @@ If a subclass declares a variable sharing the same name with the super's field, 
 ### How to Refer the Overshadowed Field
 1. Assign instances to the superclass-type references. (Ex: **Super** super = new Sub();)
 2. Use *super* reference keyword.
-3. Cast subclass-type reference to the superclass-type, then refer it. (Ex: ((Super)sub).field)
+3. Cast subclass-type reference to the superclass-type, then refer it. This type of casting is called "implicit casting", or "upcasting". The instance variable follows the class-type of the reference. (Ex: ((Super)sub).field)
 
 ## Casting
 Casting, or type conversion has two types: automatic (widening), and explicit (narrowing) casting.
