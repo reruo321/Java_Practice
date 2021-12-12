@@ -67,7 +67,7 @@ If a subclass declares a variable sharing the same name with the super's field, 
 3. Cast subclass-type reference to the superclass-type, then refer it. This type of casting is called "implicit casting", or "upcasting". The instance variable follows the class-type of the reference. (Ex: ((Super)sub).field)
 
 ## Casting
-Casting, or type conversion has two types: automatic (widening), and explicit (narrowing) casting.
+Casting, or type conversion has two types: implicit, (automatic, widening), and explicit (narrowing) casting.
 
 The former automatically converts narrower data type to broader one. For example, converting Ronaldo to a Football player is okay. However, the inverse case, which tries to make a Football player to Ronaldo, is not allowed.
 
