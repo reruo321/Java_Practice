@@ -56,7 +56,7 @@ Visibility allows to constrain the usage of an element in namespaces, and it is 
 
 Note: You can use ~ (package) for *default* in Java.
 #### Relationship
-A class may have one or more relationships with other classes. Connect them, and write small digits to show the number of each class for the relationship.
+A class may have one or more relationships with other classes. Connect them, and write small digits to show the number of each class for the relationship. For example, 1..4 means the class may have 1~4 objects, and * means many objects.
 ##### Aggregation
 ![APPhasa](https://user-images.githubusercontent.com/48712088/145827039-eae9d069-1055-445f-bb02-7635e0daa1b9.png)
 
