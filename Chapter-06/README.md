@@ -80,7 +80,7 @@ The former automatically converts narrower data type to broader one. For example
 - Only static variables are allowed in the static method.
 - static method can call only other static methods in the same class.
 
-The static method is always resolved at compile time, but overriding is done at runtime. (Compile is faster.) Thus, **the static method is not overriden**, but it would rather overshadow a method with the same name in the derived class.
+The static method is always resolved at compile time, but overriding is done at runtime. (Compile is before running.) Thus, **the static method is not overriden**, but it would rather overshadow a method with the same name in the derived class.
 
 ### final
 *final* keyword prevents a class to have any children, a method to be overriden, and a variable to be changed. (The last one is the same as *const* in C/C++.) If the variable refers an instance, it cannot point to other reference, but the instance values of its reference can be changed. *final* and *abstract* cannot be together because they are mutually exclusive concepts.
