@@ -67,7 +67,7 @@ If a subclass declares a variable sharing the same name with the super's field, 
 3. Cast subclass-type reference to the superclass-type, then refer it. This type of casting is called "implicit casting", or "upcasting". The instance variable follows the class-type of the reference. (Ex: ((Super)sub).field)
 
 ## Casting
-Casting, or type conversion has two types: implicit, (automatic, widening), and explicit (narrowing) casting.
+Casting, or type conversion has two types: implicit (automatic, widening), and explicit (narrowing) casting.
 
 The former automatically converts narrower data type to broader one. For example, converting Ronaldo to a Football player is okay. However, the inverse case, which tries to make a Football player to Ronaldo, is not allowed.
 
@@ -79,6 +79,8 @@ The former automatically converts narrower data type to broader one. For example
 - static method cannot be overriden by a normal method.
 - Only static variables are allowed in the static method.
 - static method can call only other static methods in the same class.
+
+The static method is always resolved at compile time, but overriding is done at runtime. (Compile is faster.) Thus, **the static method is not overriden**, but it would rather overshadow a method with the same name in the derived class.
 
 ### final
 *final* keyword prevents a class to have any children, a method to be overriden, and a variable to be changed. (The last one is the same as *const* in C/C++.) If the variable refers an instance, it cannot point to other reference, but the instance values of its reference can be changed. *final* and *abstract* cannot be together because they are mutually exclusive concepts.
