@@ -54,7 +54,7 @@ Summary: private < default < protected < public
 ## Overriding
 A subclass inherits the methods from its super. If a programmer adds the same method with different contents to the sub, *overriding* happens, which has polymorphism.
 
-- Methods with *private*, *static*, *final* keywords cannot be overrided.
+- Methods with *private*, *static*, *final* keywords cannot be overridden.
 - If the super's method does not throw an exception, overriding one can throw an unchecked exception (unchecked exception: children of RuntimeException), but not checked ones.
 - If the super's method declares an exception, overriding one can declare the same, subclass, or no exception, **but not** its parent.
 
@@ -76,14 +76,14 @@ The former automatically converts narrower data type to broader one. For example
 *static* keyword can be glued to a method or a variable. A *static* method is able to be called without making its instance. It also allows several intances to share the memory, so that the *static* member variables can be used as if they are global.
 
 - static method cannot use *this* reference.
-- static method cannot be overriden by a normal method.
+- static method cannot be overridden by a normal method.
 - Only static variables are allowed in the static method.
 - static method can call only other static methods in the same class.
 
-The static method is always resolved at compile time, but overriding is done at runtime. (Compile is before running.) Thus, **the static method is not overriden**, but it would rather overshadow a method with the same name in the derived class.
+The static method is always resolved at compile time, but overriding is done at runtime. (Compile is before running.) Thus, **the static method is not overridden**, but it would rather overshadow a method with the same name in the derived class.
 
 ### final
-*final* keyword prevents a class to have any children, a method to be overriden, and a variable to be changed. (The last one is the same as *const* in C/C++.) If the variable refers an instance, it cannot point to other reference, but the instance values of its reference can be changed. *final* and *abstract* cannot be together because they are mutually exclusive concepts.
+*final* keyword prevents a class to have any children, a method to be overridden, and a variable to be changed. (The last one is the same as *const* in C/C++.) If the variable refers an instance, it cannot point to other reference, but the instance values of its reference can be changed. *final* and *abstract* cannot be together because they are mutually exclusive concepts.
 
         final Animal a = new Animal();
         a.setName("Poodle");   // Changing an instance value. Okay.
