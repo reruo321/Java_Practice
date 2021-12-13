@@ -97,5 +97,3 @@ The static method is always resolved at compile time, but overriding is done at 
 *transient* is used to make a variable not to be serialized.
 #### synchronized
 *synchronized* marks a variable or a method, to lock an object in multiple threads, to synchronize its access. It ensures that the object is modified by only one thread at a time.
-
---- Under Construction ---
