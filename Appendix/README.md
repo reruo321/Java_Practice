@@ -41,15 +41,22 @@ If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for 
 UML(Unified Modeling Language) is used to express relations between objects by diagrams. It can also draw Class Diagram, and it should be drawn with their directionality and multiplicity.
 
 ### Class Diagram
-![05uml](https://user-images.githubusercontent.com/48712088/145814180-024a6d73-d696-4764-92bb-10ff4ca73f1f.png)
-### Visibility
+Class notation consists of three parts. Write them with their return types.
+1. Class Name
+2. Class Attribute: Member Variable (Field)
+3. Class Operation: Method
+#### Visibility
 Visibility allows to constrain the usage of an element in namespaces, and it is marked by an access modifier. Add this in front of member variables, or statements.
 * public: +
 * protected: #
 * package: ~
 * private: -
-### Relation
-#### Aggregation
+
+Note: You can use ~ (package) for *default* in Java.
+#### Relation
+##### Aggregation
+![05uml](https://user-images.githubusercontent.com/48712088/145814180-024a6d73-d696-4764-92bb-10ff4ca73f1f.png)
+
 If an object is an aggregation (group) of other objects, it is called "Aggregation", or "HAS-A" relationship. Example for this is the situation that a Rectangle object has a Point object as its field.
-#### Association
+##### Association
 Meanwhile, there is also a relationship to describe an activity between two objects. It is an "Association", and binary relationships on Car-Driver or Doctor-Patient can be the examples for this.
