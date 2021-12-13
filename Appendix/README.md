@@ -41,7 +41,7 @@ If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for 
 UML(Unified Modeling Language) is used to express relations between objects by diagrams. It can also draw Class Diagram, and it should be drawn with their directionality and multiplicity.
 
 ### Class Diagram
-![APPclass](https://user-images.githubusercontent.com/48712088/145821902-f763c251-e4c4-4943-93a3-ea1ff5cc1618.png)
+![APPclass](https://user-images.githubusercontent.com/48712088/145826923-f2dbf297-a4cc-49a1-a062-69fb59508cff.png)
 
 Class notation consists of three parts. Write them with their return types.
 1. Class Name
@@ -58,15 +58,30 @@ Note: You can use ~ (package) for *default* in Java.
 #### Relationship
 A class may have one or more relationships with other classes. Connect them, and write small digits to show the number of each class for the relationship.
 ##### Aggregation
-![APPhasa](https://user-images.githubusercontent.com/48712088/145821937-deb7f40c-0554-497b-8eb7-443b38670ea2.png)
+![APPhasa](https://user-images.githubusercontent.com/48712088/145827039-eae9d069-1055-445f-bb02-7635e0daa1b9.png)
 
 If an object is an aggregation (group) of other objects, it is called "Aggregation", or "HAS-A" relationship. Example for this is the situation that a Rectangle object has a Point object as its field.
 ##### Association
-![APPassociation](https://user-images.githubusercontent.com/48712088/145821964-6bb8455c-b022-45b8-87b2-eda7138cde79.png)
+![APPassociation](https://user-images.githubusercontent.com/48712088/145827022-c4f1167d-6dbd-4c2b-8637-4352487777d8.png)
 
 Meanwhile, there is also a relationship to describe an activity between two objects. It is an "Association", and binary relationships on Car-Driver or Doctor-Patient can be the examples for this. Draw an open arrow to show the direction, or just a line without the arrow.
 
 ##### Inheritance
-![APPinheritance](https://user-images.githubusercontent.com/48712088/145822035-a4a9c506-c335-436f-a44b-ce322d1d2a25.png)
+![APPinheritance](https://user-images.githubusercontent.com/48712088/145827073-6153874c-40eb-47f9-ba3a-1511dce30092.png)
 
 Inheritance, generalization, or "IS-A" represents a relationship between superclass and subclass. Name of an abstract class is written in italics.
+
+##### Composition
+![APPcomposition](https://user-images.githubusercontent.com/48712088/145827175-7df1ade1-95b5-4b35-bdec-8e77f9512670.png)
+
+Composition means a special type of aggregation where parts are destroyed when the whole is destroyed.
+
+##### Dependency
+![APPdependency](https://user-images.githubusercontent.com/48712088/145827394-6607611b-d7b4-4feb-9381-6fd65f98f251.png)
+
+Dependency shows a relationship that one's definition may cause changes to the other.
+
+##### Realization
+![APPrealization](https://user-images.githubusercontent.com/48712088/145827681-f5df3e4e-132c-41c4-a697-392e2b7aa387.png)
+
+Realization is an abstraction relationship between a specification and an implementation.
