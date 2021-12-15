@@ -14,4 +14,4 @@ Therefore, its subclasses should override all of them, and embody their methods.
 Interface is a special form of the abstract class, and it cannot have normal methods or variables. (Unlike abstract class.)
 It contains only description of the methods, so any classes can borrow the interface, even if there are no relationships among the classes.
 Java does not support multiple inheritance through class like C++, but it does via interface.
-What methods in the interface have is just method headers, so all of them MUST be embodied.
+What methods in the interface have is just a method header, so all of them MUST be embodied.
