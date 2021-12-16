@@ -1,13 +1,13 @@
 # Ch. 7 - Abstract Class & Interface
 ## Abstract Class
-Abstract class provides general attributes and behaviors without realization,
+Abstract class provides general attributes and behaviors without implementation,
 and it also provides accessible methods and variables as class contract. It cannot have an instance (substance),
 but instead its subclasses can be concrete its concept by overriding methods of their super.
 ### abstract
 To make an abstract class or method, add *abstract* keyword in front of them.
 A class automatically becomes abstract if it has any abstract methods, so *abstract* keyword for the class can be omitted.
 
-Abstract methods cause error when they is not realized. However, an abstract class cannot make any instances.
+Abstract methods cause error when they is not implemented. However, an abstract class cannot make any instances.
 Therefore, its subclasses should override all of them, and embody their methods.
 
 ## Interface
@@ -15,8 +15,27 @@ Interface is a special form of the abstract class, and it cannot have normal met
 It contains only description of the methods, so any classes can borrow the interface, even if there are no relationships among the classes.
 Java does not support multiple inheritance through class like C++, but it does via interface.
 
-What methods in the interface have is just a method header, so all of them MUST be embodied.
+What methods in the interface have is just a method header without a body, so all of them MUST be embodied.
 Override all empty methods of the interface with ones in the derived classes.
 
 ### Syntax
-You can declare an interface like this:
+Interface in Java SE 8 is *abstract*, and its access modifier is always *public*. Moreover, its methods are also public, even if you do not declare the modifiers. They can be "public abstract", "public default", and "public static". You can declare an interface like this:
+
+    <Access-Modifier> interface <Interface-Name> (<extends> <Super-Interface-Name>)
+    {...}
+    
+    ※ "<extends> <Super-Interface-Name>" can be omitted.
+
+You can implement the interface like:
+
+    <Access-Modifier> class <Class-Name> (<extends> <SuperClass-Name>) implements <Interface-Name-1>(, <Interface-Name-2>, ...)
+    {...Overriding Methods...}
+
+- Interface is always *public* and *abstract*.
+- Interface methods can be ***public abstract***, *public default*, and *public static*. (If omitted, *public abstract* is automatically attached by a compiler.)
+- *default* methods inside interface provide the new functions with backward compatibility, without having to refactor the old implementations. It needs its body to be declared.
+- *static* methods inside interface is similar to that of its class version. It should have its body, too.
+- Constants can be declared inside interface, and they become *public static final*. (Can omit it.)
+
+※ Note: Since Java 9, you can add *private* methods and *private static* methods in interface.
+They cannot be abstract, and only available inside interface. Private static method can be used inside other static and non-static interface methods, but private non-static one cannot be used inside private static methods. Both of them are not inherited by sub-interfaces or implementations, so that it enhances encapsulation.
