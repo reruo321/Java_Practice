@@ -125,3 +125,15 @@ Anonymous inner class has no name, and it is for creating a single object. When 
         }
 ### 4. Static Inner Class
 Put *static* in front of a class to define a static inner class. Even if there is no instance of outer class, the instance of inner can be created. To allow an access from the inner, outer fields should be also *static*.
+
+## Well-Known Classes
+J2SDK in Java provides a lot of classes, and here are descriptions for some import classes.
+These are almost in package "java.lang" or "java.util".
+
+### Object Class
+**Object** class is the root of the class hierarchy, so it is the superclass of all other classes in Java. toString() and equals() are the examples of Object methods.
+
+### Class Class
+Instances of the class Class represent classes and interfaces in a running Java application. Class objects are automatically constructed by JVM, and they cannot be extended since it is a final. They contain the metadata (name, constructor, field, method) of other classes and interfaces.
+
+### Wrapper Class
