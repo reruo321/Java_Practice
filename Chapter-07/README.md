@@ -33,12 +33,22 @@ You can implement the interface like:
 
 - Interface is always *public* and *abstract*.
 - Interface methods can be ***public abstract***, *public default*, and *public static*. (If omitted, *public abstract* is automatically attached by a compiler.)
-- *default* methods inside interface provide the new functions with backward compatibility, without having to refactor the old implementations. It needs its body to be declared.
+- *default* methods inside interface provide the new functions with backward compatibility, without having to refactor the old implementations. They need their bodies to be declared.
 - *static* methods inside interface are similar to those of their class versions. They should have their bodies, too.
 - Constants can be declared inside interface, and they become *public static final*. (Can omit it.)
 
-※ Note: Since Java 9, you can add *private* methods and *private static* methods in interface.
+※ Note: Since Java 9, you can also add *private* methods and *private static* methods in interface.
 - They cannot be abstract, and only available inside interface.
 - Private static method can be used inside other static and non-static interface methods
 - Private non-static one cannot be used inside private static methods.
 - Both of them are not inherited by sub-interfaces or implementations, so that it enhances encapsulation.
+
+### Comparison
+|   | Abstract Class | Interface |
+|:-:|:--------------:|:---------:|
+| **Inheritance** | single | multiple |
+| **Method** | abstract + normal | abstract + some normal |
+| **Implementation** | make some abstract methods to be implemented | all abstract methods should be implemented |
+| **Variable** | normal | final static (constant) |
+| **Object Creation** | No | No |
+| **Syntax** | extends | implements |
