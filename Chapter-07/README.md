@@ -229,9 +229,20 @@ String class has a character sequence as a value, and it is able to create an in
 | char charAt(int index) | Returns a character at index. |
 | int compareTo(String ss) | Compares the string of the object to ss lexicographically. (by ABC sequence) |
 | int compareToIgnoreCase(String str) | Compares the string of the object to str lexicographically. Case-insensitive. |
-| String concat(String str) | Concatenate the string of the object and str. |
+| String concat(String str) | Concatenates the string of the object and str. |
 | boolean equals(Object obj) | Compares if the String is equal to obj. |
 | boolean equalsIgnoreCase(String str) | Compares if the String is equal to obj. Case-insensitive. |
 | String format(String fmt, Object... args) | Returns a formatted string, using the format and object arguments. |
 | int indexOf(int ch) | Finds the index of the first ch from the string. |
 | int indexOf(String str) | Finds the index of the first str from the string. |
+| boolean isEmpty() | Returns true if length() is 0. |
+| int lastIndexOf(int ch) | Finds the index of the last ch from the string. |
+| int length() | Returns the length of the string. |
+| Strig replace(char oldChar, char newChar) | Replaces oldChar in the string to newChar. |
+| String subString(int beginIndex) | Returns substring from beginIndex to end of the string. |
+| String subString(int beginIndex, int endIndex) | Returns substring from beginIndex to endIndex of the string. |
+| String toUpperCase() | Returns the uppercase version of the string. |
+| String toLowerCase() | Returns the lowercase version of the string. |
+| Strign trim() | Returns the string which any leading and trailing whitespace are removed. |
+
+### StringBuffer
