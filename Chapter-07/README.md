@@ -92,7 +92,7 @@ Create an instance for outer first, then for inner. This allows you to access me
         }
 Local inner class is inside a method block, and accessible scope is restricted as if it is a local variable. It does not have an access modifier or any other keyword, so if it tries to access variables outside, they should be *final*.
 
-### Anonymous Inner Class
+### 3. Anonymous Inner Class
         new <Class-To-Make-An-Instance-Name>(<Parameters>)
         {
             ...
@@ -137,3 +137,50 @@ These are almost in package "java.lang" or "java.util".
 Instances of the class Class represent classes and interfaces in a running Java application. Class objects are automatically constructed by JVM, and they cannot be extended since it is a final. They contain the metadata (name, constructor, field, method) of other classes and interfaces.
 
 ### Wrapper Class
+Each primitive data type has its wrapper class.
+| Primitive Data Type | Wrapper Class |
+| :-----------------: | :-----------: |
+| boolean | Boolean|
+| byte | Byte |
+| char | Character |
+| short | Short |
+| int | Integer |
+| long | Long |
+| float | Float |
+| double | Double |
+| void | Void (no object creation) |
+
+#### Instance Creation
+Call a constructor of wrapper class via *new* keyword, with primitive data type variables or constants as its arguments.
+
+        new <WrapperClass-Name>(<Primitive-DataType-Value>);
+        new <WrapperClass-Name>(<String-Type-Value>);
+        
+        (Example)
+        Boolean b1 = new Boolean(true);
+        Boolean b2 = new Boolean("true");
+        
+        String s = "123";
+        Integer i = new Integer(s);
+        
+#### Utility Methods
+Here are some often used utility methods for common wrapper classes.
+
+| Method | Description |
+| :----: | :---------: |
+| String toString() | Returns wrapper class type data to String. |
+| @ @Value() | Returns wrapper class type data to primitive type @ data. |
+| @ parse#(String s) | Returns String s to primitive type @ data. |
+| @ parse#(String s, int r) | Returns String s to primitive type @ data as base r. |
+| # valueOf(@ i) | Returns primitive type @ data i to wrapper class type #. |
+| # valueOf(String s) | Returns String s to wrapper class type #. |
+
+(@ = Primitive Type, # = Wrapper Class Type)
+
+#### Member Fields
+These two fields from wrapper classes are frequently utilized.
+
+| Member Field | Description |
+| :----------: | :---------: |
+| static final @ MAX_VALUE | Maximum data value of primitive type @. |
+| static final @ MIN_VALUE | Minimum data value of primitive type @. |
