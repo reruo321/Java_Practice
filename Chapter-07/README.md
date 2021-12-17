@@ -214,3 +214,24 @@ These two fields from wrapper classes are frequently utilized, which show the ma
 Void is a wrapper class for void type, which cannot create an object.
 
 #### Auto-Boxing
+An automatical cast from a primitive type to a wrapper class type is called "auto-boxing", and "auto-unboxing" vice versa.
+
+        int a = 10;
+        Integer b = new Integer(3);
+        a = a * b;   // auto-unboxing of b;
+        b = a;   // auto-boxing of a;
+        
+### String
+String class has a character sequence as a value, and it is able to create an instance, call a method, and process various strings.
+
+| Method | Description |
+| :----------: | :---------: |
+| char charAt(int index) | Returns a character at index. |
+| int compareTo(String ss) | Compares the string of the object to ss lexicographically. (by ABC sequence) |
+| int compareToIgnoreCase(String str) | Compares the string of the object to str lexicographically. Case-insensitive. |
+| String concat(String str) | Concatenate the string of the object and str. |
+| boolean equals(Object obj) | Compares if the String is equal to obj. |
+| boolean equalsIgnoreCase(String str) | Compares if the String is equal to obj. Case-insensitive. |
+| String format(String fmt, Object... args) | Returns a formatted string, using the format and object arguments. |
+| int indexOf(int ch) | Finds the index of the first ch from the string. |
+| int indexOf(String str) | Finds the index of the first str from the string. |
