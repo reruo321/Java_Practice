@@ -246,3 +246,4 @@ String class has a character sequence as a value, and it is able to create an in
 | Strign trim() | Returns the string which any leading and trailing whitespace are removed. |
 
 ### StringBuffer
+A thread-safe, mutable sequence of characters. It is similar to String, but StringBuffer allows to modify the string.
