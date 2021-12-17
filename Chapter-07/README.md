@@ -148,7 +148,7 @@ Each primitive data type has its wrapper class.
 | long | Long |
 | float | Float |
 | double | Double |
-| void | Void (no object creation) |
+| void | Void |
 
 #### Instance Creation
 Call a constructor of wrapper class via *new* keyword, with primitive data type variables or constants as its arguments.
@@ -178,9 +178,39 @@ Here are some often used utility methods for common wrapper classes.
 (@ = Primitive Type, # = Wrapper Class Type)
 
 #### Member Fields
-These two fields from wrapper classes are frequently utilized.
+These two fields from wrapper classes are frequently utilized, which show the maximum or minimum value of each wrapper class.
 
 | Member Field | Description |
 | :----------: | :---------: |
 | static final @ MAX_VALUE | Maximum data value of primitive type @. |
 | static final @ MIN_VALUE | Minimum data value of primitive type @. |
+
+#### Character Class
+| Method | Description |
+| :----------: | :---------: |
+| Character(char value) | Constructor. |
+| char charValue() | Casts Character type data to char type. |
+| boolean isDefined(char ch) | Returns true if ch is a Unicode character. |
+| boolean isDigit(char ch) | Returns true if ch is a digit. |
+| boolean isLetter(char ch) | Returns true if ch is a letter. |
+| boolean isLetterOrDigit(char ch) | Returns true if ch is a letter or a digit. |
+| boolean isLowerCase(char ch) | Returns true if ch is a lowercase letter. |
+| boolean isUpperCase(char ch) | Returns true if ch is a uppercase letter. |
+| boolean isWhitespace(char ch) | Returns true if ch is a whitespace. |
+| char toLowerCase(char ch) | Returns ch to a lowercase letter. |
+| char toUpperCase(char ch) | Returns ch to a uppercase letter. |
+| Character valueOf(char ch) | Returns ch to Character type data. |
+
+#### Integer Class
+| Method | Description |
+| :----------: | :---------: |
+| String toBinaryString(int i) | Returns i to base 2 String. |
+| String toOctalString(int i) | Returns i to base 8 String. |
+| String toString(int i) | Returns i to base 10 String. |
+| String toString(int i, int r) | Returns i to base r String. |
+| String toHexString(int i) | Returns i to base 16 String. |
+
+#### Void Class
+Void is a wrapper class for void type, which cannot create an object.
+
+#### Auto-Boxing
