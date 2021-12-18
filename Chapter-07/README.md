@@ -185,7 +185,7 @@ These two fields from wrapper classes are frequently utilized, which show the ma
 | static final @ MAX_VALUE | Maximum data value of primitive type @. |
 | static final @ MIN_VALUE | Minimum data value of primitive type @. |
 
-#### Character Class
+#### Character
 | Method | Description |
 | :----------: | :---------: |
 | Character(char value) | Constructor. |
@@ -201,7 +201,7 @@ These two fields from wrapper classes are frequently utilized, which show the ma
 | char toUpperCase(char ch) | Returns *ch* as a uppercase letter. |
 | Character valueOf(char ch) | Returns *ch* as Character type data. |
 
-#### Integer Class
+#### Integer
 | Method | Description |
 | :----------: | :---------: |
 | String toBinaryString(int i) | Returns *i* to base 2 String. |
@@ -210,7 +210,7 @@ These two fields from wrapper classes are frequently utilized, which show the ma
 | String toString(int i, int r) | Returns *i* to base *r* String. |
 | String toHexString(int i) | Returns *i* to base 16 String. |
 
-#### Void Class
+#### Void
 Void is a wrapper class for void type, which cannot create an object.
 
 #### Auto-Boxing
@@ -332,4 +332,16 @@ Collection interface is the root in the collection hierarchy.
 
 ※ E: The type of elements in this collection
 
-#### Set Interface
+#### Set
+Set is an interface that represents the set of not duplicated elements. It has SortedSet as a subinterface for organized set elements.
+
+#### List
+List makes a group for elements with sequence.
+
+#### Queue
+Queue allows an access for elements at both ends of the group.
+
+#### Map
+Map represents a group which consists of its key and mapping information.
+
+### Vector
