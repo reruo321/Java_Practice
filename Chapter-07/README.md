@@ -269,6 +269,7 @@ StringTokenizer is used to break a string into tokens by parsing. Should import 
 | StringTokenizer(String str) | Constructor for *str* which uses the default delimiter set. (" \t\n\r\f")
 | StringTokenizer(String str, String delim) | Constructor for *str* which uses *delim* as delimiters.
 | StringTokenizer(String str, String delim, boolean returnDelims) | Constructor for *str* which uses *delim* as delimiters. If the *returnDelims* flag is true, the delimiters are also returned as tokens. Otherwise, they are skipped.
+
 | Method | Description |
 | :----------: | :---------: |
 | int countTokens() | Returns the number of times that this tokenizer's nextToken method can be called. |
@@ -281,10 +282,34 @@ Import java.util package and use Random class to generate random numbers.
 | Method | Description |
 | :----------: | :---------: |
 | int nextInt() | Returns random integer. |
-| int nextInt(int n) | Returns random integer between 0 <= X < n. |
+| int nextInt(int n) | Returns random integer which is 0 <= X < n. |
 | long nextLong() | Returns random long integer. |
-| float nextFloat() | Returns random float between 0.0 <= X < 1.0. |
-| double nextDouble() | Returns random double between 0.0 <= X < 1.0. |
-void setSeed(long seed) | Set *seed* as a seed. |
+| float nextFloat() | Returns random float which is 0.0 <= X < 1.0. |
+| double nextDouble() | Returns random double which is 0.0 <= X < 1.0. |
+| void setSeed(long seed) | Set *seed* as a seed. |
 
 ### Math
+Math is a public and final class, providing various mathematical functions and constants. Since all fields and methods are static, they can be directly called by the class name, Math.
+
+| Field | Description |
+| :----------: | :---------: |
+| double E | 2.7182... |
+| double PI | 3.14159... |
+
+| Method | Description |
+| :----------: | :---------: |
+| \<T\> abs(T value) | Returns the absolute value of the T-type *value*. |
+| double ceil(double a) | Returns the smallest integer as double type, which is *a* <= X. (Ex: Math.ceil(10.123) = 11.0) |
+| double cos(double a) | Returns the cosine value of *a*. |
+| double floor(double a) | Returns the biggest integer as double type, which is *a* >= X. (Ex: Math.floor(10.123) = 10.0) |
+| double log(double a) | Returns logarithm value of *a*. |
+| \<T\> max(T a, T b) | Returns the bigger value between *a* and *b*. |
+| \<T\> min(T a, T b) | Returns the smaller value between *a* and *b*. |
+| double pow(double a, double b) | Returns the value of *a* to the power of *b*. |
+| double random() | Returns the random number which is 0.0 <= X < 1.0. |
+| double rint(double a) | Returns the value rounding *a* to the nearest integer as a double. |
+| double sin(double a) | Returns the sine value of *a*. |
+| double sqrt(double a) | Returns the square root value of *a*. |
+| double tan(double a) | Returns the tangent value of *a*. |
+
+## Collection
