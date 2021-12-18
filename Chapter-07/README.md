@@ -130,10 +130,10 @@ Put *static* in front of a class to define a static inner class. Even if there i
 J2SDK in Java provides a lot of classes, and here are descriptions for some import classes.
 These are almost in package "java.lang" or "java.util".
 
-### Object Class
+### Object
 **Object** class is the root of the class hierarchy, so it is the superclass of all other classes in Java. toString() and equals() are the examples of Object methods.
 
-### Class Class
+### Class
 Instances of the class Class represent classes and interfaces in a running Java application. Class objects are automatically constructed by JVM, and they cannot be extended since it is a final. They contain the metadata (name, constructor, field, method) of other classes and interfaces.
 
 ### Wrapper Class
@@ -260,3 +260,31 @@ A thread-safe, mutable sequence of characters. It is similar to String, but Stri
 | int setLength(int newLength) | Sets *newLength* as the length of the string. |
 | String subString(int start, int end) | Returns substring from *start* to *end* of the string. |
 | String toString() | Returns the string as String type. |
+
+### StringTokenizer
+StringTokenizer is used to break a string into tokens by parsing. Should import the package java.util.
+
+| Constructor | Description |
+| :----------: | :---------: |
+| StringTokenizer(String str) | Constructor for *str* which uses the default delimiter set. (" \t\n\r\f")
+| StringTokenizer(String str, String delim) | Constructor for *str* which uses *delim* as delimiters.
+| StringTokenizer(String str, String delim, boolean returnDelims) | Constructor for *str* which uses *delim* as delimiters. If the *returnDelims* flag is true, the delimiters are also returned as tokens. Otherwise, they are skipped.
+| Method | Description |
+| :----------: | :---------: |
+| int countTokens() | Returns the number of times that this tokenizer's nextToken method can be called. |
+| boolean hasMoreTokens() | Returns true if there is available token after the current position. |
+| String nextToken() | Returns the next parsed string. |
+
+### Random
+Import java.util package and use Random class to generate random numbers.
+
+| Method | Description |
+| :----------: | :---------: |
+| int nextInt() | Returns random integer. |
+| int nextInt(int n) | Returns random integer between 0 <= X < n. |
+| long nextLong() | Returns random long integer. |
+| float nextFloat() | Returns random float between 0.0 <= X < 1.0. |
+| double nextDouble() | Returns random double between 0.0 <= X < 1.0. |
+void setSeed(long seed) | Set *seed* as a seed. |
+
+### Math
