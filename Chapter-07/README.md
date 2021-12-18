@@ -175,7 +175,7 @@ Here are some often used utility methods for common wrapper classes.
 | # valueOf(@ i) | Returns primitive type @ data *i* as wrapper class type #. |
 | # valueOf(String s) | Returns String *s* as wrapper class type #. |
 
-(@ = Primitive Type, # = Wrapper Class Type)
+※ @ = Primitive Type, # = Wrapper Class Type
 
 #### Member Fields
 These two fields from wrapper classes are frequently utilized, which show the maximum or minimum value of each wrapper class.
@@ -273,7 +273,7 @@ StringTokenizer is used to break a string into tokens by parsing. Should import 
 | Method | Description |
 | :----------: | :---------: |
 | int countTokens() | Returns the number of times that this tokenizer's nextToken method can be called. |
-| boolean hasMoreTokens() | Returns true if there is available token after the current position. |
+| boolean hasMoreTokens() | Returns true if there is more available token after the current position. |
 | String nextToken() | Returns the next parsed string. |
 
 ### Random
@@ -313,3 +313,23 @@ Math is a public and final class, providing various mathematical functions and c
 | double tan(double a) | Returns the tangent value of *a*. |
 
 ## Collection
+To more accessible data structures, Java provides **Collection Framework** as a bunch of groups of various interfaces and classes.
+
+Interfaces are largely categorized as Collection and Map. Collection has Set, List, Queue, and other subinterfaces, and Map does mainly maps such as Hashtable and ConcurrentMap.
+
+### Collection
+Collection interface is the root in the collection hierarchy.
+
+| Method | Description |
+| :----------: | :---------: |
+| boolean add(E e) | Adds an element *e*. Returns true if the collection was updated successfully.
+| void clear() | Clears all elements. |
+| boolean equals(Object o) | Returns true if all elements are equal to those of *o*. |
+| boolean isEmpty() | Returns true if the collection is empty. |
+| boolean remove(Object o) | Removes an element *o*. Returns true if the collection was updated successfully. |
+| int size() | Returns the number of the elements. |
+| Object [] toArray() | Returns the elements as an array. |
+
+※ E: The type of elements in this collection
+
+#### Set Interface
