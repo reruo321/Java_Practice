@@ -168,12 +168,12 @@ Here are some often used utility methods for common wrapper classes.
 
 | Method | Description |
 | :----: | :---------: |
-| String toString() | Returns wrapper class type data to String. |
-| @ @Value() | Returns wrapper class type data to primitive type @ data. |
-| @ parse#(String s) | Returns String s to primitive type @ data. |
-| @ parse#(String s, int r) | Returns String s to primitive type @ data as base r. |
-| # valueOf(@ i) | Returns primitive type @ data i to wrapper class type #. |
-| # valueOf(String s) | Returns String s to wrapper class type #. |
+| String toString() | Returns wrapper class type data as String. |
+| @ @Value() | Returns wrapper class type data as primitive type @ data. |
+| @ parse#(String s) | Returns String *s* as primitive type @ data. |
+| @ parse#(String s, int r) | Returns String *s* as primitive type @ data as base r. |
+| # valueOf(@ i) | Returns primitive type @ data *i* as wrapper class type #. |
+| # valueOf(String s) | Returns String *s* as wrapper class type #. |
 
 (@ = Primitive Type, # = Wrapper Class Type)
 
@@ -190,25 +190,25 @@ These two fields from wrapper classes are frequently utilized, which show the ma
 | :----------: | :---------: |
 | Character(char value) | Constructor. |
 | char charValue() | Casts Character type data to char type. |
-| boolean isDefined(char ch) | Returns true if ch is a Unicode character. |
-| boolean isDigit(char ch) | Returns true if ch is a digit. |
-| boolean isLetter(char ch) | Returns true if ch is a letter. |
-| boolean isLetterOrDigit(char ch) | Returns true if ch is a letter or a digit. |
-| boolean isLowerCase(char ch) | Returns true if ch is a lowercase letter. |
-| boolean isUpperCase(char ch) | Returns true if ch is a uppercase letter. |
-| boolean isWhitespace(char ch) | Returns true if ch is a whitespace. |
-| char toLowerCase(char ch) | Returns ch to a lowercase letter. |
-| char toUpperCase(char ch) | Returns ch to a uppercase letter. |
-| Character valueOf(char ch) | Returns ch to Character type data. |
+| boolean isDefined(char ch) | Returns true if *ch* is a Unicode character. |
+| boolean isDigit(char ch) | Returns true if *ch* is a digit. |
+| boolean isLetter(char ch) | Returns true if *ch* is a letter. |
+| boolean isLetterOrDigit(char ch) | Returns true if *ch* is a letter or a digit. |
+| boolean isLowerCase(char ch) | Returns true if *ch* is a lowercase letter. |
+| boolean isUpperCase(char ch) | Returns true if *ch* is a uppercase letter. |
+| boolean isWhitespace(char ch) | Returns true if *ch* is a whitespace. |
+| char toLowerCase(char ch) | Returns *ch* as a lowercase letter. |
+| char toUpperCase(char ch) | Returns *ch* as a uppercase letter. |
+| Character valueOf(char ch) | Returns *ch* as Character type data. |
 
 #### Integer Class
 | Method | Description |
 | :----------: | :---------: |
-| String toBinaryString(int i) | Returns i to base 2 String. |
-| String toOctalString(int i) | Returns i to base 8 String. |
-| String toString(int i) | Returns i to base 10 String. |
-| String toString(int i, int r) | Returns i to base r String. |
-| String toHexString(int i) | Returns i to base 16 String. |
+| String toBinaryString(int i) | Returns *i* to base 2 String. |
+| String toOctalString(int i) | Returns *i* to base 8 String. |
+| String toString(int i) | Returns *i* to base 10 String. |
+| String toString(int i, int r) | Returns *i* to base *r* String. |
+| String toHexString(int i) | Returns *i* to base 16 String. |
 
 #### Void Class
 Void is a wrapper class for void type, which cannot create an object.
@@ -226,24 +226,37 @@ String class has a character sequence as a value, and it is able to create an in
 
 | Method | Description |
 | :----------: | :---------: |
-| char charAt(int index) | Returns a character at index. |
-| int compareTo(String ss) | Compares the string of the object to ss lexicographically. (by ABC sequence) |
-| int compareToIgnoreCase(String str) | Compares the string of the object to str lexicographically. Case-insensitive. |
-| String concat(String str) | Concatenates the string of the object and str. |
-| boolean equals(Object obj) | Compares if the String is equal to obj. |
-| boolean equalsIgnoreCase(String str) | Compares if the String is equal to obj. Case-insensitive. |
-| String format(String fmt, Object... args) | Returns a formatted string, using the format and object arguments. |
-| int indexOf(int ch) | Finds the index of the first ch from the string. |
-| int indexOf(String str) | Finds the index of the first str from the string. |
+| char charAt(int index) | Returns a character at *index*. |
+| int compareTo(String ss) | Compares the string of the object to *ss* lexicographically. (by ABC sequence) |
+| int compareToIgnoreCase(String str) | Compares the string of the object to *str* lexicographically. Case-insensitive. |
+| String concat(String str) | Concatenates the string of the object and *str*. |
+| boolean equals(Object obj) | Compares if the String is equal to *obj*. |
+| boolean equalsIgnoreCase(String str) | Compares if the String is equal to *str*. Case-insensitive. |
+| String format(String fmt, Object... args) | Returns a formatted string, using the format *fmt* and object arguments. |
+| int indexOf(int ch) | Finds the index of the first *ch* from the string. |
+| int indexOf(String str) | Finds the index of the first *str* from the string. |
 | boolean isEmpty() | Returns true if length() is 0. |
-| int lastIndexOf(int ch) | Finds the index of the last ch from the string. |
+| int lastIndexOf(int ch) | Finds the index of the last *ch* from the string. |
 | int length() | Returns the length of the string. |
-| Strig replace(char oldChar, char newChar) | Replaces oldChar in the string to newChar. |
-| String subString(int beginIndex) | Returns substring from beginIndex to end of the string. |
-| String subString(int beginIndex, int endIndex) | Returns substring from beginIndex to endIndex of the string. |
+| Strig replace(char oldChar, char newChar) | Replaces *oldChar* in the string to *newChar*. |
+| String subString(int beginIndex) | Returns substring from *beginIndex* to end of the string. |
+| String subString(int beginIndex, int endIndex) | Returns substring from *beginIndex* to *endIndex* of the string. |
 | String toUpperCase() | Returns the uppercase version of the string. |
 | String toLowerCase() | Returns the lowercase version of the string. |
 | Strign trim() | Returns the string which any leading and trailing whitespace are removed. |
 
 ### StringBuffer
 A thread-safe, mutable sequence of characters. It is similar to String, but StringBuffer allows to modify the string.
+
+| Method | Description |
+| :----------: | :---------: |
+| StringBuffer append(String str) | Adds *str* at the end of the string. |
+| char charAt(int index) | Returns a character at *index*. |
+| StringBuffer delete(int start, int end) | Deletes the string from *start* to *end* index. |
+| int indexOf(String str) | Finds the index of the first *str* from the string. |
+| StringBuffer insert(int offset, String str) | Inserts *str* at *offset* of the string. |
+| int length() | Returns the length of the string. |
+| StringBuffer reverse() | Returns the reversed string. |
+| int setLength(int newLength) | Sets *newLength* as the length of the string. |
+| String subString(int start, int end) | Returns substring from *start* to *end* of the string. |
+| String toString() | Returns the string as String type. |
