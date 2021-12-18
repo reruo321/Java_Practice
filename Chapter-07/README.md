@@ -345,3 +345,4 @@ Queue allows an access for elements at both ends of the group.
 Map represents a group which consists of its key and mapping information.
 
 ### Vector
+Vector class is similar to array. While array has fixed size, Vector can increase or decrease its size dynamically as necessary. It is able to utilize all methods that List interface has, since it implemented List. It allows its elements to be duplicated, and to be accessed by their index values.
