@@ -373,3 +373,21 @@ Vector class is similar to array. While array has fixed size, Vector can increas
 | String toString() | Casts the elements to String. |
 
 ### Iterator
+Use Iterator interface to get collection elements in a sequence. Iterator is defined in Collection, and calling a method iterator() will bring it.
+
+        Vector v = new Vector();   // 1. Find a Collection to use Iterator.
+        Iterator it = v.iterator();   // 2. Call iterator() for it, and create a reference.
+        it.hasNext();   // 3. Process with Iterator methods.
+        it.next();
+        
+### List
+List interface allows duplicate its elements, and it has sequence for data group. It has ArrayList and LinkedList as implementing classes.
+
+#### ArrayList
+ArrayList is almost similar to Vector, except that it is unsynchronized.
+
+#### LinkedList
+LinkedList is a doubly-linked list implementation. To get its elements, call listIterator() from List to take bidirectional iterator. Then, call hasNext() and next() for forward traversal. For backward traversal, put size() as an argument for listIterator(), and call hasPrevious() and previous().
+
+### Stack
+Stack class 
