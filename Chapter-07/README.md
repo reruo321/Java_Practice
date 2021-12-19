@@ -502,3 +502,33 @@ Now you can create some instance using this class.
         GenericTest<Integer> gti = new GenericTest<Integer>(3, 6);
         
 #### Generic Method
+Generic method also has a formal parameter type.
+
+        (Syntax)
+        [Access-Modifier] [<T>] [Method-Name]([Parameters]) (throws exception)
+        { ... }
+        
+        (Example)
+        public static <T extends Comparable> T min(T x, T y){
+            if(x.compareTo(y) < 0)
+                return x;
+            else
+                return y;
+        }
+        
+        (Usage)
+        int minInt = min(2, 4);
+        double minDouble = min(12.3, 45.6);
+        
+### enum
+enum in Java is the same as that of C/C++. It cannot created by *new* keyword, but its definition and way of use are similar to those of class, and also methods values() and valueOf() are automatically provided to enum. It has Enum in java.lang as its superclass.
+
+        (Syntax)
+        [Access-Modifier] enum [enum-Name] { ... }
+        
+        (Example)
+        public enum Sex { MALE, FEMALE }
+        
+        (Usage)
+        Sex man;   // "man" is an enum variable. It can have only enum contsants as its value.
+        man = Sex.MALE;
