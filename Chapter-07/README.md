@@ -431,7 +431,40 @@ Hashtable class implements Map interface, which maps keys to values, and uses a 
 | V get(Object key) | Returns the value to which the specified *key* is mapped. |
 | V put(K key, V value) | Maps the specified *key* to the specified *value* in the Hashtable. |
 | V remove(Object key) | Removes the value to which the specified *key* is mapped. |
-| int size() | Returns the number of the key in the Hashtable. |
+| int size() | Returns the number of the keys in the Hashtable. |
 
 ## Generic & enum
 ### Generic Programming
+Generic programming is embodied by generic types and generic methods, which are similar to template and STL in C++. Generics are easier to reduce possible casting errors in execution than templates of C++, by checking data types while compiling.
+
+Moreover, Generics take just one compiled code, while the templates spout out several codes according to the using data.
+
+#### Generic Collection Class
+Most of the collection classes explained above are able to be utilized on generic programming. For example, generic Vector is defined with formal parameter type, \<E\>, like this:
+    
+        class Vector<E>
+        {
+            boolean add(E e){ ... }
+            E get(int index){ ... }
+        }
+    
+To use generic Vector, declare the reference of parameterized type.
+    
+        Vector<TYPE> var = new Vector<TYPE>();
+
+Generic List and generic Iterator look like this:
+    
+        Interface List<E>
+        Interface Iterator<E>
+    
+And you can use them like below:
+    
+        List<Integer> li = new Vector<Integer>();
+        li.add(100);
+        li.add(50);
+        Iterator<Integer> it = li.iterator();
+        while(it.hasNext())
+            System.out.print(it.next() + " ");
+    
+#### Generics and Inheritance
+    
