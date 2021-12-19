@@ -481,3 +481,24 @@ To be free from this restriction, use wild card.
         Vector<? extends Shape> vsh = vrc;
         
 #### Generic Class Definition
+When a class is defined as generic, it decides the type of its members while creating an instance.
+
+        (Syntax)
+        [Access-Modifier] class [Class-Name]<T> (extends [SuperClass-Name])
+        (implements [Interface-Name-1], ...)
+        { ... }
+        
+        (Example)
+        public class GenericTest<T>
+        {
+            private T var1;
+            private T var2;
+            public GenericTest(T x, T y){ ... }
+        }
+        
+Now you can create some instance using this class.
+
+        GenericTest<Double> gtd = new GenericTest<Double>(12.3, 45.6);
+        GenericTest<Integer> gti = new GenericTest<Integer>(3, 6);
+        
+#### Generic Method
