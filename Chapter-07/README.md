@@ -346,3 +346,30 @@ Map represents a group which consists of its key and mapping information.
 
 ### Vector
 Vector class is similar to array. While array has fixed size, Vector can increase or decrease its size dynamically as necessary. It is able to utilize all methods that List interface has, since it implemented List. It allows its elements to be duplicated, and to be accessed by their index values.
+
+| Method | Description |
+| :----------: | :---------: |
+| Vector() | Constructor. |
+| Vector(int initialCapacity) | Constructor with the initial size of vector, *initialCapacity*. |
+| Vector(int initialCap, int capInc) | Constructor with the initial size of vector, *initialCap*, automatically increasing its size by *capInc*. |
+| boolean add(E e) | Adds an element *e* to the Vector. |
+| void add(int index, E element) | Adds an element *element* at *index*.
+| void addElement(E obj) | Adds an element *obj* to the Vector. |
+| void clear() | Clears all elements in the Vector. |
+| boolean contains(Object o) | Returns true if the Vector includes the object *o*. |
+| E elementAt(int index) | Returns an element at *index*. |
+| boolean equals(Object o) | Returns true if the Vector is equal to the object *o*. |
+| E firstElement() | Returns the first element of the Vector. |
+| E get(int index) | Returns the *index*-th element of the Vector. |
+| int indexOf(Object o) | Returns the index of the object *o*. |
+| void insertElementAt(E obj, int index) | Inserts the element *obj* at *index*. |
+| boolean isEmpty() | Returns true if the Vector is empty. |
+| E remove(int index) | Removes the element at *index*. |
+| void removeAllElements() | Removes all elements in the Vector. |
+| void setElementAt(E obj, int index) | Changes the element at *index* to *obj*. |
+| int size() | Returns the size of the Vector. |
+| void setSize(int newSize) | Set the size of the Vector to *newSize*. |
+| Object [] toArray() | Returns an array having the Vector's elements. |
+| String toString() | Casts the elements to String. |
+
+### Iterator
