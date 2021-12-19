@@ -390,4 +390,48 @@ ArrayList is almost similar to Vector, except that it is unsynchronized.
 LinkedList is a doubly-linked list implementation. To get its elements, call listIterator() from List to take bidirectional iterator. Then, call hasNext() and next() for forward traversal. For backward traversal, put size() as an argument for listIterator(), and call hasPrevious() and previous().
 
 ### Stack
-Stack class 
+Stack class represents a Last-In-First-Out(LIFO) stack of objects.
+
+| Method | Description |
+| :----------: | :---------: |
+| Stack() | Constructor. |
+| boolean empty() | Returns true if the Stack is empty. |
+| E peek() | Examines the top item of the Stack, without removing it. |
+| E pop() | Retrieves and removes the top item of the Stack. |
+| E push(E item) | Adds *item* at the top of the Stack. |
+
+### Queue
+Queue interface is designed to order elements typically in a First-In-First-Out(FIFO) manner.
+It can remove its head by calling remove() or poll(). If it is a FIFO Queue, it inserts all new element at the tail of it.
+
+※ There are methods resemble each other, and their only difference is the output if the operations fail. Some of them throw an exception, and others return a special value. (either null or false)
+
+| | Throws exception | Returns special value |
+|:-:| :----------: | :---------: |
+| **Insert** | add(e) | offer(e) |
+| **Remove** | remove() | poll() |
+| **Examine** | element() | peek() |
+
+| Method | Description |
+| :----------: | :---------: |
+| boolean add(E e) | Adds an element *e* to the Queue. |
+| E element() | Examines at the head of the Queue. |
+| boolean offer(E e) | Adds an element *e* to the Queue. Returns false if fails. |
+| E peek() | Examines at the head of the Queue. Returns null if the Queue is empty. |
+| E poll() | Retrieves and removes the head of the Queue. Returns null if the Queue is empty. |
+| E remove() | Retrieves and removes the head of the Queue. |
+
+### Hashtable
+Hashtable class implements Map interface, which maps keys to values, and uses a hash code for the key.
+
+| Method | Description |
+| :----------: | :---------: |
+| Hashtable() | Constructor. |
+| Hashtable(int initialCapacity) | Constructor with *initialCapacity* as initial capacity. |
+| V get(Object key) | Returns the value to which the specified *key* is mapped. |
+| V put(K key, V value) | Maps the specified *key* to the specified *value* in the Hashtable. |
+| V remove(Object key) | Removes the value to which the specified *key* is mapped. |
+| int size() | Returns the number of the key in the Hashtable. |
+
+## Generic & enum
+### Generic Programming
