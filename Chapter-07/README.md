@@ -467,4 +467,17 @@ And you can use them like below:
             System.out.print(it.next() + " ");
     
 #### Generics and Inheritance
-    
+Suppose that a class Rectangle is derived from Shape. This example shows how to use these classes as parameterized types in generic programming.
+
+        Rectangle rc = new Rectangle();
+        Shape sh = rc;
+        Vector<Rectangle> vrc = new Vector<Rectangle>();
+        // Vector<Shape> vsh = new vrc;   // Compile Error!
+
+Generics does not allow the last code where a parameterized superclass type reference tries to refer that of subclass, since only the reference of the equivalent type is okay.
+To be free from this restriction, use wild card.
+
+        Vector<Rectangle> vrc = new Vetor<Rectangle>();
+        Vector<? extends Shape> vsh = vrc;
+        
+#### Generic Class Definition
