@@ -20,23 +20,6 @@ I would like to explain on Intellij IDEA here, and users of other IDEs such as E
     1. Run > Edit Configurations > Put arguments into the "Program arguments" field, on Build and run.
     2. Press Alt + Ctrl + F10 > Click '>' > Edit
 
-## Not Working Breakpoints in Intellij IDEA?
-I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
-### Disabled line breakpoint?
-If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for the line, check this out. You won't be able to toggle the line breakpoint on an empty line.
-
-       (Example)
-       void moveX(int a)  // OK.
-       {                  // OK.
-                          // You can't put a line breakpoint here, because it's an empty line.
-          x += a;         // OK.
-       }                  // OK.
-### Skipped breakpoints?
-1. If you "run" the program, instead of "debugging" it, breakpoints do not work. F9 is for the debugging, and F10 for the running.
-### Other possible solutions?
-1. Try to clear caches by File > Invalidate Caches.
-2. Try to update the IDE to the latest version.
-
 ## UML
 UML(Unified Modeling Language) is used to express relations between objects by diagrams. It can also draw Class Diagram, and it should be drawn with their directionality and multiplicity.
 
@@ -85,3 +68,37 @@ Dependency shows a relationship that one's definition may cause changes to the o
 ![APPrealization](https://user-images.githubusercontent.com/48712088/145827681-f5df3e4e-132c-41c4-a697-392e2b7aa387.png)
 
 Realization is an abstraction relationship between a specification and an implementation.
+
+## Issue
+### Not Working Breakpoints in Intellij IDEA?
+I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
+#### Disabled line breakpoint?
+If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for the line, check this out. You won't be able to toggle the line breakpoint on an empty line.
+
+       (Example)
+       void moveX(int a)  // OK.
+       {                  // OK.
+                          // You can't put a line breakpoint here, because it's an empty line.
+          x += a;         // OK.
+       }                  // OK.
+#### Skipped breakpoints?
+1. If you "run" the program, instead of "debugging" it, breakpoints do not work. F9 is for the debugging, and F10 for the running.
+#### Other possible solutions?
+1. Try to clear caches by File > Invalidate Caches.
+2. Try to update the IDE to the latest version.
+
+### Skipped nextLine() After nextInt()?!
+When nextInt() gets an input from a user, it takes integer input but does not remove a newline. (\n)
+Therefore, as the newline is handed to nextLine(), the next input takes only the escape sequence, and skips the response of the user right away.
+
+    /* Solution 1 */
+    Scanner scan = new Scanner(System.in);
+    int intInput = scan.nextInt();
+    scan.nextLine();   // Add this to take away the trash newline.
+    String strInput = scan.nextLine();
+    
+    /* Solution 2 */
+    Scanner scan = new Scanner(System.in);
+    int intInput = Integer.parseInt(scan.nextLine());   // OR parse integer from the String input.
+    String strInput = scan.nextLine();
+    
