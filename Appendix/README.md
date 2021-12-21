@@ -70,7 +70,7 @@ Dependency shows a relationship that one's definition may cause changes to the o
 Realization is an abstraction relationship between a specification and an implementation.
 
 ## Issue
-### Not Working Breakpoints in Intellij IDEA?
+### ▷ Not Working Breakpoints in Intellij IDEA?
 I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
 #### Disabled line breakpoint?
 If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for the line, check this out. You won't be able to toggle the line breakpoint on an empty line.
@@ -87,7 +87,7 @@ If the option Run > Toggle Breakpoint > Method Breakpoint is opened but not for 
 1. Try to clear caches by File > Invalidate Caches.
 2. Try to update the IDE to the latest version.
 
-### Skipped nextLine() After nextInt()?!
+### ▷ Skipped nextLine() After nextInt()?!
 When nextInt() gets an input from a user, it takes integer input but does not remove a newline. (\n)
 Therefore, as the newline is handed to nextLine(), the next input takes only the escape sequence, and skips the response of the user right away.
 
