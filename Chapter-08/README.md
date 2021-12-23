@@ -51,6 +51,7 @@ Enclose statements possible to throw exceptions with *try* block, and write *cat
 Next, write handling statements in the *catch* block. *catch* block can be multiple, and the arising exception while running the program defines which *catch* to be processed. If an IOException happens, among many catch blocks, the block for IOException is executed.
 
 This is the syntax for the try-catch.
+
         try {
         ...   // Try to catch exceptions here
         }
