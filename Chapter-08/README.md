@@ -119,6 +119,8 @@ A method passes the exception handling to other methods which call it. The excep
 ### throw
 A user can throw the exception on purpose, making its instance using *throw* keyword. Usually it is used with custom exceptions.
 
+        throw new <Exception-Constructor>;
+
 ## User Defined Exception Class
 User defined exception class, or custom exception class is written like this syntax.
 
