@@ -48,12 +48,12 @@ The table below shows methods for the Throwable class.
 
 ## try & catch
 Enclose statements possible to throw exceptions with *try* block, and write *catch* block right after it.
-Next, write handling statements in the *catch* block. *catch* block can be multiple, and the arising exception while running the program defines which *catch* to be processed. If an IOException happens, among many catch blocks, the block for IOException is executed.
+Next, write handling statements in the *catch* block. *catch* block can be multiple, and the arising exception while running the program decides which *catch* to be processed. If an IOException happens, among many catch blocks, the block for IOException is executed.
 
 This is the syntax for the try-catch.
 
         try {
-        ...   // Try to catch exceptions here
+        ...   // Try to catch exceptions here.
         }
         catch(Exception1 e) {
         ...   // Process Exception1 here.
@@ -62,6 +62,20 @@ This is the syntax for the try-catch.
         ...   // Process Exception2 here.
         }
 
-Since the program runs only the first matching catch block when it caught an exception, set the *catch* for the super Exception at the bottom, or a programmer cannot handle exceptions in detail.
+Since the program runs only the first matching catch block when it has caught an exception, set the *catch* for the super Exception at the bottom, or a programmer cannot handle exceptions in detail.
 
 ## finally
+If the statements should be executed, not caring if the catch block is run, enclose them with *finally* block. It comes next to the catch block.
+
+        try {
+        ...   // Try to catch exceptions here.
+        }
+        catch(Exception1 e) {
+        ...   // Process Exception1 here.
+        }
+        finally {
+        ...   // Process statements anyway here.
+        }
+        
+## throw & throws
+Add *throws* to the method to declare what exception it should throw. It is not mandatory for unchecked exceptions, but MUST be explicitly declared for checked ones.
