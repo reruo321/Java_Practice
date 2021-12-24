@@ -4,12 +4,13 @@ Exception arises in many situations such as division by 0, array of insufficient
 Handling is to predict and prepare these possible exceptions, so that the program can process and exit normally.
 Java **DOES** specify exception handler in advance, and it is more powerful than those of other languages.
 
-## Exception Handling Syntax
+## Introduction
+### Syntax
 For example, to make the main method to handle an IOException, write "*throws* IOException" like this.
 
     public static void main(String [] args) throws IOException {...}
 
-## Types of Exception
+### Types of Exception
 
 | Exception Type | Description |
 | :-: | :-: |
@@ -21,10 +22,23 @@ For example, to make the main method to handle an IOException, write "*throws* I
 | NoSuchMethodException | Not found method. |
 
 ## Class Hierarchy
-![08Exceptions](https://user-images.githubusercontent.com/48712088/147271236-075e809d-202f-4838-b411-f604102daf5e.png)
+![08Exceptions](https://user-images.githubusercontent.com/48712088/147331592-214bccbd-7009-4d25-993a-a1e74caf6ee7.png)
+
 ※ Check [here](https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html) for more classes in the hierarchy.
 
 Throwable is the root of the hierarchy, and it has Error and Exception as its children. Exception is able to be handled by the program codes, while Error is hard to be done so.
+
+### Checked Exception
+A check exception represents problems that can be recovered during the program execution, which are usually not a programmer's fault. (Ex: bad file read, bad network connection) It does not force the program to exit, but instead notifies the problems to the users to take further actions. Handling of checked exception must be declared on the method with *throws* clause.
+
+### Unchecked Exception
+Unchecked exception is divided into **Error** and **RuntimeException**, and it reflects some errors inside the program's logic. Java does not verify it at compile-time.
+
+#### Error
+The program usually cannot recover when Errors occured. It is often better to exit the program than wish the program to have a fallback on them.
+
+#### RuntimeException
+This usually happens by the fault of the programmer, so it must be resolved at his developing time.
 
 The table below shows methods for the Throwable class.
 
