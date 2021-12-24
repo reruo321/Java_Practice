@@ -91,5 +91,40 @@ If the statements should be executed, not caring if the catch block is run, encl
         ...   // Process statements anyway here.
         }
         
-## throw & throws
-Add *throws* to the method to declare what exception it should throw. It is not mandatory for unchecked exceptions, but MUST be explicitly declared for checked ones.
+## throws & throw
+### throws
+Add *throws* to the method to declare what exception it should throw. It is not mandatory for unchecked exceptions, but it MUST be explicitly declared if the exceptions are checked ones.
+
+A method passes the exception handling to other methods which call it. The exception is handled like below steps.
+
+        public void thirdMethod(){
+            ...     // 1. Suppose that thirdMethod made Exception.
+        }
+        public void secondMethod() throws Exception {
+            ...
+            thirdMethod();   // 2. thirdMethod throws the Exception to secondMethod.
+            ...
+        }
+        public void firstMethod(){
+            try {
+                ...
+                secondMethod();   // 3. firstMethod catches the Exception from secondMethod.
+                ...
+            }
+            catch(Exception e) {
+                ...   // 4. Here is the Exception handled.
+            }
+        }
+        
+### throw
+A user can throw the exception on purpose, making its instance using *throw* keyword. Usually it is used with custom exceptions.
+
+## User Defined Exception Class
+User defined exception class, or custom exception class is written like this syntax.
+
+        class <User-Defined-Exception-Name> extends Exception {
+            public <User-Defined-Exception-Name>(String s){
+                super(s);   // String s is the message for the exception.
+             }
+            ...
+        }
