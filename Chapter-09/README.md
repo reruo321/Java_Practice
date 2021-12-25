@@ -56,3 +56,8 @@ OutputStream (1-byte) and Writer (2-bytes) are also resemble each other.
 
 ## Byte I/O Stream
 ### Byte Input Stream
+The root of the byte input stream classes is InputStream. Since it is an abstract class, it cannot create its object but provides default methods.
+### Byte Output Stream
+OutputStream is the root of the byte output stream, and is an abstract class.
+
+### Buffered Stream
