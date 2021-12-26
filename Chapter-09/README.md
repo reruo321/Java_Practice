@@ -55,9 +55,18 @@ OutputStream (1-byte) and Writer (2-bytes) are also resemble each other.
 | OutputStream | Writer | Default output stream. |
 
 ## Byte I/O Stream
-### Byte Input Stream
-The root of the byte input stream classes is InputStream. Since it is an abstract class, it cannot create its object but provides default methods.
-### Byte Output Stream
-OutputStream is the root of the byte output stream, and is an abstract class.
+### Byte I/O Stream
+The roots of the byte I/O stream classes are InputStream/OutputStream. Since it is an abstract class, it cannot create its object but provides default methods.
 
 ### Buffered Stream
+Using a buffer to temporarily store a stream of data into the memory enhances the speed. Take BufferedInputStream and BufferedOutputStream classes to utilize the function.
+
+## Character I/O Stream
+The roots of the character I/O stream classes are Reader/Writer. Because they internally process character encoding in sequence,
+they are more preferable to the byte streams when inputting/outputting strings.
+
+## File
+File class defines a plenty of fields and methods to examine and edit files.
+
+## RandomAccessFile
+Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". 
