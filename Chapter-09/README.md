@@ -69,4 +69,7 @@ they are more preferable to the byte streams when inputting/outputting strings.
 File class defines a plenty of fields and methods to examine and edit files.
 
 ## RandomAccessFile
-Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". 
+### Random Access
+Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". On the other hand, "random access" (direct access) allows the computer system to read or write information anywhere in the data file, using indexing. 
+
+While sequential access has advantages when accessing information in the same order all the time and faster than random access, random access gives easier data searching for the user.
