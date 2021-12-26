@@ -60,6 +60,10 @@ The roots of the byte I/O stream classes are InputStream/OutputStream. Since it 
 
 ### Buffered Stream
 Using a buffer to temporarily store a stream of data into the memory enhances the speed. Take BufferedInputStream and BufferedOutputStream classes to utilize the function.
+### Buffer
+Buffer is a portion in the memory, and the stream of data from it is collected and stored in variables. If data was stored directly into the variable, while storing an example string "ABC",
+the first stored character 'A' in the variable would be overwritten by the next 'B', and so on, so the string would contain only the last character 'C'. It is not good.
+However, the buffer instead stores each character one by one in consecutive memory locations, so that the stream of data can be converted into a single solid value.
 
 ## Character I/O Stream
 The roots of the character I/O stream classes are Reader/Writer. Because they internally process character encoding in sequence,
@@ -69,6 +73,8 @@ they are more preferable to the byte streams when inputting/outputting strings.
 File class defines a plenty of fields and methods to examine and edit files.
 
 ## RandomAccessFile
+RandomAccessFile enables to do random access in files.
+
 ### Random Access
 Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". On the other hand, "random access" (direct access) allows the computer system to read or write information anywhere in the data file, using indexing. 
 
