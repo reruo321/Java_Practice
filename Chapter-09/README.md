@@ -75,6 +75,18 @@ File class defines a plenty of fields and methods to examine and edit files.
 ## RandomAccessFile
 RandomAccessFile enables to do random access in files.
 
+        RandomAccessFile(File file, String mode)
+        RandomAccessFile(String name, String mode)
+        
+For the constructors, *file* is a reference of File, *name* is a name and directory of the file, and *mode* means 'r' for read-only, 'rw' for read and write.
+
+Because of using a file pointer, RandomAccessFile can directly access to the file. The file pointer points to the location of data I/O. The initial value of RandomAccessFile pointer is 0, and it can move via seek().
+
+        RandomAccessFile raf = new RandomAccessFile("example.txt", "r");
+        raf.seek(0);
+        raf.seek(pos);
+        raf.getFilePointer();
+
 ### Random Access
 Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". On the other hand, "random access" (direct access) allows the computer system to read or write information anywhere in the data file, using indexing. 
 
