@@ -69,6 +69,17 @@ Dependency shows a relationship that one's definition may cause changes to the o
 
 Realization is an abstraction relationship between a specification and an implementation.
 
+## File Directory
+In Intellij IDEA, if only the name of the file was specified as a parameter of file stream's methods, it tries to read the file from the root of the current project. See the directory hierarchy from the left side of the IDE to simply check it.
+
+![APPdirectory](https://user-images.githubusercontent.com/48712088/147464757-c6021619-83c1-469c-91c7-3368fea0fd7c.png)
+
+For example, in this environment, a statement
+
+    FileOutputStream fos = new FileOutputStream("example.txt");
+
+will try to open example.txt from JavaPractice folder.
+
 ## Issue
 ### ▷ Not Working Breakpoints in Intellij IDEA?
 I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
