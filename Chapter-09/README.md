@@ -91,3 +91,32 @@ Because of using a file pointer, RandomAccessFile can directly access to the fil
 Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". On the other hand, "random access" (direct access) allows the computer system to read or write information anywhere in the data file, using indexing. 
 
 While sequential access has advantages when accessing information in the same order all the time and faster than random access, random access gives easier data searching for the user.
+
+## ※ Example Explanation
+### Example 04
+The example shows how to use reader and writer, both of which have 2 bytes as a processing unit. Even if you move the offset by 1, since they process (Unicode) character by character, the writer would not be covered in weird ��� things. Then, what if it was a byte stream?
+
+For example, if a string is like this:
+
+        Hello 방가방가
+        
+A character stream "writer" will print Korean characters entirely even if some bytes for English alphabets are cut. Let's change offset of the writer of Example 04.
+
+    public class ReaderWriterTest {
+        public static void main(String [] args) throws IOException {
+            FileReader fr = new FileReader("09E04reader.txt");
+            OutputStreamWriter w = new OutputStreamWriter(System.out);
+
+            char [] ch = new char[100];
+            int n = 0;
+            while( (n = fr.read(ch, 0, 60)) != -1){   // Started to read from offset 0
+                w.write(ch, 6, n);   // BUT writer started to write from offset 6.
+            }
+            fr.close();
+            w.close();
+        }
+    }
+    
+Since all characters in "Hello " take a byte per a character, the substring takes 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown.
+
+If we use byte streams instead of character ones for this example, the output will be "��가방가" for offset 7, "�가방가" for offset 8, and "가방가" for 9. It took three offsets to pass the bad character outputs! It may be very easy to get confused when various bytes of characters are included in the string. Now we know why it is better to process characters with the readers and writers...
