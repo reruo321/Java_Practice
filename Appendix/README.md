@@ -74,7 +74,7 @@ In Intellij IDEA, if only the name of the file was specified as a parameter of f
 
 ![APPdirectory](https://user-images.githubusercontent.com/48712088/147464757-c6021619-83c1-469c-91c7-3368fea0fd7c.png)
 
-For example, in this environment, a statement
+For example, in this environment, a stream object
 
     FileOutputStream fos = new FileOutputStream("example.txt");
 
