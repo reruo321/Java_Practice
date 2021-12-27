@@ -119,6 +119,6 @@ A character stream "writer" will print Korean characters entirely even if some b
     
 Since all characters in "Hello " take a byte per a character, the substring takes 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each in UTF-8! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown.
 
-(Q: Wait, didn't you say that the character streams takes 2 bytes?! A: Well, Java can convert 3-bytes UTF-8 Korean characters into 2-bytes data and store them into a memory. It can cast the byte data to the characters with Charset class.)
+(Q: Wait, didn't you say that the character streams take 2 bytes?! A: Well, Java can convert 3-bytes UTF-8 Korean characters into 2-bytes data and store them into a memory. It can cast the byte data to the characters with Charset class.)
 
 If we use byte streams instead of character ones for this example, the output will be "��가방가" for offset 7, "�가방가" for offset 8, and "가방가" for 9. It took three offsets to pass the bad character outputs! It may be very easy to get confused when various bytes of characters are included in the string. Now we know why it is better to process characters with the readers and writers...
