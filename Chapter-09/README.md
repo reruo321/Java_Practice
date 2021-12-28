@@ -44,7 +44,7 @@ InputStream and Reader are abstract classes which are similar to each other. Whi
 ### Output Stream Class
 Output stream class provides the function to output data from the memory.
 
-OutputStream (1-byte) and Writer (2-bytes) are also resemble each other.
+OutputStream (1byte) and Writer (2bytes) are also resemble each other.
 
 | Class Name | Corresponding Class | Description |
 | :-: | :-: | :-: |
@@ -119,6 +119,10 @@ A character stream "writer" will print Korean characters entirely even if some b
     
 Since all characters in "Hello " take a byte per a character, the substring takes 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each in UTF-8! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown.
 
-(Q: Wait, didn't you say that the character streams take 2 bytes?! A: Well, Java can convert 3-bytes UTF-8 Korean characters into 2-bytes data and store them into a memory. It can cast the byte data to the characters with Charset class.)
+???: Character stream is a I/O stream for text data, processing by 2-byte (16-bit) Unicode character unit.
 
-If we use byte streams instead of character ones for this example, the output will be "��가방가" for offset 7, "�가방가" for offset 8, and "가방가" for 9. It took three offsets to pass the bad character outputs! It may be very easy to get confused when various bytes of characters are included in the string. Now we know why it is better to process characters with the readers and writers...
+Q: Wait, didn't you say that the character streams take 2 bytes?!
+
+A: Well, Java encodes all characters including 3-byte UTF-8 Korean characters with 2-byte UTF-16 BE, and stores them into the memory. It can cast the byte data to the characters with Charset class. In conclusion, every character is allocated to 16 bits in Java, and the representation of characters depends on the user's environment which tries to encode them.
+
+If we use byte streams instead of character ones for this example, the output will be "��가방가" for offset 7, "�가방가" for offset 8, and "가방가" for 9. It took totally three offsets to pass the bad character outputs! It may be very easy to get confused when various bytes of characters are included in the string. Now we know why it is better to process characters with the readers and writers...
