@@ -117,7 +117,7 @@ A character stream "writer" will print Korean characters entirely even if some b
         }
     }
     
-Since all characters in "Hello " take a byte per a character, the substring takes 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each in UTF-8! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown.
+Since all characters in "Hello " take a byte per a character, the substring takes 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each in UTF-8! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown. Meanwhile, if the writer tried to process on an offset out of read data on buffer, trash characters will be additionally shown next to the normal text. (They look like [/] for my computer.)
 
 ???: Character stream is a I/O stream for text data, processing by 2-byte (16-bit) Unicode character unit.
 
