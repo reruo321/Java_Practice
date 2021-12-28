@@ -94,13 +94,13 @@ While sequential access has advantages when accessing information in the same or
 
 ## ※ Example Explanation
 ### Example 04
-The example shows how to use reader and writer, both of which have 2 bytes as a processing unit. Even if you move the offset by 1, since they process character by character, the writer would not be covered in weird ��� things. Then, what if it was a byte stream?
+The example shows how to use reader and writer, both of which have 2 bytes as a processing unit. Then, what will happen if we move the processing offset by 1? And what if we will use a byte stream?
 
-For example, if a string is like this:
+For example, suppose that the contents of the text file look like this:
 
         Hello 방가방가
         
-A character stream "writer" will print Korean characters entirely even if some bytes for English alphabets are cut. Let's change offset of the writer of Example 04.
+Let's change the codes on Example 04 a little bit. The offset to start to process of writer has been changed from 0 to 6. 
 
     public class ReaderWriterTest {
         public static void main(String [] args) throws IOException {
@@ -116,12 +116,14 @@ A character stream "writer" will print Korean characters entirely even if some b
             w.close();
         }
     }
-    
-Since all characters in "Hello " take a byte per a character, the substring takes 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each in UTF-8! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown. Meanwhile, if the writer tried to process on an offset out of read data on buffer, trash characters will be additionally shown next to the normal text. (They look like [/] for my computer.)
+
+The bottom line is- A character stream "writer" will print Korean characters entirely even if some bytes for English alphabets and backspace are cut. Even if you move the offset by 1, since they process character by character, the writer would not be covered in weird ��� things.
+
+We have learned that ASCII characters take a byte individually, so we can assume since all characters in "Hello " take a byte per a character, the substring would take 6 bytes. The program then will print "방가방가". How about writing from offset 7? Remarkably, both of the Korean characters '방' and '가' take **3 bytes** each in UTF-8! Thankfully however, as the character stream processes by character unit, it will skip '방' wholly, and "가방가" will be shown. Meanwhile, if the writer tried to process on an offset out of read data on buffer, trash characters will be additionally shown next to the normal text. (They look like [/] for my computer.)
 
 ???: Character stream is a I/O stream for text data, processing by 2-byte (16-bit) Unicode character unit.
 
-Q: Wait, didn't you say that the character streams take 2 bytes?! Why do those 3-byte characters exist well?!
+Q: Wait, didn't you say that the processing unit of the character streams is 2 bytes?! Why just one 1-byte ASCII character was passed per an offset moving by 1? Why do those 3-byte characters exist well?!
 
 A: Well, Java encodes all characters including 1-byte UTF-8 ones which also exist in ASCII ('H', 'e', 'l', 'o', ' ', ...) and 3-byte UTF-8 Korean characters with 2-byte UTF-16 BE, and stores them into the memory. It can cast the byte data to the characters with Charset class. In conclusion, every character is allocated to 16 bits in Java, and the representation of characters on the user's monitor screen depends on the user's environment which tries to encode them.
 
