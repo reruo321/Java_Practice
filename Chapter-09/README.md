@@ -98,7 +98,7 @@ The example shows how to use reader and writer, both of which have 2 bytes as a 
 
 For example, suppose that the contents of the text file look like this:
 
-        Hello 방가방가
+    Hello 방가방가
         
 Let's change the codes on Example 04 a little bit. The offset to start to process of writer has been changed from 0 to 6. 
 
