@@ -121,8 +121,8 @@ Since all characters in "Hello " take a byte per a character, the substring take
 
 ???: Character stream is a I/O stream for text data, processing by 2-byte (16-bit) Unicode character unit.
 
-Q: Wait, didn't you say that the character streams take 2 bytes?!
+Q: Wait, didn't you say that the character streams take 2 bytes?! Why do those 3-byte characters exist well?!
 
-A: Well, Java encodes all characters including 3-byte UTF-8 Korean characters with 2-byte UTF-16 BE, and stores them into the memory. It can cast the byte data to the characters with Charset class. In conclusion, every character is allocated to 16 bits in Java, and the representation of characters depends on the user's environment which tries to encode them.
+A: Well, Java encodes all characters including 1-byte UTF-8 ones also exist in ASCII and 3-byte UTF-8 Korean characters with 2-byte UTF-16 BE, and stores them into the memory. It can cast the byte data to the characters with Charset class. In conclusion, every character is allocated to 16 bits in Java, and the representation of characters depends on the user's environment which tries to encode them.
 
 If we use byte streams instead of character ones for this example, the output will be "��가방가" for offset 7, "�가방가" for offset 8, and "가방가" for 9. It took totally three offsets to pass the bad character outputs! It may be very easy to get confused when various bytes of characters are included in the string. Now we know why it is better to process characters with the readers and writers...
