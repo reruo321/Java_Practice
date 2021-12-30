@@ -87,6 +87,8 @@ Because of using a file pointer, RandomAccessFile can directly access to the fil
         raf.seek(pos);
         raf.getFilePointer();
 
+※ IF you have used writeUTF() for String data, it is better to use readUTF() for reading it than readLine(), or you will see the prints of weird characters.
+
 ### Random Access
 Default order of reading or writing information to the file in computer system is sequential, and it is called "sequential acceess". On the other hand, "random access" (direct access) allows the computer system to read or write information anywhere in the data file, using indexing. 
 
