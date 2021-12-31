@@ -13,4 +13,16 @@ Swing is a widget toolkit to provide more enhanced GUI embodiment than AWT. It h
 3. Swing provides Look and Feel function; by using it a user can modify program's entire UI.
 4. Swing components are platform-independent and lightweight, without using Native methods.
 
-## 
+## Swing Package
+### Component
+The abstract superclass of the nonmenu-related AWT components.
+### Container
+A generic AWT container that can contain other AWT components.
+### JComponent
+The base class for all Swing components except top-level containers JFrame, JWindow, JDialog, JApplet.
+### JFrame
+An extended version of java.awt.Frame that adds support for the JFC/Swing component architecture. It can contain other components.
+### JPanel
+Generic lightweight container.
+### Other Classes
+They represent various GUI components.
