@@ -84,3 +84,20 @@ Unlike other java.awt layouts above, BoxLayout is provided by javax.swing packag
     add(new JButton("*****));
     
 ### GridBagLayout
+GridBagLayout is able to make a flexible arrangement whose components can have different size, and be freely aligned horizontally or vertically. Detailed alignment options are in GridBagConstraints class.
+#### anchor
+It determines the direction where the component smaller than its display area to be set. Default value is CENTER, and there are many options such as NORTH, NORTHEAST, NORTHWEST, EAST, etc.... However, it may be unmeaningful when the field *fill* is BOTH.
+#### fill
+It decides the size of the component, if its size is bigger than its display area. Default is NONE, which maintains its size. Meanwhile, HORIZONTAL makes its width the same as the area, VERTICAL adjusts its height, and BOTH fills the area with the component.
+#### gridwidth, gridheight
+They set the number of grids of row or column in the display area, and 1 is set as default value. Use REMAINDER to specify that the component's display area will be the last cell in the row/column, or RELATIVE to be the next to the last one in its row/column.
+#### gridx, gridy
+They set the position of the cell containing the leading edge of the component's display area. The cell on the top-left grid is gridx=0 and gridy=0. The default value RELATIVE makes the components to be added in sequence in the container's direction.
+#### insets
+insets determines the minimum distance between the component and the edges of its display area as external padding.
+#### ipadx, ipady
+ipadx and ipady are the internal paddings of the component which are added to the minimum size of the component.
+#### weightx, weighty
+These specify how to distribute extra horizontal/vertical space. Default value for them is 0, and it gathers the components to center.
+
+### CardLayout
