@@ -47,3 +47,40 @@ Swing has a **MVC(Model-View-Controller)** pattern.
 3. Controller: Take inputs from user actions (ex: clicking the button) and send messages to model and view to update themselves.
 
 ## Layout Manager
+It is a class that determines the size and position of components.
+
+    /* Example */
+    BorderLayout bl = new BorderLayout();   // 1. Create a layout manager.
+    setLayout(bl);   // 2. Set the layout manager. The parameter is LayoutManager-type object.
+    add(new JButton("OK"));   // 3. Add a component.
+    
+### FlowLayout
+FlowLayout is one of the layout managers that places each component in row order. It provides three constants LEFT, RIGHT, CENTER (default) to align the components.
+
+    setLayout(new FlowLayout());
+    add(new JButton("Hello"));
+
+### BorderLayout
+BorderLayout arranges the components in cardinal directions. (North, South, East, West + Center) Window or Frame uses this as default layout manager. It first places NSEW components then center one, considering their size and margin of the Container window.
+
+    setLayout(new BorderLayout());
+    add("North", new JButton("North"));
+    
+### GridLayout
+It sets the components on rows and columns a grid. The layout without any arguments will create a 1x1 grid.
+
+    setLayout(new GridLayout(2,2));
+    add(new JButton("Button1"));
+    add(new JButton("Button2"));
+    add(new JButton("Button3"));
+    add(new JButton("Button4"));
+    
+### BoxLayout
+Unlike other java.awt layouts above, BoxLayout is provided by javax.swing package. It stacks the components as if they are the real-life boxes. Set the constant as X_AXIS for horizontal, and Y_AXIS for vertical pile.
+
+    setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+    add(new JButton("*"));
+    add(new JButton("***"));
+    add(new JButton("*****));
+    
+### GridBagLayout
