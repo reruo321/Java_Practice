@@ -101,3 +101,4 @@ ipadx and ipady are the internal paddings of the component which are added to th
 These specify how to distribute extra horizontal/vertical space. Default value for them is 0, and it gathers the components to center.
 
 ### CardLayout
+CardLayout is a layout manager that treats each component in the container as a card. It acts like a stack of cards showing only one card at a time.
