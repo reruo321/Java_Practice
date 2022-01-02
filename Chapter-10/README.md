@@ -141,4 +141,41 @@ To check whether the event is or not, and to handle each event, Java provides **
 3. Write the event handler.
 
 ### Adapter
-Since Listener is an interface, a user might have a problem with some methods he does not even need to implement at all. To solve this, Java also has an abstract class, **Adapter**. It is very convenient to override a few methods, but it has a demerit for handling various events, because multiple inheritance is not allowed for Java classes. Moreover, not all Listeners have their Adapter versions. For these reasons, you would patronize Listener.
+Since Listener is an interface, a user might be annoyed with some methods he does not even need to implement at all. To solve this, Java also has an abstract class, **Adapter**. It is very convenient to override a few methods, but it has a demerit for handling various events, because multiple inheritance is not allowed for Java classes. Moreover, not all Listeners have their Adapter versions. For these reasons, you would patronize Listener.
+
+## Swing Components
+### JLabel
+JLabel component shows a String on graphic screen. Swing label can also express an image.
+### JButton
+JButton is the most common among GUI components, which makes actions by being clicked.
+### JCheckBox
+JCheckBox toggles the selections by clicking the mouse.
+### JRadioButton
+It can toggle the selections like checkbox, but only one button is checked at a time if it is used with ButtonGroup.
+
+### Menu
+#### JMenu
+JMenu contains some parts such as menu bar and items.
+#### JPopupMenu
+It is hidden in usual, but pops up when right-clicking the mouse.
+
+### Text Components
+#### JTextField
+A TextField gets just a line input by the screen.
+#### JTextArea
+It can get many line inputs by the screen.
+
+### JList
+JList shows a list of items, and lets a user to choose one or more of them.
+### JComboBox
+It is the component that combines a button or editable field and a drop-down list. A user can select a value from the list. If JComboBox is editable, he can type the value freely.
+### JSpinner
+JSpinner is similar to JComboBox, but it allows users to select a wanted value with his mouse and keyboard, instead of using drop-down list. Typing is also okay.
+### JScrollPane
+This provides scrollable view of a lightweight component. It manages a viewport and optional horizontal & vertical bars.
+### JTable
+JTable enables a user to output data and edit them on the 2D table, with rows and columns.
+
+Do not forget to attach created JTable to JScrollPane, or it might not be displayed properly!
+### JTabbedPane
+A JTabbedPane can change the component group, when its tabs with specific titles or icons are clicked.
