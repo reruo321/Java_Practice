@@ -133,4 +133,12 @@ You can call KeyEvent by getting your hands on/off a key.
 #### 6. InputEvent
 InputEvent is an abstract class derived from Component. It has KeyEvent and MouseEvent as its children, and it provides several constants for them.
 
-### Event Handling with Listener Interface
+### Listener
+To check whether the event is or not, and to handle each event, Java provides **Listener** interface. A event handler can implement it to satisfy user needs, and has the name with ~Listener, instead of ~Event.
+
+1. Select the type of the event, and write a class for handling this, implementing Listener.
+2. Add the listener to the component making the event. For example, try button.addActionListener(this); for ActionListener.
+3. Write the event handler.
+
+### Adapter
+Since Listener is an interface, a user might have a problem with some methods he does not even need to implement at all. To solve this, Java also has an abstract class, **Adapter**. It is very convenient to override a few methods, but it has a demerit for handling various events, because multiple inheritance is not allowed for Java classes. Moreover, not all Listeners have their Adapter versions. For these reasons, you would patronize Listener.
