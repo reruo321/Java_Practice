@@ -42,9 +42,9 @@ Swing has a **MVC(Model-View-Controller)** pattern.
 ![10MVC](https://user-images.githubusercontent.com/48712088/147849770-58b3baa0-2684-4502-9f7f-7f77492cd8c8.png)
 
 ### Example
-1. Model: Encapsulates the state of button components, such as ON/OFF state of them and the contents on them.
-2. View: Shows the ON/OFF forms of buttons, and text of them.
-3. Controller: Take inputs from user actions (ex: clicking the button) and send messages to model and view to update themselves.
+* Model: Encapsulates the state of button components, such as ON/OFF state of them and the contents on them.
+* View: Shows the ON/OFF forms of buttons, and text of them.
+* Controller: Take inputs from user actions (ex: clicking the button) and send messages to model and view to update themselves.
 
 ## Layout Manager
 It is a class that determines the size and position of components.
@@ -102,3 +102,14 @@ These specify how to distribute extra horizontal/vertical space. Default value f
 
 ### CardLayout
 CardLayout is a layout manager that treats each component in the container as a card. It acts like a stack of cards showing only one card at a time.
+
+* add(): Adds a component. It is from java.awt.Component.
+* show(): Flips to the component. The second parameter gets the String name of the component.
+* first(), last(), previous(), next(): Flips the first/last/previous/next card.
+
+## Event Handling
+A Significant change in state, such as user actions like typing a keyboard or clicking a mouse, is called **event**. Event-driven programming makes the program to do proper reaction to events. Java supports this, and it represents all user actions into Event class. Component class has methods to handle the events, which can be overridden with new contents by user's customization.
+
+**processEvent()** is the most important method among the event-handling methods, which is automatically called when the event arises. It may be convenient to handle all events with it, but it is better to declare individual event handlers than overgrowing just one method.
+
+### Type of Events
