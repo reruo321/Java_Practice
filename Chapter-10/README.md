@@ -112,4 +112,25 @@ A Significant change in state, such as user actions like typing a keyboard or cl
 
 **processEvent()** is the most important method among the event-handling methods, which is automatically called when the event arises. It may be convenient to handle all events with it, but it is better to declare individual event handlers than overgrowing just one method.
 
-### Type of Events
+### Types of Events
+Java provides classes according to the types of events.
+#### AWT Events
+The official documentation for java.awt.event is [here](https://docs.oracle.com/javase/8/docs/api/java/awt/event/package-summary.html).
+#### Swing Events
+While Swing components can fire AWT events, they also use special events for Swing. See [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/event/package-summary.html) for details.
+
+### Frequently Used Events
+#### 1. ActionEvent
+When a button is pushed, an item from menu or list is selected, or enter key is pushed on a text field, ActionEvent arises.
+#### 2. ItemEvent
+ItemEvent pops up if you check/uncheck a radiobutton, a checkbox, a menu item, or a list item.
+#### 3. WindowEvent
+If a window size is changed, a window is opened or closed, activated, or becomed an icon, WindowEvent happens.
+#### 4. MouseEvent
+MouseEvent is emitted when a mouse button is clicked or a mouse is moved.
+#### 5. KeyEvent
+You can call KeyEvent by getting your hands on/off a key.
+#### 6. InputEvent
+InputEvent is an abstract class derived from Component. It has KeyEvent and MouseEvent as its children, and it provides several constants for them.
+
+### Event Handling with Listener Interface
