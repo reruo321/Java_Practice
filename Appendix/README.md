@@ -113,3 +113,34 @@ Therefore, as the newline is handed to nextLine(), the next input takes only the
     int intInput = Integer.parseInt(scan.nextLine());   // OR parse integer from the String input.
     String strInput = scan.nextLine();
     
+### ▷ Not Displayed Korean Text on AWT?
+It is better to utilize Swing for overcome this issue, but IF you need to fix it on AWT, try these out.
+
+1. This is the most possible solution for \*Koreans\*. Put this into "VM options" on "Edit Configurations".
+
+    -Dfile.encoding=MS949
+    
+Explanation: Try to run this code.
+
+    System.out.println(System.getProperty("file.encoding"));
+
+In my case, I notified it was UTF-8.
+
+There are Java system properties that can be an argument of System.getProperty(), (Check [here](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html) for more information.) and you can use them to know system information. Wait, THERE IS NO "file.encoding"! - Actually, this is the defined property as **VM arguments** of JVM, which change the behavior of the VM. They have "-D" in front of the property.
+
+    -Dfile.encoding=UTF-8
+
+The JVM would had have this argument. Therefore, configuring it to "-Dfile.encoding=MS949" makes the encoding of the JVM to MS949, instead of UTF-8. 
+
+MS949 is the Microsoft Windows code page for the Korean language, and it extends EUC-KR.
+
+2. Change the font of AWT. You can use canDisplayUpTo(String str) from java.awt.Font to verify the acceptance of it. If it returns -1, all characters in the string are printable with the font.
+
+You can also use the method to find all fonts able to print your string like this:
+
+    String str = "BLAHBLAH한글";
+    Font[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
+    for(Font f : fonts)
+      if(f.canDisplayUpTo(str) < 0)
+        System.out.println(f.getName());
+        
