@@ -113,10 +113,12 @@ Therefore, as the newline is handed to nextLine(), the next input takes only the
     int intInput = Integer.parseInt(scan.nextLine());   // OR parse integer from the String input.
     String strInput = scan.nextLine();
     
-### ▷ Not Displayed Korean Text on AWT?
-It is better to utilize Swing for overcome this issue, but IF you need to fix it on AWT, try these out.
+### ▷ Not Displayed Text on AWT?
+It is better to utilize Swing to avoid this issue, but IF you need to fix it on AWT, try these out.
 
-1. This is the most possible solution for \*Koreans\*. Put this into "VM options" on "Edit Configurations".
+1. This is the most possible solution for \*Korean\* guys. Change the encoding of the VM or the IDE.
+
+a) (Recommended) Put this into "VM options" on "Edit Configurations". If there's no VM options, click Modify options > Add VM options. 
 
     -Dfile.encoding=MS949
     
@@ -132,7 +134,11 @@ There are Java system properties that can be an argument of System.getProperty()
 
 The JVM would had have this argument. Therefore, configuring it to "-Dfile.encoding=MS949" makes the encoding of the JVM to MS949, instead of UTF-8. 
 
-MS949 is the Microsoft Windows code page for the Korean language, and it extends EUC-KR.
+b) Change the encoding setting of IDE. For Intellij IDEA, Go File > Settings > File Encodings.
+
+My IDE was using UTF-8 as Global Encoding, but x-windows-949 (MS949) as Project Encoding. Between these, my System Default one is x-windows-949, so adjusting global encoding to it worked. However, I prefer the first solution to this, since the file encoding would make existing project files very annoying to see...
+
+※ MS949 is the Microsoft Windows code page for the Korean language, and it extends EUC-KR. It is often used as default in Korean Windows.
 
 2. Change the font of AWT. You can use canDisplayUpTo(String str) from java.awt.Font to verify the acceptance of it. If it returns -1, all characters in the string are printable with the font.
 
@@ -144,3 +150,5 @@ You can also use the method to find all fonts able to print your string like thi
       if(f.canDisplayUpTo(str) < 0)
         System.out.println(f.getName());
         
+### ▷ error: unmappable character for encoding x-windows-949
+Change the encoding setting of IDE. For Intellij IDEA, Go File > Settings > File Encodings, and change both Global Encoding and Project Encoding to UTF-8.
