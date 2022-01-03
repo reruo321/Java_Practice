@@ -136,7 +136,7 @@ The JVM would had have this argument. Therefore, configuring it to "-Dfile.encod
 
 b) Change the encoding setting of IDE. For Intellij IDEA, Go File > Settings > File Encodings.
 
-My IDE was using UTF-8 as Global Encoding, but x-windows-949 (MS949) as Project Encoding. Between these, my System Default one is x-windows-949, so adjusting global encoding to it worked. However, I prefer the first solution to this, since the file encoding would make existing project files very annoying to see...
+My IDE was using UTF-8 as Global Encoding, but x-windows-949 (MS949) as Project Encoding. Between these, my System Default one is x-windows-949, so adjusting global encoding to it worked. However, I prefer the first solution to this, since the file encoding would make other existing project files very annoying to see...
 
 ※ MS949 is the Microsoft Windows code page for the Korean language, and it extends EUC-KR. It is often used as default in Korean Windows.
 
