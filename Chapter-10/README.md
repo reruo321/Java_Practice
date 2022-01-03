@@ -179,3 +179,22 @@ JTable enables a user to output data and edit them on the 2D table, with rows an
 Do not forget to attach created JTable to JScrollPane, or it might not be displayed properly!
 ### JTabbedPane
 A JTabbedPane can change the component group, when its tabs with specific titles or icons are clicked.
+
+### Border
+Most of Swing components are easy to add or change their border. Use setBorder() method derived from JComponent to determine the shape of it. If you need additional one, you can implement interface Border by yourself.
+
+### LookAndFeel
+Using UIManager class, you can implement an appropriate LookAndFeel, which represents literally look and feel. (Skin in short!)
+
+Use methods in UIManager to get objects, and set your custom LookAndFeel with setLookAndFeel().
+
+        static String getCrossPlatformLookAndFeelClassName()   // Java LookAndFeel
+        static String getSystemLookAndFeelClassName()   // Native System LookAndFeel
+        
+These examples can be an argument for setLookAndFeel().
+        
+        "com.sum.java.swing.plaf.motif.MotifLookAndFeel"   // Motif LookAndFeel
+        "javax.swing.plaf.metal.MetalLookAndFeel"   // Java LookAndFeel
+        "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"   // Windows OS LookAndFeel
+        
+Call updateComponentTreeUI() from SwingUtilities class, and you can apply your LookAndFeel to UI.
