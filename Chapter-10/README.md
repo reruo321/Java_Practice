@@ -5,6 +5,9 @@ AWT(Abstract Window Toolkit) is a package of components for programming GUI prog
 It provides various things as default, including components such as menu, button, list, checkbox, and text area, and also containers for them like window and panel.
 There are classes to edit the font or color of components, or to process events for them.
 
+![10AWT](https://user-images.githubusercontent.com/48712088/148050268-f9c150aa-53b5-419f-a005-4bc15682baeb.png)
+This example shows some components from AWT.
+
 ## Swing
 Swing is a widget toolkit to provide more enhanced GUI embodiment than AWT. It has Swing components most of which are similar to those of AWT.
 
