@@ -19,6 +19,20 @@ Swing is a widget toolkit to provide more enhanced GUI embodiment than AWT. It h
 ## Swing Package
 ### Component
 The abstract superclass of the nonmenu-related AWT components.
+
+* void setVisible(boolean b): Sets the component to be visible/invisible.
+* void setFont(Font f): Sets the font of the component.
+* void setForeground(Color c): Sets the foreground color of the component.
+* void setBackground(Color c): Sets the background color of the component.
+* void setSize(int width, int height): Sets the size of the component.
+* void setEnabled(boolean n): Sets the component to be enabled/disabled.
+* void setLocation(int x, int y): Sets the location of the component.
+* Color getForeground(): Returns the foreground color of the component.
+* Dimension getSize(): Returns the size of the component.
+* String getName(): Returns the name of the component.
+* void paint(Graphics g): Invoked by Swing to draw components. This should not be called by user directly. Instead, if the component shows for the first time, if the component had shadowed by other windows and then appears again, or if the user calls repaint() directly, it is called.
+* void repaint(): Requests to draw components again.
+* void update(Graphics g): Called by the request of repaint(). Erases the current components, and calls paint().
 ### Container
 A generic AWT container that can contain other AWT components.
 ### JComponent
