@@ -56,9 +56,11 @@ An extended version of java.awt.Frame that adds support for the JFC/Swing compon
 ![10JFrame](https://user-images.githubusercontent.com/48712088/148080604-ea1fa1cf-a599-4797-be31-a5ca7d7ea9b5.png)
 
 #### Root Pane
-- Glass pane: Hidden by default. If it becomes visible, it blocks all input events from reaching the components in the content pane like a sheet of glass. It is useful when you catch events or paint over an area that already contains one or more components.
-- Layered pane: 
-- Content pane
+In general, you don't need to create a JRootPane directly. When you create an JFrame object, you also get it automatically. [(The official tutorial)](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+
+- Glass pane: Hidden by default. If it becomes visible, it detects but blocks all input events from reaching the components in the content pane like a sheet of glass. It is useful when you catch events or paint over an area that already contains one or more components.
+- Layered pane: Container with depth enables to overlap on top of the other. There are also certain depths are defined to be used for specific functions: FRAME_CONTENT_LAYER(-30000), DEFAULT_LAYER(0), PALETTE_LAYER(100), MODAL_LAYER(200), POPUP_LAYER(300), DRAG_LAYER(400).
+- Content pane: 
 - Optional menu bar
 
 ### JPanel
