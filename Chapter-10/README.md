@@ -31,16 +31,41 @@ The abstract superclass of the nonmenu-related AWT components.
 * Dimension getSize(): Returns the size of the component.
 * String getName(): Returns the name of the component.
 * void paint(Graphics g): Invoked by Swing to draw components. This should not be called by user directly. Instead, if the component shows for the first time, if the component had shadowed by other windows and then appears again, or if the user calls repaint() directly, it is called.
-* void repaint(): Requests to draw components again.
-* void update(Graphics g): Called by the request of repaint(). Erases the current components, and calls paint().
+* void repaint(): Requests to draw components again, connecting the process between update() and paint(). While paint() is for the system thread, this is for the application thread.
+* void update(Graphics g): Called by the request of repaint(). It erases the current components, and then calls paint().
 ### Container
 A generic AWT container that can contain other AWT components.
+
+* void setLayout(LayoutManager lay): Sets the LayoutManager of the container.
+* Component add(Component comp): Adds the component at the end of the container.
+* void remove(Component comp): Removes the component from the container.
+* Component [] getComponents(): Returns all the components in the container.
 ### JComponent
 The base class for all Swing components except top-level containers JFrame, JWindow, JDialog, JApplet.
+
+* void setBorder(Border b): Sets the border of the component.
+* void setPreferredSize(Dimension preSize): Sets the size of the component.
+* void setToolTipText(String t): Sets the tooltip for the component.
 ### JFrame
 An extended version of java.awt.Frame that adds support for the JFC/Swing component architecture. It can contain other components.
+
+* JFrame(): Creates a JFrame, with BorderLayout as its default LayoutManager.
+* Container getContentPane(): Returns the ContentPane of the frame.
+* void setDefaultCloseOperation(int op): Sets the default operation when the frame is closed. The operation constants are: EXIT_ON_CLOSE, DO_NOTHING_ON_CLOSE, HIDE_ON_CLOSE, DISPOSE_ON_CLOSE.
+
+![10JFrame](https://user-images.githubusercontent.com/48712088/148080604-ea1fa1cf-a599-4797-be31-a5ca7d7ea9b5.png)
+
+#### Root Pane
+- Glass pane: Hidden by default. If it becomes visible, it blocks all input events from reaching the components in the content pane like a sheet of glass. It is useful when you catch events or paint over an area that already contains one or more components.
+- Layered pane: 
+- Content pane
+- Optional menu bar
+
 ### JPanel
 Generic lightweight container.
+
+* JPanel(): Creates a JPanel, with FlowLayout as its default LayoutManager.
+* JPanel(LayoutManager lay): Creates a JPanel, with the specified LayoutManager.
 #### ※ JFrame vs JPanel
 | | JFrame | JPanel |
 |:-:| :----: | :----: |
