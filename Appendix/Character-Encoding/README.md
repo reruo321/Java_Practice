@@ -12,11 +12,14 @@ The last ASCII code 0x7F, "delete"(DEL), is included here, although it is far fr
 ### Printable Characters
 ASCII codes 20 (32) to 7E (126) in hex are printable characters.
 
+## Unicode
+Unicode is an information technology standard for the consistent encoding, representation, and handling of text expressed in most of the world's writing systems. The Unicode standard defines UTF and several other encodings.
+
 ## UTF
 UTF, Unicode Transformation Format, is one of the two mapping methods for Unicode. The last number of the name shows how many bits are used as a unit per code point.
 
 ### UTF-8
-UTF-8 uses 1~4 bytes for each code point, and it maximizes compatibility with ASCII.
+UTF-8 uses 1~4 bytes for each code point, and it maximizes compatibility with ASCII. It is the dominant encoding on the WWW.
 
 ## Extended Unix Code
 Extended Unix Code (EUC) is a multibyte character encoding system used primarily for East Asian users, such as Korean, Japanese, and simplified Chinese.
