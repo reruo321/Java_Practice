@@ -98,7 +98,7 @@ It is a class that determines the size and position of components.
     setLayout(bl);   // 2. Set the layout manager. The parameter is LayoutManager-type object.
     add(new JButton("OK"));   // 3. Add a component.
 
-This is the example figure of five layout managers.
+This is the full example figure of five layout managers from Example 02.
 
 ![10Layout](https://user-images.githubusercontent.com/48712088/148222970-a350b263-b122-4836-a9ce-75ef673e122a.png)
 
