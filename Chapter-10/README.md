@@ -164,6 +164,13 @@ These specify how to distribute extra horizontal/vertical space. Default value f
 ### CardLayout
 CardLayout is a layout manager that treats each component in the container as a card. It acts like a stack of cards showing only one card at a time.
 
+Create multiple JPanels with their components. It may need a card panel with several cards, (We can use JButtons as card components!) a main panel for holding the cards, and others containing miscellaneous components. (such as some functional JButtons to turn up the cards)
+After that, put all of them to the content pane of the frame.
+
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(mainPanel, BorderLayout.CENTER);
+        ...
+
 * add(): Adds a component. It is from java.awt.Component.
 * show(): Flips to the component. The second parameter gets the String name of the component.
 * first(), last(), previous(), next(): Flips the first/last/previous/next card.
