@@ -60,8 +60,8 @@ In general, you don't need to create a JRootPane directly. When you create an JF
 
 - Glass pane: Hidden by default. If it becomes visible, it detects but blocks all input events from reaching the components in the content pane like a sheet of glass. It is useful when you catch events or paint over an area that already contains one or more components.
 - Layered pane: Container with depth enables to overlap on top of the other. There are also certain depths are defined to be used for specific functions: FRAME_CONTENT_LAYER(-30000), DEFAULT_LAYER(0), PALETTE_LAYER(100), MODAL_LAYER(200), POPUP_LAYER(300), DRAG_LAYER(400).
-- Content pane: 
-- Optional menu bar
+- Content pane: The container of the root pane's visible components, excluding the menu bar.
+- Optional menu bar: The home for the root pane's container's menus.
 
 ### JPanel
 Generic lightweight container.
