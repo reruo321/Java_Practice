@@ -97,7 +97,11 @@ It is a class that determines the size and position of components.
     BorderLayout bl = new BorderLayout();   // 1. Create a layout manager.
     setLayout(bl);   // 2. Set the layout manager. The parameter is LayoutManager-type object.
     add(new JButton("OK"));   // 3. Add a component.
-    
+
+This is the example figure of five layout managers.
+
+![10Layout](https://user-images.githubusercontent.com/48712088/148222970-a350b263-b122-4836-a9ce-75ef673e122a.png)
+
 ### FlowLayout
 FlowLayout is one of the layout managers that places each component in row order. It provides three constants LEFT, RIGHT, CENTER (default) to align the components.
 
@@ -135,6 +139,19 @@ It determines the direction where the component smaller than its display area to
 It decides the size of the component, if its size is bigger than its display area. Default is NONE, which maintains its size. Meanwhile, HORIZONTAL makes its width the same as the area, VERTICAL adjusts its height, and BOTH fills the area with the component.
 #### gridwidth, gridheight
 They set the number of grids of row or column in the display area, and 1 is set as default value. Use REMAINDER to specify that the component's display area will be the last cell in the row/column, or RELATIVE to be the next to the last one in its row/column.
+
+Suppose that there are four JButtons b1, b2, b3, and b4 in a GridBagLayout. If our program is like this, (See more on Example 02.)
+
+        GridBagLayout gb = new GridBagLayout();
+        GridBagConstraints gc = new GridBagConstraints();
+        JButton b1...
+        add...
+        gc.gridwidth = GridBagConstraints.REMAINDER;
+        gb.setConstraints(b3, gc);
+        gb.setConstraints(b4, gc);
+        
+It means that b3 and b4 would be the last cell of each horizontal grid.
+
 #### gridx, gridy
 They set the position of the cell containing the leading edge of the component's display area. The cell on the top-left grid is gridx=0 and gridy=0. The default value RELATIVE makes the components to be added in sequence in the container's direction.
 #### insets
