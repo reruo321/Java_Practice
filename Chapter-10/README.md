@@ -186,6 +186,7 @@ Java provides classes according to the types of events.
 The official documentation for java.awt.event is [here](https://docs.oracle.com/javase/8/docs/api/java/awt/event/package-summary.html).
 
 | Event | Description |
+| :-: | :-: |
 | ActionEvent | Actions (click, enter, ...) on a component. |
 | AdjustmentEvent | Events by Adjustable objects. (ex: Scrollbar) |
 | ComponentEvent | When a component is moved, its size or visibility is changed. |
@@ -193,7 +194,13 @@ The official documentation for java.awt.event is [here](https://docs.oracle.com/
 | FocusEvent | If a component gets/loses focus. |
 | InputEvent | Input events on component level. |
 | InternalFrameEvent | Adds support for JInternalFrame objects as the event source. |
-| ItemEvent | 
+| ItemEvent | Indicates selection or cancellation on an item. |
+| KeyEvent | Key press on a component. |
+| MenuDragMouseEvent | Mouse drags on menu items. |
+| MenuKeyEvent | Key pressed on menu items. |
+| MouseEvent | Mouse action on a component. |
+| TextEvent | Text of the text object is edited. |
+| WindowEvent | Window status has been changed. |
 
 #### Swing Events
 While Swing components can fire AWT events, they also use special events for Swing. See [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/event/package-summary.html) for details.
