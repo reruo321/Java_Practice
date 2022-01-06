@@ -193,7 +193,6 @@ The official documentation for java.awt.event is [here](https://docs.oracle.com/
 | ContainerEvent | When contents of container has changed by component adding or removing. |
 | FocusEvent | If a component gets/loses focus. |
 | InputEvent | Input events on component level. |
-| InternalFrameEvent | Adds support for JInternalFrame objects as the event source. |
 | ItemEvent | Indicates selection or cancellation on an item. |
 | KeyEvent | Key press on a component. |
 | MenuDragMouseEvent | Mouse drags on menu items. |
@@ -203,7 +202,36 @@ The official documentation for java.awt.event is [here](https://docs.oracle.com/
 | WindowEvent | Window status has been changed. |
 
 #### Swing Events
-While Swing components can fire AWT events, they also use special events for Swing. See [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/event/package-summary.html) for details.
+While Swing components can fire AWT events, they also invoke special events for Swing. See [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/event/package-summary.html) for details.
+
+| Event | Description |
+| :-: | :-: |
+| CaretEvent | Indicates a change on caret of text objects. |
+| ChangeEvent | Component statue has been changed. |
+| DocumentEvent | Change on documents. |
+| HyperlinkEvent | Events on hyperlink. |
+| InternalFrameEvent | Adds support for JInternalFrame objects as the event source. |
+| ListDataEvent | Events on modifying a list. |
+| ListSelectionEvent | Changes on list selection area. |
+| MenuEvent | Menu actions like selection or deletion. |
+| PopupMenuEvent | Events on pop-up menu. |
+| TableColumnModelEvent | Events on table column model changes. |
+| TreeSelectionEvent | Events on tree selection changes. |
+
+※ Caret: Insertion-point cursor on text area. It looks like 'I' or '|'.
+
+※ Table Column Model: All the attributes of a column in a JTable. You can see a lot of database tables in this model...
+
+| Animal | Leg | canFly |
+| :-: | :-: | :-: |
+| Dog | 4 | |
+| Cat | 4 | |
+| Parrot | 2 | V |
+| Bee | 6 | V |
+
+The above is simple form of table column model.
+
+※ Tree Selection: Shows the current state of the selection for the tree component. File explorer to represent directory hierarchy is the example for this.
 
 ### Frequently Used Events
 #### 1. ActionEvent
