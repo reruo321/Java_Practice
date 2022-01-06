@@ -184,6 +184,17 @@ A Significant change in state, such as user actions like typing a keyboard or cl
 Java provides classes according to the types of events.
 #### AWT Events
 The official documentation for java.awt.event is [here](https://docs.oracle.com/javase/8/docs/api/java/awt/event/package-summary.html).
+
+| Event | Description |
+| ActionEvent | Actions (click, enter, ...) on a component. |
+| AdjustmentEvent | Events by Adjustable objects. (ex: Scrollbar) |
+| ComponentEvent | When a component is moved, its size or visibility is changed. |
+| ContainerEvent | When contents of container has changed by component adding or removing. |
+| FocusEvent | If a component gets/loses focus. |
+| InputEvent | Input events on component level. |
+| InternalFrameEvent | Adds support for JInternalFrame objects as the event source. |
+| ItemEvent | 
+
 #### Swing Events
 While Swing components can fire AWT events, they also use special events for Swing. See [here](https://docs.oracle.com/javase/8/docs/api/javax/swing/event/package-summary.html) for details.
 
