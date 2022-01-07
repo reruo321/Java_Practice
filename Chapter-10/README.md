@@ -265,11 +265,24 @@ JButton is the most common among GUI components, which makes actions by being cl
 ### JCheckBox
 JCheckBox toggles the selections by clicking the mouse.
 ### JRadioButton
-It can toggle the selections like checkbox, but only one button is checked at a time if it is used with ButtonGroup.
+It can toggle the selections like checkbox, but only one button is checked at a time in the same ButtonGroup.
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(radio1);
+        group.add(radio2);
+
+Group the JRadioButtons, or multiple selections can be checked simultaneously.
 
 ### Menu
 #### JMenu
 JMenu contains some parts such as menu bar and items.
+
+        menu.add(item1);
+        menubar.add(menu);
+        this.setJMenuBar(menubar);
+
+ Add items to the menu, menus to the menu bar, and set the menu bar to the frame.
+
 #### JPopupMenu
 It is hidden in usual, but pops up when right-clicking the mouse.
 
