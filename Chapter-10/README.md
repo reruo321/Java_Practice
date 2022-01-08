@@ -162,6 +162,8 @@ ipadx and ipady are the internal paddings of the component which are added to th
 These specify how to distribute extra horizontal/vertical space. Default value for them is 0, and it gathers the components to center.
 
 ### CardLayout
+![10Card](https://user-images.githubusercontent.com/48712088/148646311-da7bb00f-3d0e-488e-b94d-0d4be59de387.png)
+
 CardLayout is a layout manager that treats each component in the container as a card. It acts like a stack of cards showing only one card at a time.
 
 Create multiple JPanels with their components. It may need a card panel with several cards, (We can use JButtons as card components!) a main panel for holding the cards, and others containing miscellaneous components. (such as some functional JButtons to turn up the cards)
