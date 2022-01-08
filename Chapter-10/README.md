@@ -265,6 +265,8 @@ JButton is the most common among GUI components, which makes actions by being cl
 ### JCheckBox
 JCheckBox toggles the selections by clicking the mouse.
 ### JRadioButton
+![10Radio](https://user-images.githubusercontent.com/48712088/148642766-fa649227-5f43-40d1-9aba-baa46543d369.png)
+
 It can toggle the selections like checkbox, but only one button is checked at a time in the same ButtonGroup.
 
         ButtonGroup group = new ButtonGroup();
@@ -275,6 +277,8 @@ Group the JRadioButtons, or multiple selections can be checked simultaneously.
 
 ### Menu
 #### JMenu
+![10JMenu](https://user-images.githubusercontent.com/48712088/148643025-8d487fee-b971-4d45-a999-1a9e427387c8.png)
+
 JMenu contains some parts such as menu bar and items.
 
         menu.add(item1);
@@ -284,16 +288,32 @@ JMenu contains some parts such as menu bar and items.
  Add items to the menu, menus to the menu bar, and set the menu bar to the frame.
 
 #### JPopupMenu
-It is hidden in usual, but pops up when right-clicking the mouse.
+![10JPopup](https://user-images.githubusercontent.com/48712088/148643032-81c273b3-489f-4936-8d4c-07fdad144c79.png)
+
+It is the menu hidden in usual, but pops up when right-clicking the mouse.
 
 ### Text Components
 #### JTextField
+![10JTField](https://user-images.githubusercontent.com/48712088/148643404-163bf471-edd0-4617-995c-e305183e7d85.png)
+
 A TextField gets just a line input by the screen.
 #### JTextArea
+![10JTArea](https://user-images.githubusercontent.com/48712088/148643407-176314b3-e6c0-439a-a593-54df62ce5aa4.png)
+
 It can get many line inputs by the screen.
 
 ### JList
+![10JList](https://user-images.githubusercontent.com/48712088/148643426-91c7c74f-83e2-4030-bbbf-bede1054f3c6.png)
+
 JList shows a list of items, and lets a user to choose one or more of them.
+#### Selection Mode
+![10Selection](https://user-images.githubusercontent.com/48712088/148643833-613d8b45-dfd7-4a92-befa-b039ca9a8322.png)
+
+There are three types of selection mode for items in the JList, and you can choose one of them.
+
+        JList<Object> list = new JList<>(data);
+        list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+
 ### JComboBox
 It is the component that combines a button or editable field and a drop-down list. A user can select a value from the list. If JComboBox is editable, he can type the value freely.
 ### JSpinner
