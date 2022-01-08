@@ -339,6 +339,8 @@ This provides scrollable view of a lightweight component. It manages a viewport 
 
 JTable enables a user to output data and edit them on the 2D table, with rows and columns.
 
+    JScrollPane scroll = new JScrollPane(table);
+
 Do not forget to attach created JTable to JScrollPane, or it might not be displayed properly!
 ### JTabbedPane
 ![10JTabbed](https://user-images.githubusercontent.com/48712088/148645981-eeabf958-7c96-48ea-a3e2-0736e905dba3.png)
