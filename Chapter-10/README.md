@@ -315,19 +315,31 @@ There are three types of selection mode for items in the JList, and you can choo
         list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 ### JComboBox
+![10JCombo](https://user-images.githubusercontent.com/48712088/148645948-fecfa010-95b2-4775-b61c-31e040de86a8.png)
+
 It is the component that combines a button or editable field and a drop-down list. A user can select a value from the list. If JComboBox is editable, he can type the value freely.
 ### JSpinner
+![10JSpinner](https://user-images.githubusercontent.com/48712088/148645958-6da604c3-255f-4561-97c1-64a1d2503e76.png)
+
 JSpinner is similar to JComboBox, but it allows users to select a wanted value with his mouse and keyboard, instead of using drop-down list. Typing is also okay.
 ### JScrollPane
+![10JScroll](https://user-images.githubusercontent.com/48712088/148645959-2b54d708-a41f-4920-8b5d-45b4a316b88d.png)
+
 This provides scrollable view of a lightweight component. It manages a viewport and optional horizontal & vertical bars.
 ### JTable
+![10Table](https://user-images.githubusercontent.com/48712088/148645968-281bf170-6dcc-4e4c-8a23-100835c90b0e.png)
+
 JTable enables a user to output data and edit them on the 2D table, with rows and columns.
 
 Do not forget to attach created JTable to JScrollPane, or it might not be displayed properly!
 ### JTabbedPane
+![10JTabbed](https://user-images.githubusercontent.com/48712088/148645981-eeabf958-7c96-48ea-a3e2-0736e905dba3.png)
+
 A JTabbedPane can change the component group, when its tabs with specific titles or icons are clicked.
 
 ### Border
+![10Border](https://user-images.githubusercontent.com/48712088/148645986-77d93bc1-8dfe-4d33-bc01-f78c08de1280.png)
+
 Most of Swing components are easy to add or change their border. Use setBorder() method derived from JComponent to determine the shape of it. If you need additional one, you can implement interface Border by yourself.
 
 ### LookAndFeel
