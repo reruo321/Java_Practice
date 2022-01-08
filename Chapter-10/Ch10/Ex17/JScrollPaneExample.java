@@ -1,7 +1,6 @@
 package Ch10.Ex17;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class JScrollPaneExample extends JFrame {
     public JScrollPaneExample(){
