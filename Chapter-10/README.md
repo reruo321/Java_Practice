@@ -259,10 +259,16 @@ Since Listener is an interface, a user might be annoyed with some methods he doe
 
 ## Swing Components
 ### JLabel
+![10JLabel](https://user-images.githubusercontent.com/48712088/148646213-03113973-a332-4f77-b037-f9508afbc4f7.png)
+
 JLabel component shows a String on graphic screen. Swing label can also express an image.
 ### JButton
+![10JButton](https://user-images.githubusercontent.com/48712088/148646193-3bbca6f8-26a6-44c5-b249-526fc2ccf049.png)
+
 JButton is the most common among GUI components, which makes actions by being clicked.
 ### JCheckBox
+![10JCheck](https://user-images.githubusercontent.com/48712088/148646194-ac1ed81f-3b0e-42a0-812d-ca9f289f73d8.png)
+
 JCheckBox toggles the selections by clicking the mouse.
 ### JRadioButton
 ![10Radio](https://user-images.githubusercontent.com/48712088/148642766-fa649227-5f43-40d1-9aba-baa46543d369.png)
