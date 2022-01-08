@@ -1,7 +1,6 @@
 package Ch10.Ex18;
 
 import javax.swing.*;
-import javax.swing.table.JTableHeader;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -11,7 +10,6 @@ public class TableUseExample extends JFrame implements MouseListener {
     public TableUseExample(){
         super("TableUse Demo");
         String [] attributes = {"이름", "나이", "직업"};
-        JTableHeader header = new JTableHeader();
         table = new JTable(data, attributes);
         JScrollPane scroll = new JScrollPane(table);   // Warning: Cover the table with JScrollPane, or it may not be properly displayed!!!
         add(scroll);
