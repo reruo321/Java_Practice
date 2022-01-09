@@ -373,4 +373,4 @@ Make use of JPanels to beautify your GUI alignment!
 
 ![10Panel](https://user-images.githubusercontent.com/48712088/148692718-c044232d-cdd3-48fc-a697-c485fd1f1167.png)
 
-The boxes with red, blue, and green borders are JPanels, and especially the blue one contains two sub-panels for ID and password components.
+The boxes with red, blue, and green borders are JPanels, and especially the blue one contains two sub-panels for ID and password components. I used BorderLayout as main, and each panel gets red-NORTH, blue-CENTER, and green-SOUTH region.
