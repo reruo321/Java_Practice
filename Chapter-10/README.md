@@ -353,7 +353,7 @@ A JTabbedPane can change the component group, when its tabs with specific titles
 Most of Swing components are easy to add or change their border. Use setBorder() method derived from JComponent to determine the shape of it. If you need additional one, you can implement interface Border by yourself.
 
 ### LookAndFeel
-Using UIManager class, you can implement an appropriate LookAndFeel, which represents literally look and feel. (Skin in short!)
+Using UIManager class, you can implement an appropriate LookAndFeel, which represents literally look and feel. (UI, or "skin" in short!)
 
 Use methods in UIManager to get objects, and set your custom LookAndFeel with setLookAndFeel().
 
@@ -367,3 +367,10 @@ These examples can be an argument for setLookAndFeel().
         "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"   // Windows OS LookAndFeel
         
 Call updateComponentTreeUI() from SwingUtilities class, and you can apply your LookAndFeel to UI.
+
+### ※ Tips
+Make use of JPanels to beautify your GUI alignment!
+
+![10Panel](https://user-images.githubusercontent.com/48712088/148692718-c044232d-cdd3-48fc-a697-c485fd1f1167.png)
+
+The boxes with red, blue, and green borders are JPanels, and especially the blue one contains two sub-panels for ID and password components.
