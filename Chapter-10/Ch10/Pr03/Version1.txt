@@ -1,0 +1,304 @@
+package Ch10.Pr03;
+
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
+class CalFunc {
+    static Boolean isEntry = false;
+    static Boolean isEqualRightAfterArith = false;
+    static Boolean isArithRightAfterEqual = false;
+    static Boolean isMultipleEqual = false;
+    static final int scaleBigDecimal = 16;
+
+    static void Functions(int index){
+        switch(index){
+            case 0:
+                Backspace();
+                break;
+            case 1:
+                CE();
+                break;
+            case 2:
+                C();
+                break;
+        }
+    }
+    static void Memories(int index) {
+        switch (index) {
+            case 0:
+                MC();
+                break;
+            case 1:
+                MR();
+                break;
+            case 2:
+                MS();
+                break;
+            case 3:
+                Mplus();
+                break;
+        }
+        if(SwingCalculator.mem.compareTo(BigDecimal.ZERO) != 0)
+            SwingCalculator.blank.setText("M");
+        else
+            SwingCalculator.blank.setText(" ");
+    }
+    static void Numbers(int num){
+        if(getField().equals("0"))
+            updateField(Integer.toString(num));
+        else
+            if(isEntry)
+                updateField(getField() + Integer.toString(num));
+            else
+                updateField(Integer.toString(num));
+//        if(isFirstNumber)
+//            updateResult(getField());
+//        else
+            updateLastArithValue(getField());
+        isEntry = true;
+    }
+    static void Arithmetics(int index, boolean bool){
+        isMultipleEqual = (index == 3 && bool);   // Check if the user pushes the = button several times continuosly.
+        isEqualRightAfterArith = (getLastArith() != LAST_ARITH.OTHERS && index == 3 && !isMultipleEqual);   // Check if the user pushes the = button right after 4 arithmetic buttons. (+,-,*,/)
+        isArithRightAfterEqual = ((index != 3) && bool);
+        switch(index){
+            case 0:
+                negative();
+                break;
+            case 1:
+                dot();
+                break;
+            case 2:
+                add();
+                break;
+            case 3:
+                equal();
+                break;
+            case 4:
+                subtract();
+                break;
+            case 5:
+                rational();
+                break;
+            case 6:
+                multiply();
+                break;
+            case 7:
+                percentage();
+                break;
+            case 8:
+                divide();
+                break;
+            case 9:
+                sqrt();
+                break;
+        }
+    }
+    static void Backspace(){
+        if(!isEntry)
+            return;
+        String str = getField();
+        if(str.length() <= 1)
+            updateField("0");
+        else
+            updateField(str.substring(0, str.length()-1));
+        updateLastArithValue(getField());
+    }
+    static void CE(){
+        updateField("0");
+        if(isEntry)
+            updateLastArithValue(BigDecimal.ZERO);
+        else
+            updateResult(BigDecimal.ZERO);
+        isEntry = false;
+    }
+    static void C(){
+        updateField("0");
+        updateResult(BigDecimal.ZERO);
+        updateLastArithValue(BigDecimal.ZERO);
+        updateLastArith(LAST_ARITH.OTHERS);
+        isEntry = false;
+        isMultipleEqual = false;
+        isEqualRightAfterArith = false;
+        SwingCalculator.isEqualBefore = false;
+    }
+    static void MC(){
+        updateMemory(BigDecimal.ZERO);
+        isEntry = false;
+    }
+    static void MR(){
+        BigDecimal mem = SwingCalculator.mem;
+        updateField(mem);
+        updateResult(mem);
+        isEntry = false;
+    }
+    static void MS(){
+        updateMemory(getField());
+        isEntry = false;
+    }
+    static void Mplus(){
+        updateMemory(SwingCalculator.mem + getField());
+    }
+    static void negative(){
+        updateField(new BigDecimal(getField()).multiply(new BigDecimal(-1)));
+    }
+    static void dot(){
+        if(isEntry)
+            if(!getField().contains("."))
+                updateField(getField() + ".");
+        else
+            updateField("0.");
+    }
+    static void add(){
+        arrangeCalculation();
+        if(isEntry) {
+            updateLastArithValue(getField());
+            BigDecimal f = getResult().add(getLastArithValue());
+            updateField(f);
+            updateResult(f);
+        }
+        else
+            updateResult(getField());
+        isEntry = false;
+        updateLastArith(LAST_ARITH.ADD);
+    }
+    static void equal(){
+        BigDecimal f;
+        if(isEqualRightAfterArith) {
+            updateLastArithValue(getField());
+        }
+        switch(getLastArith()){
+            case ADD:
+                f = getResult().add(getLastArithValue());
+                break;
+            case SUBTRACT:
+                f = getResult().subtract(getLastArithValue());
+                break;
+            case MULTIPLY:
+                f = getResult().multiply(getLastArithValue());
+                break;
+            case DIVIDE:
+                if(getLastArithValue().compareTo(BigDecimal.ZERO) == 0) {
+                    C();
+                    SwingCalculator.field.setText("0으로 나눌 수 없습니다");
+                    return;
+                }
+                f = getResult().divide(getLastArithValue(), MathContext.DECIMAL128);
+                break;
+            default:
+                f = getLastArithValue();
+        }
+        updateField(f);
+        updateResult(f);
+        isEntry = false;
+    }
+    static void subtract(){
+        arrangeCalculation();
+        if(isEntry) {
+            updateLastArithValue(getField());
+            BigDecimal f = getResult().subtract(getLastArithValue());
+            updateField(f);
+            updateResult(f);
+        }
+        else
+            updateResult(getField());
+        isEntry = false;
+        updateLastArith(LAST_ARITH.SUBTRACT);
+    }
+    static void rational(){
+        arrangeCalculation();
+        BigDecimal f = (BigDecimal.ONE.divide(getLastArithValue(), MathContext.DECIMAL128));
+        updateField(f);
+        updateLastArithValue(f);
+        isEntry = false;
+    }
+    static void multiply(){
+        arrangeCalculation();
+        if(isEntry) {
+            updateLastArithValue(getField());
+            BigDecimal f = getResult().multiply(getLastArithValue());
+            updateField(f);
+            updateResult(f);
+        }
+        else
+            updateResult(getField());
+        isEntry = false;
+        updateLastArith(LAST_ARITH.MULTIPLY);
+    }
+    static void percentage(){
+        arrangeCalculation();
+        BigDecimal f = getResult().multiply(getLastArithValue()).divide(new BigDecimal(100), MathContext.DECIMAL128);
+        updateField(f);
+        updateLastArithValue(f);
+        isEntry = false;
+    }
+    static void divide(){
+        arrangeCalculation();
+        if(isEntry) {
+            updateLastArithValue(getField());
+            if(getLastArithValue().compareTo(BigDecimal.ZERO) == 0) {
+                C();
+                SwingCalculator.field.setText("0으로 나눌 수 없습니다");
+                return;
+            }
+            BigDecimal f = getResult().divide(getLastArithValue(), MathContext.DECIMAL128);
+            updateField(f);
+            updateResult(f);
+        }
+        else
+            updateResult(getField());
+        isEntry = false;
+        updateLastArith(LAST_ARITH.DIVIDE);
+    }
+    static void sqrt(){
+        arrangeCalculation();
+        BigDecimal f = new BigDecimal(Double.toString(Math.sqrt(getLastArithValue().doubleValue())));   // Cannot use BigDecimal.sqrt() directly since it is supported since SE9...
+        updateField(f);
+        updateLastArithValue(f);
+        isEntry = false;
+    }
+
+    static String getField(){
+        return SwingCalculator.field.getText();
+    }
+    static void updateField(String str){
+        SwingCalculator.field.setText(str);
+    }
+    static void updateField(BigDecimal f){
+        if(f.compareTo(f.setScale(0, RoundingMode.HALF_UP)) == 0)
+            SwingCalculator.field.setText(f.toBigInteger().toString());
+        else
+            SwingCalculator.field.setText(f.setScale(scaleBigDecimal, RoundingMode.HALF_UP).stripTrailingZeros().toString());
+    }
+    static BigDecimal getResult(){
+        return SwingCalculator.result;
+    }
+    static void updateResult(String str){
+        SwingCalculator.result = new BigDecimal(str);
+    }
+    static void updateResult(BigDecimal f){ SwingCalculator.result = f; }
+    static void updateMemory(String str){ SwingCalculator.mem = new BigDecimal(str); }
+    static void updateMemory(BigDecimal f){
+        SwingCalculator.mem = f;
+    }
+    static LAST_ARITH getLastArith(){
+        return SwingCalculator.last_arith;
+    }
+    static void updateLastArith(LAST_ARITH l){
+        SwingCalculator.last_arith = l;
+    }
+    static BigDecimal getLastArithValue(){
+        return SwingCalculator.last_arith_value;
+    }
+    static void updateLastArithValue(String str){ SwingCalculator.last_arith_value = new BigDecimal(str); }
+    static void updateLastArithValue(BigDecimal f){ SwingCalculator.last_arith_value = f; }
+    static void arrangeCalculation(){
+        if(isEntry || !isArithRightAfterEqual)
+            equal();
+        else {
+            updateLastArithValue(getField());
+            isEntry = false;
+        }
+    }
+}
