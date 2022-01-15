@@ -8,7 +8,7 @@ class CalFunc {
     static final int SCALE_BIGDECIMAL = 16;
     static final RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
     static final MathContext MATH_CONTEXT = MathContext.DECIMAL128;
-    static Boolean isEntry = false;
+    static Boolean isEntry = true;
     static BigDecimal num1 = BigDecimal.ZERO;
     static BigDecimal num2 = BigDecimal.ZERO;
     static BigDecimal result;
@@ -113,10 +113,10 @@ class CalFunc {
             num2 = BigDecimal.ZERO;
             status = 0b0111;
         }
-        isEntry = false;
+        isEntry = true;
     }
     static void C(){
-        isEntry = false;
+        isEntry = true;
         num1 = BigDecimal.ZERO;
         num2 = BigDecimal.ZERO;
         result = BigDecimal.ZERO;
