@@ -32,7 +32,22 @@ A JTextField field shows the input, (interim) calculation result, memory read, a
 - Backspace: Erases the last digit of the field. Backspace on just one digit will make it 0. Only works when the field number is entry.
 - CE: Erases the entry, or calculation result if the field is not an entry. The later may leave previous addend(+), subtrahend(-), factor(\*), or divisor(/) value.
 - C: Initialize all calculation values except memory.
-- 
+- blank: If the memory stores a value, it draws "M". It is the only unclickable button.
+- MC: Clears the memory.
+- MR: Reads a value in the memory.
+- MS: Stores a value to the memory. There is only one space for the memory, unlike that of Windows 10 Calculator supporting multiple memory values.
+- M+: Adds the field value to the memory.
+- 0~9: Writes a digit on the field. If the field was an entry, it updates the number with adding the digit. Otherwise, the field writes the new number. Any cases will make the field an entry.
+- +/-: Negate. Makes the field positive/negative.
+- .: Put a dot to express a decimal point.
+- +: Addition.
+- -: Subtraction.
+- \*: Multiplication.
+- /: Division.
+- =: Equation.
+- 1/x: 1/x.
+- %: Percentage. If the input is "200 + 20 %", it means 200 + 200 * 20% = 200 + 40 = 240.
+- sqrt: Square Root.
 
 ### Number
 All numbers for calculation are **BigDecimal**, and the displayed one on the text field has maximum 16 as scale. Scale is the number of the digits to the right of the decimal point of BigDecimal. For example, the scale of a BigDecimal "12.345" would be 3, and "3.00000" would be 5.
