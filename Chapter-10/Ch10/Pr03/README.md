@@ -3,9 +3,36 @@
 The problem requires to make a calculator using Swing.
 
 ## Program Explanation
-![10Calculator](https://user-images.githubusercontent.com/48712088/149197908-4ec9d294-2554-4cac-9d54-76d5e9768178.png)
+![10Calculator](https://user-images.githubusercontent.com/48712088/149622049-a3973576-6581-4ea0-9d57-2be17b1a4cc9.png)
 
-This is the calculator whose UI resembles the program from old Windows, but miscellaneous controls try to imitate that of Windows 10.
+This is the Swing calculator whose UI resembles the program from old Windows, but miscellaneous controls try to imitate those of Windows 10.
+
+### UI
+![10CalculatorUI](https://user-images.githubusercontent.com/48712088/149622100-129da028-33f3-4185-a1b6-323b07d4d6de.png)
+
+#### JButtons
+There are four JButton arrays to group a lot of JButtons by their functions and positions: b_func, b_mem, b_num, and b_arith. Additionally an unclickable JButton "blank" to show the status of the memory exists, which is not an element of any arrays but grouped by the same panel with b_mem buttons.
+
+* b_func: Three long function buttons. Backspace, CE, C.
+* b_mem: Four memory buttons on the left side of the program. MC, MR, MS, M+.
+* b_num: Ten number buttons indicating digits 0~9.
+* b_arith: Ten arithmetic buttons. +/-, ., +, -, \*, /, =, 1/x, %, sqrt.
+
+#### JPanels
+* p_func: Groups b_func buttons.
+* p_mem: Groups b_mem buttons and a blank.
+* p_main: Array of JPanels to group b_num and b_arith buttons on the main part of the program. Each element takes a row of buttons.
+* p_M: Contains p_func, and all of elements of p_main.
+
+### Functionality
+#### Field
+A JTextField field shows the input, (interim) calculation result, memory read, and so on.
+
+#### Buttons
+- Backspace: Erases the last digit of the field. Backspace on just one digit will make it 0. Only works when the field number is entry.
+- CE: Erases the entry, or calculation result if the field is not an entry. The later may leave previous addend(+), subtrahend(-), factor(\*), or divisor(/) value.
+- C: Initialize all calculation values except memory.
+- 
 
 ### Number
 All numbers for calculation are **BigDecimal**, and the displayed one on the text field has maximum 16 as scale. Scale is the number of the digits to the right of the decimal point of BigDecimal. For example, the scale of a BigDecimal "12.345" would be 3, and "3.00000" would be 5.
