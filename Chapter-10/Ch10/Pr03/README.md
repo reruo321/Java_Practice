@@ -11,7 +11,7 @@ This is the Swing calculator whose UI resembles the program from old Windows, bu
 ![10CalculatorUI](https://user-images.githubusercontent.com/48712088/149622100-129da028-33f3-4185-a1b6-323b07d4d6de.png)
 
 #### JButtons
-There are four JButton arrays to group a lot of JButtons by their functions and positions: b_func, b_mem, b_num, and b_arith. Additionally an unclickable JButton "blank" to show the status of the memory exists, which is not an element of any arrays but grouped by the same panel with b_mem buttons.
+There are four JButton arrays to group a lot of JButtons by their functions and positions: b_func, b_mem, b_num, and b_arith. Additionally an unclickable JButton *blank* to show the status of the memory exists, which is not an element of any arrays but grouped by the same panel with b_mem buttons.
 
 * b_func: Three long function buttons. Backspace, CE, C.
 * b_mem: Four memory buttons on the left side of the program. MC, MR, MS, M+.
@@ -27,6 +27,9 @@ There are four JButton arrays to group a lot of JButtons by their functions and 
 ### Functionality
 #### Field
 A JTextField field shows the input, (interim) calculation result, memory read, and so on.
+
+#### Entry
+Entry is a number input on the field that is handled by a Boolean variable, *isEntry*. If the field is an entry, user's digits and backspace inputs will continue to edit the current field. However, if *isEntry* is false, clicking a digit or a dot button will clear the field once and write the digit or "0." on it. Moreover, no entry will block the backspace. All arithmetic buttons disable the entry to prevent the user to modify the value of calculation results showing on the field. Clicking the digits, CE, or C would make the Boolean true again.
 
 #### Buttons
 - Backspace: Erases the last digit of the field. Backspace on just one digit will make it 0. Only works when the field number is entry.
