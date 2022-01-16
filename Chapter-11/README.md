@@ -1,6 +1,6 @@
 # Ch. 11 - Java Applet and Graphics
 ## Applet
-**※ Warning! Applet was deprecated in 2017. Let's just glance at the README, and learn Spring instead.**
+**※ Warning! Applet was deprecated in 2017. Let's just glance at the applet, and learn Spring instead.**
 
 Applet program can be embedded in \<applet\> tag in a HTML document, downloaded from web server to client,
 and executed on the web browser. The browser with higher version of JVM than applet does not require extra JVM downloading by a user.
