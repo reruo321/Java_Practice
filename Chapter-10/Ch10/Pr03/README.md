@@ -65,7 +65,7 @@ Entry is a number input on the field that is handled by a Boolean variable, *isE
 When you take a look at the arithmetic operations in the Windows 10 Calculator closely, you may notice that there's a little mechanism differences among these three operator groups: {+, -, \*, /}, {1/x, %, sqrt}, and {=}.
 
 1. +, -, \*, /: These operators take the field value in sequence, while calculating the previous ones even the formula is not finished yet by = operator. Taking the input "1 + 5 - 2 +", and you will notice "1 + 5" becomes "6" displayed on the field when you press "-". In the same way, after the second "+", "6 - 2" is concluded as "4" to be the next augend.
-2. 1/x, %, sqrt: This group updates the current field, instead of progressing the calculation. Suppose that the input is "3 + 5 sqrt - 2". Since "sqrt" only affects "5", the first formula would be "3 + √5". After pressing a "-", it will be calculated.
+2. 1/x, %, sqrt: This group updates the current field, instead of progressing the calculation. Suppose that the input is "3 + 5 sqrt - 2". Since "sqrt" only affects "5", the first formula would be "3 + √5". After pressing a "-", "3 + √5" will be calculated.
 3. =: It ends the equation. The funny thing is, it also checks the last value and operator to duplicate the last operation with multiple "=" clicking. If the user presses "1 + 3 + 5 = = =", the last operation will be "+5", so the equation can be interpreted as "1 + 3 + 5 + 5 + 5 =" = "19". However, if the input was "1 + 3 + 5 + = =", "1 + 3 + 5 +" should be repeated so the result would be "9 + 9 + 9 =" = "27".
 
 In the program, a byte variable *status* acts as 4 flags to control the operation orders.
