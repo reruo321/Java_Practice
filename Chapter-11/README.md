@@ -2,8 +2,6 @@
 ## Applet
 **※ Warning! Applet was deprecated in 2017. Let's just glance at the applet, and learn Spring instead.**
 
-I'll treat Spring later...
-
 Applet program can be embedded in \<applet\> tag in a HTML document, downloaded from web server to client,
 and executed on the web browser. The browser with higher version of JVM than applet does not require extra JVM downloading by a user.
 Java applet cannot run other programs from client, or create a new process due to the security issues.
@@ -59,3 +57,4 @@ If you use CMD to execute the applet, use *appletviewer* command, not *java*. Ru
 
     C:\myJava> appletviewer HTML_DOCUMENT_NAME
     
+Since Intellij IDEA does not support applet, you should download a plugin to run it.
