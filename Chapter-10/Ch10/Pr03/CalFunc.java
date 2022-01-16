@@ -199,6 +199,11 @@ class CalFunc {
                 result = num1.multiply(num2);
                 break;
             case 8:
+                if(num2.compareTo(BigDecimal.ZERO) == 0){
+                    C();
+                    updateField("0으로 나눌 수 없습니다");
+                    return;
+                }
                 result = num1.divide(num2, MATH_CONTEXT);
                 break;
         }
@@ -207,6 +212,11 @@ class CalFunc {
     static void ArithSpecialOperations(BigDecimal num, int arith){
         switch(arith){
             case 5:
+                if(num.compareTo(BigDecimal.ZERO) == 0){
+                    C();
+                    updateField("0으로 나눌 수 없습니다");
+                    return;
+                }
                 num = BigDecimal.ONE.divide(num, MATH_CONTEXT);
                 break;
             case 7:
