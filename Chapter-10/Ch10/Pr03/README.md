@@ -93,6 +93,6 @@ So to speak, the real number 12.345 will have unscaled_value=12345 and scale=3. 
     BigDecimal big = new BigDecimal("12.345");
     System.out.println("Unscaled Value: " + big.unscaledValue() + ", Scale: " + big.scale()); 
 
-BigDecimal will give the numbers as much precision as possible, so double represented as a String is preferable to double itself as a parameter. (It will say "Unpredictable 'new BigDecimal()' call" warning to double type parameter, and the constructor will lose the precision benefit.)
+BigDecimal will give the numbers as much precision as possible, so double explicitly represented as a String type is preferable to double itself as a parameter of the BigDecimal constructor. It will say "Unpredictable 'new BigDecimal()' call" warning to double type parameter, and the constructor will lose the precision benefit.
 
 All numbers for calculation in the program are **BigDecimal**, and the displayed one on the text field has maximum 16 as scale. It uses MathContext.DECIMAL128 for MathContext in division, and square root is calculated indirectly from double type values. (BigDecimal.sqrt() is available since Java SE 9.)
