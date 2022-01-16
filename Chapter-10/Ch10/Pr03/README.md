@@ -64,8 +64,6 @@ In the program, a byte variable *status* acts as 4 flags to control the operatio
 CE should also pay attention to these rules to correctly clear the non-entry values. In "2 \* 7 = CE 3 =", the last operation is "\*7", so it becomes "3 **\* 7** =" = "21". By the way, if the input was "2 \* 7 \* = CE 3 =", the program remembers "2 \* 7 \*", and after CE, "**14 \*** 3 =" = "42". Did you notice not only the remaining operand values after CE but the position of them were also different?
 
 ### Number
-All numbers for calculation are **BigDecimal**, and the displayed one on the text field has maximum 16 as scale. Scale is the number of the digits to the right of the decimal point of BigDecimal. For example, the scale of a BigDecimal "12.345" would be 3, and "3.00000" would be 5.
-
 The problem of using float or double is that they make loss of precision while handling very big or very small numbers. For example, if we continuously add double 0.1,
 
     0.1
@@ -79,12 +77,13 @@ The problem of using float or double is that they make loss of precision while h
     0.8999999999999999
     ...
     
-The results have a bit of errors. Therefore to get exact real numbers, BigDecimal is more recommended than binary floats. (Especially important on bank business with many big transactions.) It is immutable, arbitrary-precision signed decimal number consists of an arbitrary precision integer *unscaled value* and a 32-bit integer *scale*.
+the results have a bit of errors. Therefore to get exact real numbers, BigDecimal is more recommended than binary floats. (Especially important on bank business with many big transactions.) It is immutable, arbitrary-precision signed decimal number consists of an arbitrary precision integer *unscaled value* and a 32-bit integer *scale*. Scale is the number of the digits to the right of the decimal point of BigDecimal.
 
-So to speak, the number 12.345 will have unscaled_value=12345 and scale=3.
+So to speak, the real number 12.345 will have unscaled_value=12345 and scale=3. In the same way, 3.00000 will have unscaled_value=30000 and scale=5.
 
     BigDecimal big = new BigDecimal("12.345");
-    System.out.println("Unscaled Value: " + big.unscaledValue() + ", Scale: " + big.scale());
-    
+    System.out.println("Unscaled Value: " + big.unscaledValue() + ", Scale: " + big.scale()); 
+
 BigDecimal will give the numbers as much precision as possible, so double represented as a String is preferable to double itself as a parameter. (It will say "Unpredictable 'new BigDecimal()' call" warning to double type parameter, and the constructor will lose the precision benefit.)
 
+All numbers for calculation in the program are **BigDecimal**, and the displayed one on the text field has maximum 16 as scale. It uses MathContext.DECIMAL128 for MathContext in division, and square root is calculated indirectly from double type values. (BigDecimal.sqrt() is available since Java SE 9.)
