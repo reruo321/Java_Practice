@@ -29,7 +29,7 @@ There are four JButton arrays to group a lot of JButtons by their functions and 
 A JTextField field shows many values: the current entry, (interim) calculation results, read memory value, and so on.
 
 #### Entry
-Entry is a number input on the field that is handled by a Boolean variable, *isEntry*. If the field is an entry, user's digits, a dot, and backspace inputs will continue to edit the current field. However, if *isEntry* is false, clicking a digit or a dot button allows the user to express his new input value on the field without taking out the numbers one by one; it automatically clears the field once, and put the digit or "0." on it. Moreover, no entry will block the backspace working, to prevent to modify the calculation results. All arithmetic buttons would disable the entry, but clicking the digits, CE, or C would make the Boolean true again.
+Entry is a number input on the field that is handled by a Boolean variable, *isEntry*. If the field is an entry, user's digits, a dot, and backspace inputs will continue to edit the current field. However, if *isEntry* is false, clicking a digit or a dot button allows the user to express his new input value on the field without taking out the numbers one by one; it automatically clears the field once, and put the digit or "0." on it. Moreover, not-an-entry situation will block the backspace working, to prevent to modify the calculation results. All arithmetic buttons would disable the entry, but clicking the digits, CE, or C would make the Boolean true again.
 
 #### Buttons
 - Backspace: Erases the last digit of the field. Backspace on just one digit will make it 0. Only works when the field number is entry.
@@ -48,7 +48,7 @@ Entry is a number input on the field that is handled by a Boolean variable, *isE
 - \*: Multiplication.
 - /: Division. If the divisor is 0, it calls C() to clear all things and prints "0으로 나눌 수 없습니다" on the field.
 - =: Equation.
-- 1/x: Rational function 1/x. If x=0, it calls C() to clear all things and prints "0으로 나눌 수 없습니다" on the field.
+- 1/x: Rational Function 1/x. If x=0, it calls C() to clear all things and prints "0으로 나눌 수 없습니다" on the field.
 - %: Percentage. If the input is "200 + 20 %", it means 200 + 200 * 20% = 200 + 40 = 240.
 - sqrt: Square Root. Since BigDecimal.sqrt() is not in Java SE 8, it gets the result by casting the input value to double type to use Math.sqrt().
 
