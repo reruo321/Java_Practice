@@ -46,9 +46,9 @@ Entry is a number input on the field that is handled by a Boolean variable, *isE
 - +: Addition.
 - -: Subtraction.
 - \*: Multiplication.
-- /: Division.
+- /: Division. If the divisor is 0, it calls C() to clear all things and prints "0으로 나눌 수 없습니다" on the field.
 - =: Equation.
-- 1/x: Rational function 1/x.
+- 1/x: Rational function 1/x. If x=0, it calls C() to clear all things and prints "0으로 나눌 수 없습니다" on the field.
 - %: Percentage. If the input is "200 + 20 %", it means 200 + 200 * 20% = 200 + 40 = 240.
 - sqrt: Square Root. Since BigDecimal.sqrt() is not in Java SE 8, it gets the result by casting the input value to double type to use Math.sqrt().
 
