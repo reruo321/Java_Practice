@@ -1,11 +1,20 @@
 # Simple Calculator
 
-The problem requires to make a calculator using Swing.
+Make a calculator using Swing.
+
+## Problem
+![10prob](https://user-images.githubusercontent.com/48712088/149661711-f15c593d-18bc-4a22-ab1b-212fe3a7e3fc.png)
+
+The book provided the problem like this: Make a calculator program using Swing like this figure.
+
+Making a UI and adding action listeners were very fun, but weaving smooth mechanism for some arithmetic operations was unexpectedly quite a challenge...
 
 ## Program Explanation
 ![10Calculator](https://user-images.githubusercontent.com/48712088/149622049-a3973576-6581-4ea0-9d57-2be17b1a4cc9.png)
 
 This is the Swing calculator whose UI resembles the program from old Windows, but miscellaneous controls try to imitate those of Windows 10.
+
+※ Note: CalcFunc_OldVer.txt is the old version of CalcFunc.java which I struggled to complete all day long. But it got messed up, so I discarded the contents to the text file, and I wrote the java file again.
 
 ### UI
 ![10CalculatorUI](https://user-images.githubusercontent.com/48712088/149622100-129da028-33f3-4185-a1b6-323b07d4d6de.png)
