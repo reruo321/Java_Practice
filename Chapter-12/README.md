@@ -74,3 +74,10 @@ The cycle of a thread is called "State Transition" or "Life Cycle".
 5. **Dead**: The thread is completely terminated, so it cannot be executed again.
 
 ![12Lifecycle](https://user-images.githubusercontent.com/48712088/149791337-93525bb9-81b0-4e6a-8bab-c76ff03c57b7.png)
+
+## Synchronization and Scheduling
+If a multi-threaded program executes multiple threads in parallel, not in sequence, they may cause a problem because of their sharing resources. This happens since different threads are trying to modify the same data concurrently. To solve it, use **synchronized** to lock other threads. It prevents them from modifying the data, until one terminates.
+
+In addition, multiple threads should be executed by CPU in multi-threaded program, but actually only one thread can be done at the moment. Therefore, it should select a thread to execute among waiting ones by **scheduling**.
+
+### Synchronization
