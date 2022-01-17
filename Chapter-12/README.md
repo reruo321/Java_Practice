@@ -81,3 +81,18 @@ If a multi-threaded program executes multiple threads in parallel, not in sequen
 In addition, multiple threads should be executed by CPU in multi-threaded program, but actually only one thread can be done at the moment. Therefore, it should select a thread to execute among waiting ones by **scheduling**.
 
 ### Synchronization
+To avoid duplicated execution on shared data by multiple threads, Java provides *synchronized* keyword. There are two ways to use it. 1) Declare it on a method declaration.
+
+    public synchronized <Return-Type> <Method-Name> (<Parameters>){...}
+    
+2) Declare it on a block. This makes more effective threading than the first one, when there are so many contents in the method.
+
+       public class <Class-Name>{
+             public <Return-Type> <Method-Name>(<Parameter>){
+               synchronized(this){...}
+               ...
+             }
+            ...
+        }
+
+### Scheduling
