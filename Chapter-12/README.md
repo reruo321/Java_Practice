@@ -5,17 +5,17 @@ Meanwhile, process is a processing unit which executes a program on the memory, 
 
 Process has parent process and child process. The parent one is started from a program or a command, but the child one is from its parent. The situation that multiple children seem to be processed simultaneously by one CPU is called **multitasking**. Process is managed by these states.
 
-1. Create: Process is being created.
-2. Running: Process is being run onto the CPU, running instructions.
-3. Ready: Process is ready for CPU allocation, not using CPU now.
-4. Waiting: Process is waiting for certain events such as I/O completion or signal receiving.
-5. Terminated: Process execution is terminated.
+1. **Create**: Process is being created.
+2. **Running**: Process is being run onto the CPU, running instructions.
+3. **Ready**: Process is ready for CPU allocation, not using CPU now.
+4. **Waiting**: Process is waiting for certain events such as I/O completion or signal receiving.
+5. **Terminated**: Process execution is terminated.
 
 The process has changed its state by dispatch, block, and wakeup.
 
-6. Dispatch: Process becomes ready → running. The state that the first process on the ready queue occupies a CPU.
-7. Block: Process cannot carry on without an external change in state or event occurring, so it returns its CPU by itself and becomes waiting state.
-8. Wakeup: Process becomes waiting → ready when certain event like I/O task termination or signal receiving arises.
+6. **Dispatch**: Process becomes ready → running. The state that the first process on the ready queue occupies a CPU.
+7. **Block**: Process cannot carry on without an external change in state or event occurring, so it returns its CPU by itself and becomes waiting state.
+8. **Wakeup**: Process becomes waiting → ready when certain event like I/O task termination or signal receiving arises.
 
 ## Thread
 **Thread** gets the same execution environment with process but takes less resources to create a new one, since it is in the process sharing process's resources (memory, file, ...) with others. To sum up, this is the reason thread is also called "lightweight process". It is effective but might cause a sharing issue.
@@ -25,7 +25,7 @@ Java has two ways to create the thread.
 1. Extend *Thread* class.
 2. Implement *Runnable* interface: When making a thread with the class already extended the other.
 
-### Thread class
+### Class Thread
 Create a thread with its extending Thread class like this. First, redefine run() method. run() acts in the same way as main() in Java applications.
 
     class <Class-Name> extends Thread {
@@ -51,3 +51,26 @@ These are major methods in Thread.
 | static void yield() | Yields the current running thread to run another one. |
 | void suspend() | (Not recommended) Suspends the thread. |
 | void resume() | (Not recommended) Resumes the suspended thread. |
+
+### Interface Runnable
+Interface Runnable only provides run() method.
+
+    class <Class-Name> implements Runnable {
+      public void run(){...}
+      ...
+    }
+    
+    <Class-Name> <Reference-Name-1> = new <Constructor>();
+    Thread <Reference-Name-2> = new Thread(<Reference-Name-1>);
+    <Reference-Name-2>.start();
+    
+### Thread State and Life Cycle
+The cycle of a thread is called "State Transition" or "Life Cycle".
+
+1. **New**: The initial state of a new created thread. Created one by Thread constructor gets this state.
+2. **Runnable**: Waiting state for being processed by CPU. The new thread goes to it by start(). Besides, the thread can be also Runnable 1) if the thread paused by wait(), sleep(), or suspend() is run by resume() or notify(), 2) if I/O paused the thread is completed, or 3) yield() is called for the running thread.
+3. **Running**: The thread is running on a CPU. The runnable thread becomes running when it is executed by Scheduler.
+4. **Blocked**: Blocked thread is the thread paused while running, waiting for the next execution. Special condition would make it running state again. 1) If wait(), sleep(), or suspend() is called for a runnable or a running thread, or 2) some tasks like I/O pauses the thread, thread becomes blocked.
+5. **Dead**: The thread is completely terminated, so it cannot be executed again.
+
+![12Lifecycle](https://user-images.githubusercontent.com/48712088/149791337-93525bb9-81b0-4e6a-8bab-c76ff03c57b7.png)
