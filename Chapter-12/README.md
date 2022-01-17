@@ -96,3 +96,7 @@ To avoid duplicated execution on shared data by multiple threads, Java provides 
         }
 
 ### Scheduling
+Scheduling in Java is preemptive. It checks priority of runnable threads based on scheduling algorithm. Suppose that there are two threads A and B. If the priority is running A < runnable B, it blocks A and executes B. If the priority is A = B, and if they want to be run concurrently, it rotates their execution in sequence, as much as time can to do.
+
+If a thread creates another thread, the new one derives the priority from its parent. By using Thread.setPriority(), you can change the order of the threads, giving them the priority from 1(lowest) to 10(highest). Default priority for threads is 5(NORM_PRIORITY). Use getPriority() to know the priority of specific thread.
+
