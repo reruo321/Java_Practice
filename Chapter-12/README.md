@@ -67,13 +67,18 @@ Interface Runnable only provides run() method.
 ### Thread State and Life Cycle
 The cycle of a thread is called "State Transition" or "Life Cycle".
 
+![12Lifecycle](https://user-images.githubusercontent.com/48712088/149791337-93525bb9-81b0-4e6a-8bab-c76ff03c57b7.png)
+
 1. **New**: The initial state of a new created thread. Created one by Thread constructor gets this state.
 2. **Runnable**: Waiting state for being processed by CPU. The new thread goes to it by start(). Besides, the thread can be also Runnable 1) if the thread paused by wait(), sleep(), or suspend() is run by resume() or notify(), 2) if I/O paused the thread is completed, or 3) yield() is called for the running thread.
 3. **Running**: The thread is running on a CPU. The runnable thread becomes running when it is executed by Scheduler.
 4. **Blocked**: Blocked thread is the thread paused while running, waiting for the next execution. Special condition would make it running state again. 1) If wait(), sleep(), or suspend() is called for a runnable or a running thread, or 2) some tasks like I/O pauses the thread, thread becomes blocked.
 5. **Dead**: The thread is completely terminated, so it cannot be executed again.
 
-![12Lifecycle](https://user-images.githubusercontent.com/48712088/149791337-93525bb9-81b0-4e6a-8bab-c76ff03c57b7.png)
+#### ※ Blocked vs Waiting
+If wait() is called on an object, a thread goes to **Waiting** state. Then it may need to wait until other threads call notify() or notifyAll().
+
+Once the thread is notified, it will not be Runnable but **Blocked** if there are other notified threads (using notifyAll()) or the first thread has not finished its work, still being blocked to get its chance. It finally becomes Runnable once others have left and it gets the chance.
 
 ## Synchronization and Scheduling
 If a multi-threaded program executes multiple threads in parallel, not in sequence, they may cause a problem because of their sharing resources. This happens since different threads are trying to modify the same data concurrently. To solve it, use **synchronized** to lock other threads. It prevents them from modifying the data, until one terminates.
