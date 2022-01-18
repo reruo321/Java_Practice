@@ -75,7 +75,7 @@ The cycle of a thread is called "State Transition" or "Life Cycle".
 4. **Blocked**: Blocked thread is the thread paused while running, waiting for the next execution. Special condition would make it running state again. 1) If wait(), sleep(), or suspend() is called for a runnable or a running thread, or 2) some tasks like I/O pauses the thread, thread becomes blocked.
 5. **Dead**: The thread is completely terminated, so it cannot be executed again.
 
-#### ※ Blocked vs Waiting
+#### ※ Waiting vs Blocked
 If wait() is called on an object, a thread goes to **Waiting** state. Then it may need to wait until other threads call notify() or notifyAll().
 
 Once the thread is notified, it will not be Runnable but **Blocked** if there are other notified threads (using notifyAll()) or the first thread has not finished its work, still being blocked to get its chance. It finally becomes Runnable once others have left and it gets the chance.
