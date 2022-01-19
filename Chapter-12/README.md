@@ -100,6 +100,12 @@ To avoid duplicated execution on shared data by multiple threads, Java provides 
             ...
         }
 
+If you erase *synchronized* keyword on methods in Example 03 or Example 05, data would be tangled.
+
+![12Ex03](https://user-images.githubusercontent.com/48712088/150128863-79fe7e80-2901-470a-9ca3-0bf1b24c8920.png)
+![12Ex05](https://user-images.githubusercontent.com/48712088/150128870-2554e33f-26d8-470d-9022-2cb56a086d2c.png)
+
+
 ### Scheduling
 Scheduling in Java is preemptive. It checks priority of runnable threads based on scheduling algorithm. Suppose that there are two threads A and B. If the priority is running A < runnable B, it blocks A and executes B. If the priority is A = B, and if they want to be run concurrently, it rotates their execution in sequence, as much as time can to do.
 
