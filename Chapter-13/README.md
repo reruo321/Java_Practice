@@ -14,5 +14,8 @@ There are TCP and UDP(User Datagram Protocol) in the transport layer. **TCP** is
 It needs some headers and continuous connections among the systems to transmit data in sequence, with no duplication and errors.
 Meanwhile, UDP is a connectionless protocol transmitting datagram. It is lightweight, but no guarantee of delivery, ordering, or duplicate protection.
 ### 3. Internet Layer
-
+Internet layer defines packet (or datagram) and sets its route. Packet has source IP address, destination IP address, data, and some fields. The layer checks the address of packet, goes to the address in the network, and transmits it to the host.
 ### 4. Network Access Layer
+The layer supports network hardware things like NIC or device drivers. TCP/IP follows IEEE hardware standard, and it uses Ethernet.
+
+## TCP/IP Address
