@@ -24,3 +24,17 @@ All computers in the network with TCP/IP protocol must have their addresses. Onl
 IP should know the destination address to transmit data. The address is called "IP address", which must be unique for a device or a computer in the network. It contains network information to express network, and host information pointing to specific computer.
 
 ### IPv4
+IPv4(Internet Protocol ver. 4) has 32bits, represented in "XXX.XXX.XXX.XXX" format. It is divided in 5 classes, and Class A, B, and C among them are used generally.
+
+### IPv6
+IPv6 has 128bits, which format is "XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX". Network can be more stable with IPv6 than with IPv4, supporting user identifications and security functions.
+
+## Socket Programming
+Socket enables duplex (bidirectional) communication between programs from server and from client, via specific port.
+
+When the client requests service via channel, the server listens it, executes the program, and returns the result to the channel.
+
+Java provides ServerSocket class for server, and Socket for client in package java.net.
+The programs create their socket object, and use InputStream and OutputStream to communicate.
+
+### ServerSocket
