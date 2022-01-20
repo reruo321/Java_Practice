@@ -51,6 +51,7 @@ Create a server socket with one of these constructors.
 The class provides some methods like below:
 
 | Method | Description |
+| :-: | :-: |
 | Socket accept() | Accepts a connection on the server socket. |
 | void close() | Closes the server socket. |
 | InetAddress getInetAddress() | Gets the local address of the server socket. |
@@ -67,6 +68,7 @@ Socket provides the socket creation on client. Refer these constructors and meth
     Socket(String host, int port, IntAddress localAddr, int localPort)
     
 | Method | Description |
+| :-: | :-: |
 | void close() | Closes the client socket. |
 | InetAddress getInetAddress() | Gets the remote IP address to which the socket is connected. |
 | InputStream getInputStream() | Gets the input stream for the socket. |
