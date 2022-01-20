@@ -37,4 +37,44 @@ When the client requests service via channel, the server listens it, executes th
 Java provides ServerSocket class for server, and Socket for client in package java.net.
 The programs create their socket object, and use InputStream and OutputStream to communicate.
 
+![13socket](https://user-images.githubusercontent.com/48712088/150379250-b80c2b07-79a0-4919-85d3-6410c86cc83f.png)
+
 ### ServerSocket
+Class ServerSocket provides a server socket to communicate with client. It waits until it gets a request via port in network, which set in advance, and it returns proper service process to input request.
+
+Create a server socket with one of these constructors.
+
+    ServerSocket(int port)
+    ServerSocket(int port, int backlog)
+    ServerSocket(int port, int backlog, InetAddress bindAddr)
+    
+The class provides some methods like below:
+
+| Method | Description |
+| Socket accept() | Accepts a connection on the server socket. |
+| void close() | Closes the server socket. |
+| InetAddress getInetAddress() | Gets the local address of the server socket. |
+| int getLocalPort() | Gets the port number on which the socket is listening. |
+
+### Socket
+Socket provides the socket creation on client. Refer these constructors and methods for client socket.
+
+    Socket(InetAddress address, int port)
+    Socket(InetAddress address, int port, boolean stream)
+    Socket(InetAddress address, int port, InetAddress localAddr, int localPort)
+    Socket(String host, int port)
+    Socket(String host, int port, boolean stream)
+    Socket(String host, int port, IntAddress localAddr, int localPort)
+    
+| Method | Description |
+| void close() | Closes the client socket. |
+| InetAddress getInetAddress() | Gets the remote IP address to which the socket is connected. |
+| InputStream getInputStream() | Gets the input stream for the socket. |
+| InetAddress getLocalAddress() | Gets the local IP address of the socket. |
+| int getLocalPort() | Gets the local port number of the socket. |
+| OutputStream getOutputStream() | Gets the output stream for the socket. |
+| int getPort() | Gets the remote port number to which the socket is connected. |
+
+Both server and client should have sockets to make socket program work well. However, by using a special port on server, the program also works even if only the client has the socket. Since in this situation server socket is already installed, it does not need additional work.
+
+## UDP Programming
