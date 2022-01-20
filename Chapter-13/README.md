@@ -1,7 +1,7 @@
 # Ch. 13 - Network Programming
 ![13TCPIP](https://user-images.githubusercontent.com/48712088/150157893-c337e38e-4b33-45fb-b810-c75e85986ad2.png)
 
-TCP/IP(Transmission Control Protocol/Internet Protocol) is the most typical protocol on the Internet.
+TCP/IP(Transmission Control Protocol/Internet Protocol) is the most typical protocol on the Internet. The figure shows the structure difference between OSI(Open System Interconnection) model and TCP/IP.
 ## TCP/IP Structure
 
 TCP/IP has four layers in its structure.
@@ -19,3 +19,8 @@ Internet layer defines packet (or datagram) and sets its route. Packet has sourc
 The layer supports network hardware things like NIC or device drivers. TCP/IP follows IEEE hardware standard, and it uses Ethernet.
 
 ## TCP/IP Address
+All computers in the network with TCP/IP protocol must have their addresses. Only one address per a computer is allowed. The computers with their addresses group to organize a network, and moreover these networks compose the Internet.
+
+IP should know the destination address to transmit data. The address is called "IP address", which must be unique for a device or a computer in the network. It contains network information to express network, and host information pointing to specific computer.
+
+### IPv4
