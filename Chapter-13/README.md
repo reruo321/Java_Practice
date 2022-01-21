@@ -112,3 +112,74 @@ DatagramPacket also supports various methods like these.
 | void setPort(int iport) | Sets the port number. |
 
 ### DatagramSocket
+The class provides a datagram socket to send or receive datagram packets. Every sent/received packet by the socket is individually addressed and routed.
+
+Utilize the class with these methods.
+
+    DatagramSocket()
+    DatagramSocket(int port)
+    DatagramSocket(int port, InetAddress address)
+    
+| Method | Description |
+| :-: | :-: |
+| void close() | Closes the socket. |
+| void connect(InetAddress address, int port) | Connects the socket to a remote socket. |
+| void disconnect() | Disconnects the socket. |
+| InetAddress getInetAddress() | Gets the IP address to which the socket is connected. |
+| InetAddress getLocalAddress() | Gets the local IP address to which the socket is bound. |
+| int getLocalPort() | Gets the local port to which the socket is connected. |
+| int getPort() | Gets the remote port to which the socket is connected. |
+| void receive(DatagramPacket p) | Receives the datagram packet. |
+| void send(DatagramPacket p) | Sends the datagram packet. |
+
+## InetAddress
+Class InetAddress is used to identify the addresses of server and client.
+
+| Method | Description |
+| :-: | :-: |
+| byte [] getAddress() | Returns the byte array of IP address from this object. |
+| String getHostAddress() | Returns the IP address information as a string. |
+| String getHostName() | Returns the host's name from this object as a string. |
+| static InetAddress [] getAllByName(String host) | Returns an array of all allocated IP addresses. |
+| static InetAddress getByName(String host) | Returns an IP address. |
+| InetAddress getLocalHost() | Returns the InetAddress object expressing local host, the current computer. |
+
+## URL and URLConnection
+### URL
+Class **URL**(Uniform Resource Locator) supports various functions to locate the address of resources on the web. They can be simple things like files or directories, or more complicated references such as database, or web query on search engine.
+
+Usually URL is divided into some pieces below.
+
+1. **Protocol**: Protocol to access to resource. Example - http, ftp, file
+2. **Host**: Name of the computer where accessing resource is saved. Example - www.google.co.kr
+3. **Port**: URL can set the port number of a TCP connection on a remote host. When the port is omitted, each protocol will the default value. For example, as the default of http is 80, the above URL can be also written like www.google.co.kr:80.
+4. **Path**: Path to the accessing resource on the host. It may be expressed differently on protocol or on host, and it is either file or directory.
+5. **Anchor**: Reference on URL is called anchor. The anchor on the same page is expressed with character '#'.
+
+The class enables Java to use URL.
+
+    URL(String spec)
+    URL(String protocol, String host, String file)
+    URL(String protocol, String host, int port, String file)
+    URL(String protocol, String host, int port, String file, URLStreamHandler handler)
+    URL(URL context, String spec)
+    URL(URL context, String spec, URLStreamHandler handler)
+    
+| Method | Description |
+| :-: | :-: |
+| Object getContent() | Returns the contents of the URL. |
+| String getFile() | Returns the file name of the URL. |
+| String getHost() | Returns the host name of the URL. |
+| String getPath() | Returns the path of the URL. |
+| int getPort() | Returns the port number of the URL. |
+| String getProtocol() | Returns the name of protocol of the URL. |
+| String getRef() | Returns the anchor of the URL. |
+| URLConnection openConnection() | Returns the URLConnection expressing the access on a remote object whose reference is the URL. |
+| InputStream openStream() | Returns the InputStream to input on the accessing URL. |
+| boolean sameFile(URL other) | Compares two URLs, and returns true if they are the same |
+| String toExternalForm() | Constructs a string representation of the URL. |
+| String toString() | Constructs a string representation of the URL. |
+| URI toURI() | Returns a URI equivalent to this URL. |
+
+### URLConnection
+URLConnection is the abstract class which is the parent of all classes representing a communication link between an application and a URL.
