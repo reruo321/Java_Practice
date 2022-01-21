@@ -80,3 +80,13 @@ Socket provides the socket creation on client. Refer these constructors and meth
 Both server and client should have sockets to make socket program work well. However, by using a special port on server, the program also works even if only the client has the socket. Since in this situation server socket is already installed, it does not need additional work.
 
 ## UDP Programming
+While TCP guarantees accuracy and reliability of data transmission, with construction of logical channels via sockets. However, when sometimes less reliable but faster communication is needed, we can choose UDP.
+
+UDP uses datagram as a data packet. Datagrams are sent to a receiver with destination information. However, because of their independence, it does not respond to check if message has arrived correctly, set the message in the order, or provide feedback to control flow speed. Therefore, UDP message can be reached with loss, duplicate, or unordered.
+
+UDP programming does not include a special server socket, but DatagramSocket object as a client one. Since it is connectionless, the server socket is not necessary. It just reads and writes datagrams from the client via the datagram socket.
+
+Java offers two classes on UDP programming in java.net package: DatagramPacket for creating and controlling datagram packets, and DatagramSocket for sending and receiving them.
+
+### DatagramPacket
+DatagramPacket is to embody connectionless packet transmitting service using datagram. Message is sent from 
