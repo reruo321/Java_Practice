@@ -89,4 +89,26 @@ UDP programming does not include a special server socket, but DatagramSocket obj
 Java offers two classes on UDP programming in java.net package: DatagramPacket for creating and controlling datagram packets, and DatagramSocket for sending and receiving them.
 
 ### DatagramPacket
-DatagramPacket is to embody connectionless packet transmitting service using datagram. Message is sent from 
+DatagramPacket is to embody connectionless packet transmitting service using datagram. Message is sent from one host to another, based on its containing information. Each packet would get its own route, and arrive in random order.
+
+Create a datagram packet using DatagramPacket constructors.
+
+    DatagramPacket(byte[] buf, int length)
+    DatagramPacket(byte[] buf, int offset, int length)
+    DatagramPacket(byte[] buf, int length, InetAddress address, int port)
+
+DatagramPacket also supports various methods like these.
+
+| Method | Description |
+| :-: | :-: |
+| InetAddress getAddress() | Gets IP address of host which is the datagram sender/receiver. |
+| byte [] getData() | Gets data. |
+| int getLength() | Gets the size of data. |
+| int getOffset() | Gets the offset of data. |
+| int getPort() | Gets the port number of the remote host. |
+| void setAddress(InetAddress iaddr) | Sets IP address. |
+| void setData(byte [] buf, int offset, int length) | Sets data. |
+| void setLength(int length) | Sets the size of the packet. |
+| void setPort(int iport) | Sets the port number. |
+
+### DatagramSocket
