@@ -224,7 +224,9 @@ Here are also methods for some frequently accessed header fields.
 | long getLastModified() | Returns the value of the *last-modified* header field. |
 
 ## Example Explanation
+※ If you use PrintWriter(OutputStream out, boolean autoFlush) for output, you should configure autoFlush = true!
 ### Example 01
 ![13Ex01](https://user-images.githubusercontent.com/48712088/150641728-7526050a-9922-486c-959e-6dfd87d7c51b.png)
 
 By running SocketServer.java and SocketClient.java, you can send and receive message by yourself.
+
