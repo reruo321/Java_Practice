@@ -225,6 +225,6 @@ Here are also methods for some frequently accessed header fields.
 
 ## Example Explanation
 ### Example 01
-![13Ex01](https://user-images.githubusercontent.com/48712088/150641517-f9c0a6de-9c19-4682-af40-8164b64cd0d9.png)
+![13Ex01](https://user-images.githubusercontent.com/48712088/150641728-7526050a-9922-486c-959e-6dfd87d7c51b.png)
 
 By running SocketServer.java and SocketClient.java, you can send and receive message by yourself.
