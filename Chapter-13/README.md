@@ -222,3 +222,9 @@ Here are also methods for some frequently accessed header fields.
 | long getDate() | Returns the value of the *date* header field. |
 | long getExpiration() | Returns the value of the *expires* header field. |
 | long getLastModified() | Returns the value of the *last-modified* header field. |
+
+## Example Explanation
+### Example 01
+![13Ex01](https://user-images.githubusercontent.com/48712088/150641517-f9c0a6de-9c19-4682-af40-8164b64cd0d9.png)
+
+By running SocketServer.java and SocketClient.java, you can send and receive message by yourself.
