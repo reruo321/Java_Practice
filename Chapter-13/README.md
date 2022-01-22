@@ -182,4 +182,43 @@ The class enables Java to use URL.
 | URI toURI() | Returns a URI equivalent to this URL. |
 
 ### URLConnection
-URLConnection is the abstract class which is the parent of all classes representing a communication link between an application and a URL.
+URLConnection is the abstract class which is the parent of all classes representing a communication link between an application and a URL. By using this class, you can read and write the resource with URL.
+
+Follow these steps to access a URL.
+
+1. Call openConnection() method to create a URLConnection instance, the accessing object.
+2. Manipulate setup parameters and general request property.
+3. Use connect() method to establish a connection to a remote object.
+4. Access the header fields and the contents of the remote object.
+
+Manipulate parameters with these URLConnection methods.
+
+| Method | Description |
+| :-: | :-: |
+| void setAllowUserInteraction(boolean allowuserinteraction) | Sets allowUserInteraction field of this URLConnection. |
+| void setDoInput(boolean doinput) | Sets doInput field of this URLConnection. |
+| void setDoOutput(boolean dooutput) | Sets doOutput field of this URLConnection. |
+| void setIfModifiedSince(long ifmodifiedsince) | Sets ifModifiedSince field of this URLConnection. |
+| void setRequestProperty(String key, String value) | Sets general require property. |
+| void setUseCaches(boolean usecaches) | Sets useCaches field of this URLConnection. |
+
+After the remote object becomes available, use these to access the header fields and the contents.
+
+| Method | Description |
+| :-: | :-: |
+| Object getContent() | Returns the contents of this URLConnection. |
+| String getHeaderField(int n) | Returns the value for the N-th header field. |
+| String getHeaderField(String name) | Returns the value of the specified header field. |
+| InputStream getInputStream() | Returns the InputStream of this URLConnection. |
+| OutputStream getOutputStream() | Returns the OutputStream of this URLConnection. |
+
+Here are also methods for some frequently accessed header fields.
+
+| Method | Description |
+| :-: | :-: |
+| String getContentEncoding() | Returns the value of the *content-encoding* header field. |
+| int getContentLength() | Returns the value of the *content-length* header field. |
+| String getContentType() | Returns the value of the *content-type* header field. |
+| long getDate() | Returns the value of the *date* header field. |
+| long getExpiration() | Returns the value of the *expires* header field. |
+| long getLastModified() | Returns the value of the *last-modified* header field. |
