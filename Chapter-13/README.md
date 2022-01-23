@@ -229,4 +229,5 @@ Here are also methods for some frequently accessed header fields.
 ![13Ex01](https://user-images.githubusercontent.com/48712088/150641728-7526050a-9922-486c-959e-6dfd87d7c51b.png)
 
 By running SocketServer.java and SocketClient.java, you can send and receive message by yourself.
-
+### Problem 01
+To make a group chat, you may use **MulticastSocket**. Also, make some **Thread**s to send/receive messages concurrently. (You would not want a bad communication that receives nothing until you send something...)
