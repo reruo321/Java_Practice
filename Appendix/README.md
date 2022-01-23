@@ -1,5 +1,28 @@
 # Appendix
 The documentation shows some useful information on Java.
+## Compile on Command Line
+Suppose that there are (main) **Test.java** and **Person.java** in package **Example.PersonTest** from the directory "..\myJava", and you would gather the compiled files into another directory, **ClassFolder**.
+
+    ...
+      └ myJava
+        └ Example
+          └ PersonTest
+            └ Test.java
+            └ Person.java
+
+1. Go to the directory "../myJava" on CMD.
+
+    C:\> cd ..\myJava
+
+2. Enter these commands to compile the .java files.
+
+    C:\...\myJava> javac -d "ClassFolder" "Example/PersonTest/Test.java"
+    C:\...\myJava> javac -d "ClassFolder" "Example/PersonTest/Person.java"
+
+3. Type the command to run the Java runtime launcher.
+
+    C:\...\myJava> java -classpath "ClassFolder" "Example.PersonTest.Test"
+
 ## Main Arguments
 If you want to give some arguments to the main method, follow this.
 1. Command Line
