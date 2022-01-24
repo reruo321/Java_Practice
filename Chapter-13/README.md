@@ -239,3 +239,7 @@ To make a group chat, you may use **MulticastSocket**. Also, make some **Thread*
 * **Broadcast**: 1:ALL
 * **Multicast**: 1:N or N:N group communication where data transmission is addressed to a group of destination computers simultaneously.
 * **Anycast**: 1:1 any one out of a group of nodes, typically the nearest one
+
+A multicast group is specified by a class D IP address and by a standard UDP port number. The addresses are in the range 224.0.0.0 to 239.255.255.255, inclusive. Since the address 224.0.0.0 is reserved, it should not be used. I chose 225.0.0.0 in the solution.
+
+Use setTimeToLive(int ttl) to set the default time-to-live for multicast packets sent out on the MulticastSocket in order to control the scope of the multicasts. The ttl must be in the range 0 <= ttl <= 255. I set it to 0, so that multicast packets would be delivered locally.
