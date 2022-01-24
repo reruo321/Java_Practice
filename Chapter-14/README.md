@@ -30,11 +30,25 @@ Schema is a logical collection that groups tables and other database objects ass
     
 If you do not need the schema anymore, use DROP to delete it. Command CASCADE drops all objects referring to the schema, but command RESTRICT cancels the deletion if an object has it as a reference.
 
-    DROP SCHEMA schema_name { CASCADE | RESTRICT };
+    DROP SCHEMA schema_name [ CASCADE | RESTRICT ];
 
 ### 2. Domain Definition
+Domain is the collection of values that a data element may contain. For example, a domain for gender column in a table handling information on people would be "Male", "Female". Define it like below.
+
+    CREATE DOMAIN domain_name type
+    [DEFAULT default_value]
+    [CONSTRAINT VALID-domain_name CHECK(range_value)];
+    
+    CREATE DOMAIN GENDER CHAR(1)
+    DEFAULT 'M'
+    CONSTRAINT VALID-GENDER CHECK(VALUE IN ('M', 'F'));
+
+To delete it, DROP it.
+
+    DROP DOMAIN domain_name [ CASCADE | RESTRICT ];
 
 ### 3. Table Definition
+Tables are database objects that contain all the data in a database. Set constraints to a column or a collection of columns to define a table. PRIMARY KEY, UNIQUE, and FOREIGN KEY are the examples of the constraints. 
 
 ### 4. View Definition
 
