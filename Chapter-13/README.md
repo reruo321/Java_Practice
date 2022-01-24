@@ -231,3 +231,11 @@ Here are also methods for some frequently accessed header fields.
 By running SocketServer.java and SocketClient.java, you can send and receive message by yourself.
 ### Problem 01
 To make a group chat, you may use **MulticastSocket**. Also, make some **Thread**s to send/receive messages concurrently. (You would not want a bad communication that receives nothing until you send something...)
+
+#### Routing Schemes
+![13Routing](https://user-images.githubusercontent.com/48712088/150755287-a1a5a81a-b341-4ac1-aced-7a3b9a5a9385.png)
+
+* **Unicast**: 1:1 single specific node
+* **Broadcast**: 1:ALL
+* **Multicast**: 1:N or N:N group communication where data transmission is addressed to a group of destination computers simultaneously.
+* **Anycast**: 1:1 any one out of a group of nodes, typically the nearest one
