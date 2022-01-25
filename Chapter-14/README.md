@@ -149,3 +149,7 @@ SELECT searches the value of a column on the table. GROUP BY groups values by sp
 JDBC-ODBC Bridge converts JDBC functions called by JDBC API into ODBC(Open DataBase Connectivity) functions. The outcomes are delivered to the DBMS via ODBC driver, so that they produce their execution results. The strength of this type of driver interface is it does not require additional costs for the connection to the supporting DBMSs. However, each client should have ODBC module, and downloading via network is impossible on some programs like Applet.
 
 ### Type 2: Native Bridge
+Native Bridge converts JDBC API calls to DBMS's own client API calls. Therefore, Java uses native methods partially to interface with binary files, provided from a vendor. (Vendor database: Database with which interacted through JDBC using special drivers) Native methods are the codes programmed by other languages such as C or C++. They can access computer components where JVM cannot do, and be executed on specific OS or CPU.
+
+If you want to interface with a database with a Native Bridge driver as a client, you should have a library in binary code format provided by DBMS vendor. On account of Native Bridge using native methods, it cannot download through network on some programs.
+
