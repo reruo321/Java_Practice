@@ -75,13 +75,37 @@ To change the definition of the table, follow these commands. ADD to add a new f
     ALTER TABLE table_name ALTER column_name type;
     ALTER TABLE table_name DROP column_name;
 
-Delete the table with DROP command.
+Delete a table with DROP command.
 
     DROP TABLE table_name [ CASCADE | RESTRICT ];
 
 ### 4. View Definition
+View is the virtual table whose data are derived from one or more tables using FROM clause. It is created by SELECT statement used as a subquery.
+
+    CREATE VIEW view_name [(column1_name, column2_name, ...)]
+    AS select_statement
+    
+    CREATE VIEW MALE
+    AS SELECT NAME, NUMBER
+    FROM STUDENT
+    WHERE SEX = 'M';
+
+The way to delete a view is identical to others.
+
+    DROP VIEW view_name [ CASCADE | RESTRICT ];
 
 ### 5. Index Definition
+Index is a data structure to make search faster. It allows to duplicate value unless you use command UNIQUE. ASC lists data in ascending order, and DESC in descending order. Default is ASC.
+
+    CREATE [UNIQUE] INDEX index_name ON table_name (column1_name [ ASC | DESC ], column2_name [ ASC | DESC ], ...);
+    
+    CREATE INDEX NUMINDEX ON STUDENT (NUMBER ASC);
+
+Delete an index uising DROP.
+
+    DROP INDEX index_name [ CASCADE | RESTRICT ];
 
 ## DML
+DML(Data Manipulation Language) manipulates data on a database table using INSERT, UPDATE, DELETE, and SELECT.
 
+### Data Insertion
