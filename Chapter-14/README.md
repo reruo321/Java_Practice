@@ -48,7 +48,36 @@ To delete it, DROP it.
     DROP DOMAIN domain_name [ CASCADE | RESTRICT ];
 
 ### 3. Table Definition
-Tables are database objects that contain all the data in a database. Set constraints to a column or a collection of columns to define a table. PRIMARY KEY, UNIQUE, and FOREIGN KEY are the examples of the constraints. 
+Tables are database objects that contain all the data in a database. Set constraints to a column or a collection of columns to define a table. PRIMARY KEY, UNIQUE, and FOREIGN KEY are the examples of the constraints. Also, define CHECK constraint to limit the value range of the column.
+
+    CREATE TABLE table_name (
+    column1_name type1 [NOT NULL],
+    column2_name type2 [NOT NULL],
+    ...,
+    [PRIMARY KEY(column_name, ...)]
+    [UNIQUE (column_name, ...)]
+    [FOREIGN KEY(column_name, ...) REFERENCES reference_table_name(primary_key_column_name)]
+    [CONSTRAINT constraint_name] [CHECK conditional_expression]
+    );
+    
+    CREATE TABLE STUDENT(
+    NAME VARCHAR(20) NOT NULL,
+    NUMBER CHAR(8),
+    MAJOR CHAR(3),
+    SEX GENDER,
+    PRIMARY KEY(NUMBER)
+    FOREIGN KEY(MAJOR) REFERENCES DEPARTMENT(CODE)
+    );
+
+To change the definition of the table, follow these commands. ADD to add a new field, and ALTER to modify a column definition, and DROP to delete a column.
+
+    ALTER TABLE table_name ADD column_name type;
+    ALTER TABLE table_name ALTER column_name type;
+    ALTER TABLE table_name DROP column_name;
+
+Delete the table with DROP command.
+
+    DROP TABLE table_name [ CASCADE | RESTRICT ];
 
 ### 4. View Definition
 
