@@ -143,7 +143,7 @@ SELECT searches the value of a column on the table. GROUP BY groups values by sp
     ORDER BY MAJOR ASC
     
 ## JDBC
-**JDBC**(Java DataBase Connectivity) is an API for Java, whose driver acts as a bridge between an application and a DBMS. If the application sends a query with requirements to the DBMS via JDBC API, the driver converts it into the query type the DBMS can recognize. Since Java provides only JDBC API, a user should use JDBC driver made by the DBMS company or a third party.
+**JDBC**(Java DataBase Connectivity) is an API for Java, whose driver acts as a bridge between an application and a DBMS. If the application sends a query with requests to the DBMS via JDBC API, the driver converts it into the query type the DBMS can recognize. Since Java provides only JDBC API, a user should use JDBC driver made by the DBMS company or a third party.
 
 ### Type 1: JDBC-ODBC Bridge
 JDBC-ODBC Bridge converts JDBC functions called by JDBC API into ODBC(Open DataBase Connectivity) functions. The outcomes are delivered to the DBMS via ODBC driver, so that they produce their execution results. The strength of this type of driver interface is it does not require additional costs for the connection to the supporting DBMSs. However, each client should have ODBC module, and downloading via network is impossible on some programs like Applet.
@@ -153,3 +153,13 @@ Native Bridge converts JDBC API calls to DBMS's own client API calls. Therefore,
 
 If you want to interface with a database with a Native Bridge driver as a client, you should have a library in binary code format provided by DBMS vendor. On account of Native Bridge using native methods, it cannot download through network on some programs.
 
+### Type 3: Net Protocol
+Net Protocol driver is the most flexible among the JDBC driver types. When a user access a middleware server, it helps him to approach to various DBMS. After the JDBC driver communicates JDBC API, converted to DBMS-independent net protocol, to the middleware server, it converts it to a protocol unique on DBMS, and conveys it to the server. The driver without native codes has the advantage of being downloaded via network, and of driver processing being simplified.
+
+### Type 4: Native Protocol
+Native Protocol JDBC driver is a small and fast driver that access to a DBMS directly, converting JDBC calls from client into the DBMS-exclusive protocol. Additionally, it is a pure Java driver available by downloading it through network. Nevertheless, it is bigger than Net Protocol driver, because of containing all process for accessing the DBMS.
+
+### Conclusion
+Type 1 and Type 2 are the temporary solutions to utilize JDBC in some locations unable to use pure Java drivers directly. Type 3 and Type 4 is the optimized ways to access a database through JDBC, and between them Type 4 is the fastest. If you need to deal with various types of database with one program, it is good to choose Type 3.
+
+## JDBC Driver Installation
