@@ -33,7 +33,7 @@ If you do not need the schema anymore, use DROP to delete it. Command CASCADE dr
     DROP SCHEMA schema_name [ CASCADE | RESTRICT ];
 
 ### 2. Domain Definition
-Domain is the collection of values that a data element may contain. For example, a domain for gender column in a table handling information on people would be "Male", "Female". Define it like below.
+Domain is the collection of values that a data element may contain. For example, a domain for gender column (field) in a table handling information on people would be "Male", "Female". Define it like below.
 
     CREATE DOMAIN domain_name type
     [DEFAULT default_value]
@@ -109,3 +109,38 @@ Delete an index uising DROP.
 DML(Data Manipulation Language) manipulates data on a database table using INSERT, UPDATE, DELETE, and SELECT.
 
 ### Data Insertion
+INSERT adds a new tuple (row) into a table.
+
+    INSERT INTO table_name(column1_name[, column2_name, ...]) VALUES(column1_value[, column2_value, ...])
+    
+    INSERT INTO STUDENT(NAME, NUMBER, MAJOR, SEX) VALUES ('HongGilDong', '20102211', '044', 'F')
+    
+### Data Update
+UPDATE modifies the value of a column on the table.
+
+    UPDATE table_name SET column1_name = column1_value[, column2_name = column2_value, ...] [WHERE conditional_expression]
+    
+    UPDATE STUDENT SET MAJOR = 042 WHERE NUMBER = '20102211'
+    
+### Data Deletion
+DELETE removes a tuple from the table.
+
+    DELETE FROM table_name [WHERE conditional_expression]
+    
+    DELETE FROM STUDENT WHERE NUMBER = '20102211'
+    
+### Data Selection
+SELECT searches the value of a column on the table. GROUP BY groups values by specific column, and ORDER BY sorts them based on appointed column. ASC and DESC also can be used.
+
+    SELECT * | [DISTINCT] column1_name[, column2_name, ...] expression [AS nickname], ...
+    FROM table_name
+    [WHERE condition]
+    [GROUP BY column1_name[, column2_name, ...] [HAVING group_condition]]
+    [ORDER BY column1_name[, column2_name, ...] [ ASC | DESC ]]
+    
+    SELECT NAME, NUMBER, MAJOR
+    FROM STUDENT WHERE SEX = 'F'
+    ORDER BY MAJOR ASC
+    
+## JDBC
+JDBC(Java DataBase Connectivity) driver acts as a bridge between an application and a DBMS.
