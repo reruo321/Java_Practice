@@ -143,4 +143,9 @@ SELECT searches the value of a column on the table. GROUP BY groups values by sp
     ORDER BY MAJOR ASC
     
 ## JDBC
-JDBC(Java DataBase Connectivity) driver acts as a bridge between an application and a DBMS.
+**JDBC**(Java DataBase Connectivity) is an API for Java, whose driver acts as a bridge between an application and a DBMS. If the application sends a query with requirements to the DBMS via JDBC API, the driver converts it into the query type the DBMS can recognize. Since Java provides only JDBC API, a user should use JDBC driver made by the DBMS company or a third party.
+
+### Type 1: JDBC-ODBC Bridge
+JDBC-ODBC Bridge converts JDBC functions called by JDBC API into ODBC(Open DataBase Connectivity) functions. The outcomes are delivered to the DBMS via ODBC driver, so that they produce their execution results. The strength of this type of driver interface is it does not require additional costs for the connection to the supporting DBMSs. However, each client should have ODBC module, and downloading via network is impossible on some programs like Applet.
+
+### Type 2: Native Bridge
