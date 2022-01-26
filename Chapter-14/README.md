@@ -202,3 +202,16 @@ ResultSet is the table representing the result set of the database, usually crea
 
 | Method | Description |
 | :-: | :-: |
+| void close() | Closes the database and the JDBC resources of this ResultSet object. |
+| void deleteRow() | Deletes the current row from the ResultSet object and from the underlying database. |
+| boolean first() | Moves the cursor to the first row in this ResultSet. |
+| int getInt(int columnIndex) | Gets the value of the designated column as an int, from the current row in this ResultSet. |
+| int getRow() | Gets the index of the current row. |
+| String getString(String columnLabel) | Gets the value of the designated column as a String, from the current row in this ResultSet. |
+| boolean isFirst() | Examines if the cursor is on the first row in this ResultSet. |
+| boolean isLast() | Examines if the cursor is on the last row in this ResultSet. |
+| boolean first() | Moves the cursor to the first row in this ResultSet. |
+| boolean last() | Moves the cursor to the last row in this ResultSet. |
+| boolean next() | Moves the cursor to the next row from the current position. |
+| boolean previous() | Moves the cursor to the previous row from the current position. |
+| void refreshRow() | Refreshes the current row to the latest value in the database. |
