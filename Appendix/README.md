@@ -113,6 +113,28 @@ will try to open example.txt from JavaPractice folder.
 
 3. If you add it successfully, it will be shown on "External Libraries" on the Project tool window.
 
+Now let's test the connection! First, initialize the driver. If your JDBC version is 4.0 or above, it would be done automatically so that can skip this step.
+
+   Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+   // Class.forName("com.mysql.jdbc.Driver").newInstance(); // For older version
+   
+Next, obtain a connection from DriverManager.
+   
+   Connection con = null;
+   ...
+   con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?", USER_ID, USER_PW);
+   
+※ If you do not have any database, simply empty the DATABASE_NAME.
+
+※ If you want to disable MySQL SSL, add "useSSL=false".
+
+   con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?useSSL=false", USER_ID, USER_PW);
+
+You can set the URL checking one of these examples:
+
+    con = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=root&password=1234");
+    con = DriverManager.getConnection("jdbc:mysql://localhost/test?", "root", "1234");
+   
 ## Issue
 ### ▷ Not Working Breakpoints in Intellij IDEA?
 I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
