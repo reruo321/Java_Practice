@@ -166,3 +166,28 @@ Type 1 and Type 2 are the temporary solutions to utilize JDBC in some locations 
 Check [Appendix](https://github.com/reruo321/Java_Practice/blob/main/Appendix/README.md#jdbc-connection) and Example 01 for JDBC connection.
 
 ## JDBC-Related Class
+### DriverManager
+DriverManager manages the JDBC drivers.
+
+| Method | Description |
+| :-: | :-: |
+| static Connection getConnection(String url, String user, String password) | Connects URL of the designated database. |
+| static Driver getDriver(String url) | Gets the driver recognizing the URL. |
+| static void registerDriver(Driver driver) | Registers the driver to the DriverManager. |
+
+### Connection
+Class Connection expresses the connetion with database. Create a Statement object and a PreparedStatement object, through a Connection object.
+
+| Method | Description |
+| :-: | :-: |
+| void close() | Closes the database and the JDBC resources of this Connection object. |
+| void commit() | Commits all the latest changes. |
+| Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability) | Creates a Statement object, to send a SQL statement to the database. |
+| PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability) | Create a PreparedStatement object, to send a SQL statement with parameters to the database. |
+| void rollback(Savepoint savepoint) | Rollbacks all changes in the current transaction. |
+
+### Statement
+Object Statement is used to execute a SQL statement and return the result.
+
+| Method | Description |
+| :-: | :-: |
