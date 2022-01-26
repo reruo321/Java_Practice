@@ -191,3 +191,14 @@ Object Statement is used to execute a SQL statement and return the result.
 
 | Method | Description |
 | :-: | :-: |
+| void close() | Closes the database and the JDBC resources of this Statement object. |
+| boolean execute(String sql, String [] columnNames) | Executes the SQL statement which may return multiple results. |
+| ResultSet executeQuery(String sql) | Executes the SQL statement returning a single ResultSet. |
+| int executeUpdate(String sql, String [] columnNames) | Executes the SQL statmenet. |
+| Connection getConnection() | Gets the Connection object which created this Statement. |
+
+### ResultSet
+ResultSet is the table representing the result set of the database, usually created by execution of SQL statements.
+
+| Method | Description |
+| :-: | :-: |
