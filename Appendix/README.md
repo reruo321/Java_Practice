@@ -103,6 +103,16 @@ For example, in this environment, a stream object
 
 will try to open example.txt from JavaPractice folder.
 
+## JDBC Connection
+(I used Intellij IDEA + MySQL in Windows 10.)
+
+1. Download MySQL Connector/J, the official JDBC driver for MySQL. The latest MySQL Installer would automatically download it.
+2. From Intellij IDEA open File > Project Structure > Modules > Dependencies > + icon, and add your driver file. The file directory looks like this:
+
+    C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.28.jar
+
+3. If you add it successfully, it will be shown on "External Libraries" on the Project tool window.
+
 ## Issue
 ### ▷ Not Working Breakpoints in Intellij IDEA?
 I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
