@@ -162,4 +162,7 @@ Native Protocol JDBC driver is a small and fast driver that access to a DBMS dir
 ### Conclusion
 Type 1 and Type 2 are the temporary solutions to utilize JDBC in some locations unable to use pure Java drivers directly. Type 3 and Type 4 is the optimized ways to access a database through JDBC, and between them Type 4 is the fastest. If you need to deal with various types of database with one program, it is good to choose Type 3.
 
-## JDBC Driver Installation
+## JDBC Connection
+Check [Appendix](https://github.com/reruo321/Java_Practice/blob/main/Appendix/README.md#jdbc-connection) and Example 01 for JDBC connection.
+
+## JDBC-Related Class
