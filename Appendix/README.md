@@ -122,14 +122,14 @@ Next, obtain a connection from DriverManager.
    
       Connection con = null;
       ...
-      con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?", USER_ID, USER_PW);
+      con = DriverManager.getConnection("jdbc:mysql://" + YOUR_SERVER + "/" + DATABASE_NAME + "?", USER_ID, USER_PW);
   
 * YOUR_SERVER: It is either "localhost" or "IP:PORT" format. Default port can be omitted.
 * If you do not have any database, simply empty the DATABASE_NAME.
 
 * If you want to disable MySQL SSL, add "useSSL=false".
 
-      con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?useSSL=false", USER_ID, USER_PW);
+      con = DriverManager.getConnection("jdbc:mysql://" + YOUR_SERVER + "/" + DATABASE_NAME + "?useSSL=false", USER_ID, USER_PW);
 
 You can set the URL checking one of these examples:
 
