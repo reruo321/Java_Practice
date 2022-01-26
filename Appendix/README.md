@@ -109,26 +109,27 @@ will try to open example.txt from JavaPractice folder.
 1. Download MySQL Connector/J, the official JDBC driver for MySQL. The latest MySQL Installer would automatically download it.
 2. From Intellij IDEA open File > Project Structure > Modules > Dependencies > + icon, and add your driver file. The file directory looks like this:
 
-    C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.28.jar
+     C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.28.jar
 
 3. If you add it successfully, it will be shown on "External Libraries" on the Project tool window.
 
 Now let's test the connection! First, initialize the driver. If your JDBC version is 4.0 or above, it would be done automatically so that can skip this step.
 
-   Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-   // Class.forName("com.mysql.jdbc.Driver").newInstance(); // For older version
+     Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+     // Class.forName("com.mysql.jdbc.Driver").newInstance(); // For older version
    
 Next, obtain a connection from DriverManager.
    
-   Connection con = null;
-   ...
-   con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?", USER_ID, USER_PW);
-   
-※ If you do not have any database, simply empty the DATABASE_NAME.
+      Connection con = null;
+      ...
+      con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?", USER_ID, USER_PW);
+  
+* YOUR_SERVER: It is either "localhost" or "IP:PORT" format. Default port can be omitted.
+* If you do not have any database, simply empty the DATABASE_NAME.
 
-※ If you want to disable MySQL SSL, add "useSSL=false".
+* If you want to disable MySQL SSL, add "useSSL=false".
 
-   con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?useSSL=false", USER_ID, USER_PW);
+      con = DriverManager.getConnection("jdbc:mysql://"+ YOUR_SERVER +"/" + DATABASE_NAME + "?useSSL=false", USER_ID, USER_PW);
 
 You can set the URL checking one of these examples:
 
