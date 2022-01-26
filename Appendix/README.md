@@ -104,7 +104,7 @@ For example, in this environment, a stream object
 will try to open example.txt from JavaPractice folder.
 
 ## JDBC Connection
-(I used Intellij IDEA + MySQL in Windows 10.)
+I used Intellij IDEA + MySQL in Windows 10, and the Type 4 JDBC driver.
 
 1. Download MySQL Connector/J, the official JDBC driver for MySQL. The latest MySQL Installer would automatically download it.
 2. From Intellij IDEA open File > Project Structure > Modules > Dependencies > + icon, and add your driver file. The file directory looks like this:
