@@ -215,3 +215,6 @@ ResultSet is the table representing the result set of the database, usually crea
 | boolean next() | Moves the cursor to the next row from the current position. |
 | boolean previous() | Moves the cursor to the previous row from the current position. |
 | void refreshRow() | Refreshes the current row to the latest value in the database. |
+
+## Other Tips
+### Checking the Database 
