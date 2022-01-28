@@ -218,3 +218,32 @@ ResultSet is the table representing the result set of the database, usually crea
 
 ## Other Tips
 ### Checking the Database 
+If you need to print the list of the databases, follow these steps.
+
+        Connection con = DriverManager.getConnection(url, id, password);
+        ...
+        try{
+            ResultSet rs = con.getMetaData().getCatalogs();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int count = rsmd.getColumnCount();
+            while(rs.next())
+                for(int i=1; i<=count; i++)
+                    System.out.println(rs.getString(i));
+            rs.close();
+            } catch(Exception e){ e.printStackTrace(); }
+            
+Connection.getMetadata() will return a DatabaseMetaData, and calling getCatalogs() for it will return a ResultSetMetaData which contains the catalog names available in the database. By moving the cursor, you can browse the ResultSet to get the database names.
+
+### Checking the Table
+Likewise, if you want to find the name of the table, take these.
+
+        try{
+            rs = con.getMetaData().getTables(con.getCatalog(), null, "%", null);
+            while(rs.next())
+                System.out.println(rs.getString(3));
+            rs.close();
+        } catch(Exception e){ e.printStackTrace(); }
+        
+con.getMetaData().getTables() will bring a ResultSet with a description of the tables in the given catalog, con.getCatalog() as a parameter. Since % is a wildcard character representing "zero or more characters" in SQL Server, the parameter "%" will find all available tables in the catalog.
+
+See [the official documentation](https://docs.oracle.com/javase/8/docs/api/java/sql/DatabaseMetaData.html#getTables-java.lang.String-java.lang.String-java.lang.String-java.lang.String:A-) to check its columns. It says the column 3 holds TABLE_NAME, so we can find the table names with it.
