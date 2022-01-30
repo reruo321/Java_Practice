@@ -135,7 +135,20 @@ You can set the URL checking one of these examples:
 
     con = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=root&password=1234");
     con = DriverManager.getConnection("jdbc:mysql://localhost/test?", "root", "1234");
-   
+
+## Round a Double to N Decimal Places
+Key Point: Call Math.round() for Double * 10^N, and then divide it into 10^N.
+
+Suppose that you have a double
+
+    double d = 12.34567;
+    
+and if you want to round it to 2 decimal places,
+
+    d = Math.round(d * 100.0) / 100.0;
+
+This will output 12.35.
+
 ## Issue
 ### ▷ Not Working Breakpoints in Intellij IDEA?
 I experienced a little dumb troubles for the first time to use debugger in Intellij IDEA.
