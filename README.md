@@ -26,7 +26,7 @@ Stream, InputStream, OutputStream, Reader, Writer.
 ### Ch. 10 - Java GUI Program
 AWT, Swing, MVC, Event Handling
 ### ~~Ch. 11 - Java Applet and Graphics~~
-(Deprecated) Applet
+~~(Deprecated) Applet~~
 ### Ch. 12 - Process and Thread
 Process, Thread, Runnable, Synchronization, Scheduling
 ### Ch. 13 - Network Programming
