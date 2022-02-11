@@ -87,10 +87,14 @@ Composition means a special type of aggregation where parts are destroyed when t
 
 Dependency shows a relationship that one's definition may cause changes to the other.
 
+##### Extension
+
+Extension 
+
 ##### Realization
 ![APPrealization](https://user-images.githubusercontent.com/48712088/145827681-f5df3e4e-132c-41c4-a697-392e2b7aa387.png)
 
-Realization is an abstraction relationship between a specification and an implementation.
+Realization is an abstraction relationship between a specification (supplier) and an implementation(client). Implementing objects of a specification can be grouped by common attribute. For instance, both implementations "Bird" and "Airplane" of a supplier "Fly" can "fly".
 
 ## File Directory
 In Intellij IDEA, if only the name of the file was specified as a parameter of file stream's methods, it tries to read the file from the root of the current project. See the directory hierarchy from the left side of the IDE to simply check it.
