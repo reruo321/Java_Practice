@@ -87,9 +87,9 @@ Composition means a special type of aggregation where parts are destroyed when t
 
 Dependency shows a relationship that one's definition may cause changes to the other.
 
-##### Extension
+##### Extend
 
-Extension 
+Extend relationship specifies one use case extending the behavior of another use case. Draw a dashed line with an open arrowhead, with writing "extend" into a guilemet(\<\<extend\>\>).
 
 ##### Realization
 ![APPrealization](https://user-images.githubusercontent.com/48712088/145827681-f5df3e4e-132c-41c4-a697-392e2b7aa387.png)
